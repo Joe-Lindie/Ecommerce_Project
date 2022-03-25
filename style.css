@@ -23,6 +23,24 @@ body {
     ######## 
 */
 
+.container__homepage__mobile {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.homepage__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+.homepage_mobile_img {
+  width: 100vw;
+}
+
 .hero__title {
 }
 
