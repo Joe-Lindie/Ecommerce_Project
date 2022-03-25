@@ -1,0 +1,55 @@
+/* The default font-family for the website is 'geograph'. A free alternative of the font has been imported. */
+
+@font-face {
+  font-family: "geograph-medium";
+  src: url("../fonts/geograph-edit-cufonfonts/");
+}
+:root {
+  /* Setting 'rem' to 10px seems to be good practice,  as per this article https://bit.ly/3tDdBT5 */
+  font-size: 62.5%;
+
+  /* Variables */
+  --title-color: #212a2f;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "geograph-medium", Arial, Helvetica, sans-serif;
+}
+
+/* 
+    ########
+    # HOME #
+    ######## 
+*/
+
+.hero__title {
+}
+
+.hero__button {
+}
+
+/* 
+    ###########
+    # PRODUCT # 
+    ########### 
+*/
+
+.breadcrumbs__item {
+  width: fit-content;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  text-decoration: underline;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+.breadcrumbs__item::after {
+  content: "";
+  display: inline-block;
+  height: 0.15rem;
+  width: 1rem;
+  transform: translate(15%, -250%) rotate(-65deg);
+  background-color: var(--title-color);
+}
