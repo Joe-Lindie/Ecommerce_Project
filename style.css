@@ -33,6 +33,10 @@ body {
   font-family: "geograph-medium", Arial, Helvetica, sans-serif;
 }
 
+a {
+  text-decoration: underline;
+}
+
 /* 
     ########
     # HOME #
@@ -68,7 +72,6 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.05rem;
-  text-decoration: underline;
   color: var(--title-color);
   cursor: pointer;
 }
@@ -98,4 +101,10 @@ body {
 
 .product__stars .fa-star:nth-child(1) {
   margin-left: 0;
+}
+
+.product__review-count {
+  font-family: "geograph-regular", Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
