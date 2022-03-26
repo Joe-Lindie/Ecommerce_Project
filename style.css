@@ -1,9 +1,25 @@
 /* The default font-family for the website is 'geograph'. A free alternative of the font has been imported. */
 
 @font-face {
-  font-family: "geograph-medium";
-  src: url("../fonts/geograph-edit-cufonfonts/");
+  font-family: "geograph-heavy";
+  src: url("../fonts/geograph-alt/geograph-heavy.ttf");
 }
+
+@font-face {
+  font-family: "geograph-medium";
+  src: url("../fonts/geograph-alt/geograph-medium.ttf");
+}
+
+@font-face {
+  font-family: "geograph-light";
+  src: url("../fonts/geograph-alt/geograph-light.ttf");
+}
+
+@font-face {
+  font-family: "geograph-regular";
+  src: url("../fonts/geograph-alt/geograph-regular.ttf");
+}
+
 :root {
   /* Setting 'rem' to 10px seems to be good practice,  as per this article https://bit.ly/3tDdBT5 */
   font-size: 62.5%;
@@ -41,12 +57,6 @@ body {
   width: 100vw;
 }
 
-.hero__title {
-}
-
-.hero__button {
-}
-
 /* 
     ###########
     # PRODUCT # 
@@ -70,4 +80,22 @@ body {
   width: 1rem;
   transform: translate(15%, -250%) rotate(-65deg);
   background-color: var(--title-color);
+}
+
+.product__price {
+  font-family: "geograph-regular", Arial, Helvetica, sans-serif;
+  color: var(--title-color);
+}
+
+.product__stars {
+  width: fit-content;
+  transform: scale(0.85);
+}
+
+.product__stars .fa-star {
+  margin: 0 0.2rem;
+}
+
+.product__stars .fa-star:nth-child(1) {
+  margin-left: 0;
 }
