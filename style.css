@@ -41,12 +41,6 @@ body {
   width: 100vw;
 }
 
-.hero__title {
-}
-
-.hero__button {
-}
-
 /* 
     ###########
     # PRODUCT # 
@@ -70,4 +64,12 @@ body {
   width: 1rem;
   transform: translate(15%, -250%) rotate(-65deg);
   background-color: var(--title-color);
+}
+
+.product__stars {
+  transform: scale(0.85);
+}
+
+.product__stars .fa-star {
+  margin: 0 0.2rem;
 }
