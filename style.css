@@ -25,7 +25,8 @@
   font-size: 62.5%;
 
   /* Variables */
-  --title-color: #212a2f;
+  --outer-space: #212a2f;
+  --wild-sand: #f5f5f5;
 }
 
 body {
@@ -72,7 +73,7 @@ a {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.05rem;
-  color: var(--title-color);
+  color: var(--outer-space);
   cursor: pointer;
 }
 
@@ -82,12 +83,12 @@ a {
   height: 0.15rem;
   width: 1rem;
   transform: translate(15%, -250%) rotate(-65deg);
-  background-color: var(--title-color);
+  background-color: var(--outer-space);
 }
 
 .product__price {
   font-family: "geograph-regular", Arial, Helvetica, sans-serif;
-  color: var(--title-color);
+  color: var(--outer-space);
 }
 
 .product__stars {
@@ -113,10 +114,15 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: var(--wild-sand);
 }
 
 .product__image {
   width: 100%;
   max-width: 42rem;
+}
+
+.product__label {
+  text-transform: uppercase;
+  font-size: 1.2rem;
 }
