@@ -123,6 +123,13 @@ a {
 }
 
 .product__label {
+  font-family: "geograph-medium", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.product__selected-value {
+  font-size: 1.2rem;
+  font-family: "geograph-regular", Arial, Helvetica, sans-serif;
 }
