@@ -17,6 +17,7 @@ body {
 
 a {
   text-decoration: underline;
+  color: var(--outer-space);
 }
 
 button {
