@@ -231,3 +231,17 @@ button:hover {
 .collapsible__chevron--rotate {
   transform: rotate(180deg);
 }
+
+.collapsible__text {
+  color: var(--outer-space);
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.collapsible__text--strong {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
