@@ -4,23 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Font Awesome Icon Library -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <link rel="stylesheet" type="text/css" href="../style.css" />
+    <!-- Font Awesome Icon Library -->
+    <script
+      src="https://kit.fontawesome.com/248cd170f1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="../scripts/Product.js"></script>
     <title>Tree Runners</title>
   </head>
   <body>
-    <!-- Components -->
+    <!--        Components        -->
+
+    <!-- Breadcrumbs -->
     <div class="breadcrumbs">
       <a class="breadcrumbs__item">Home</a>
       <a class="breadcrumbs__item">Shoes</a>
       <a class="breadcrumbs__item">Everyday Trainers</a>
     </div>
+
+    <!-- Price -->
     <p class="product__price">£105</p>
 
+    <!-- Rating -->
     <div class="product__stars">
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -30,13 +36,16 @@
     </div>
     <a class="product__review-count">(629)</a>
 
+    <!-- Carousel -->
     <div class="product__carousel">
       <img
         class="product__image"
-        src="../Images/Tree_Runners_Trees.jpg"
+        src="../Images/Tree_Runners_Mist.jpg"
         alt=""
       />
     </div>
+
+    <!-- Selections -->
     <section class="product__selection">
       <p class="product__selected-value">
         <label class="product__label">classics:</label> Mist (White Sole)
@@ -52,9 +61,19 @@
         <p class="size__region">uk</p>
         <p class="size__number">7</p>
       </div>
+
+      <button class="product__button button--gray">Button Text</button>
     </section>
 
-    <button class="product__button button--gray">Button Text</button>
-    <div class="product__size"></div>
+    <!-- Highlights -->
+    <div class="highlights">
+      <hr class="highlights__hr" />
+      <p class="highlights__item">
+        Lightweight, breathable eucalyptus fibre provides next-level comfort
+      </p>
+    </div>
+    <!-- Collapsible -->
+    <label class="collapsible__label">collapsible</label>
+    <i class="collapsible__chevron fa-solid fa-angle-down"></i>
   </body>
 </html>

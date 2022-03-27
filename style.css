@@ -1,16 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 :root {
   /* Setting 'rem' to 10px seems to be good practice,  as per this article https://bit.ly/3tDdBT5 */
   font-size: 62.5%;
 
   /* Variables */
-  --outer-space: #212a2f;
+  --outer-space: #212a2f; /* rgb(33, 42, 47) */
   --wild-sand: #f5f5f5;
+  --french-gray: #cfcfd0;
   --iron: #d3d4d5;
 }
 
 body {
   font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -99,7 +101,6 @@ button:hover {
 }
 
 .product__review-count {
-  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   cursor: pointer;
 }
@@ -116,8 +117,8 @@ button:hover {
   max-width: 42rem;
 }
 
-.product__label {
-  font-family: "Roboto", sans-serif;
+.product__label,
+.collapsible__label {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.1rem;
@@ -126,7 +127,6 @@ button:hover {
 
 .product__selected-value {
   font-size: 1.2rem;
-  font-family: "Roboto", sans-serif;
 }
 
 .color {
@@ -195,4 +195,39 @@ button:hover {
 .button--gray:hover {
   cursor: not-allowed;
   filter: none;
+}
+
+.highlights {
+  background-color: var(--wild-sand);
+}
+
+.highlights__hr {
+  height: 0.1rem;
+  margin: 0;
+  background-color: var(--french-gray);
+  border: none;
+}
+
+.highlights__item {
+  width: 80%;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--outer-space);
+}
+
+.collapsible__chevron {
+  transition: transform 0.2s linear;
+}
+
+.collapsible__chevron:hover {
+  cursor: pointer;
+}
+
+.collapsible__chevron--rotate {
+  transform: rotate(180deg);
 }
