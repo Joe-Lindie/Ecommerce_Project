@@ -14,7 +14,7 @@
     <script defer type="module" src="../scripts/Product.js"></script>
     <title>Tree Runners</title>
   </head>
-  <body>
+  <body class="product">
     <!--        Components        -->
     <!-- Nav -->
     <nav>
@@ -23,27 +23,42 @@
         <div class="nav__menu-icon--mid"></div>
         <div class="nav__menu-icon--bot"></div>
       </div>
+      <img
+        class="nav__shoe-icon"
+        src="../Images/Shoe_Icon.png"
+        alt="shoe icon"
+      />
+
+      <img
+        class="nav__cart-icon"
+        src="../Images/Cart_Icon.png"
+        alt="cart icon"
+      />
     </nav>
 
-    <!-- Breadcrumbs -->
-    <div class="breadcrumbs">
-      <a class="breadcrumbs__item">Home</a>
-      <a class="breadcrumbs__item">Shoes</a>
-      <a class="breadcrumbs__item">Everyday Trainers</a>
-    </div>
+    <header>
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a class="breadcrumbs__item">Home</a>
+        <a class="breadcrumbs__item">Shoes</a>
+        <a class="breadcrumbs__item">Everyday Trainers</a>
+      </div>
 
-    <!-- Price -->
-    <p class="product__price">£105</p>
+      <h1 class="product__title">Tree Runners</h1>
 
-    <!-- Rating -->
-    <div class="product__stars">
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star-half-o" aria-hidden="true"></i>
-    </div>
-    <a class="product__review-count">(629)</a>
+      <!-- Price -->
+      <p class="product__price">£105</p>
+
+      <!-- Rating -->
+      <div class="product__stars">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+      </div>
+      <a class="product__review-count">(629)</a>
+    </header>
 
     <!-- Carousel -->
     <div class="product__carousel">
