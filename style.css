@@ -246,3 +246,7 @@ button:hover {
   font-size: 1.4rem;
   font-weight: 500;
 }
+
+.product-part__image {
+  width: clamp(15rem, 100%, 75rem);
+}
