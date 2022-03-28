@@ -250,3 +250,10 @@ button:hover {
 .product-part__image {
   width: clamp(15rem, 100%, 75rem);
 }
+
+.product-part__name {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.4rem;
+  color: var(--outer-space);
+}
