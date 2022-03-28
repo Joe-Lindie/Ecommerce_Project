@@ -37,6 +37,36 @@ button:hover {
   cursor: pointer;
 }
 
+.nav__menu-icon {
+  cursor: pointer;
+  width: fit-content;
+  margin-left: 1rem;
+}
+
+.nav__menu-icon * {
+  height: 0.2rem;
+  width: 2.2rem;
+  margin: 0.6rem 0;
+  transform-origin: left;
+  transition: all 0.2s ease;
+  background-color: var(--outer-space);
+}
+
+.nav--active .nav__menu-icon * {
+}
+
+.nav--active .nav__menu-icon--top {
+  transform: rotate(45deg);
+}
+
+.nav--active .nav__menu-icon--mid {
+  transform: translateX(-25%);
+  opacity: 0;
+}
+
+.nav--active .nav__menu-icon--bot {
+  transform: rotate(-45deg);
+}
 /* 
     ########
     # HOME #
