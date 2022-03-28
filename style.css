@@ -1,20 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 :root {
   /* Setting 'rem' to 10px seems to be good practice,  as per this article https://bit.ly/3tDdBT5 */
   font-size: 62.5%;
 
   /* Variables */
-  --outer-space: #212a2f;
+  --outer-space: #212a2f; /* rgb(33, 42, 47) */
   --wild-sand: #f5f5f5;
+  --french-gray: #cfcfd0;
   --iron: #d3d4d5;
 }
 
 body {
+  margin: 0;
   font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
+  color: var(--outer-space);
 }
 
 a {
   text-decoration: underline;
+  color: var(--outer-space);
 }
 
 button {
@@ -32,6 +37,36 @@ button:hover {
   cursor: pointer;
 }
 
+.nav__menu-icon {
+  cursor: pointer;
+  width: fit-content;
+  margin-left: 1rem;
+}
+
+.nav__menu-icon * {
+  height: 0.2rem;
+  width: 2.2rem;
+  margin: 0.6rem 0;
+  transform-origin: left;
+  transition: all 0.2s ease;
+  background-color: var(--outer-space);
+}
+
+.nav--active .nav__menu-icon * {
+}
+
+.nav--active .nav__menu-icon--top {
+  transform: rotate(45deg);
+}
+
+.nav--active .nav__menu-icon--mid {
+  transform: translateX(-25%);
+  opacity: 0;
+}
+
+.nav--active .nav__menu-icon--bot {
+  transform: rotate(-45deg);
+}
 /* 
     ########
     # HOME #
@@ -99,7 +134,6 @@ button:hover {
 }
 
 .product__review-count {
-  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   cursor: pointer;
 }
@@ -116,8 +150,8 @@ button:hover {
   max-width: 42rem;
 }
 
-.product__label {
-  font-family: "Roboto", sans-serif;
+.product__label,
+.collapsible__label {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.1rem;
@@ -126,7 +160,6 @@ button:hover {
 
 .product__selected-value {
   font-size: 1.2rem;
-  font-family: "Roboto", sans-serif;
 }
 
 .color {
@@ -195,4 +228,70 @@ button:hover {
 .button--gray:hover {
   cursor: not-allowed;
   filter: none;
+}
+
+.highlights {
+  background-color: var(--wild-sand);
+}
+
+.highlights__hr {
+  height: 0.1rem;
+  margin: 0;
+  background-color: var(--french-gray);
+  border: none;
+}
+
+.highlights__item {
+  width: 80%;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--outer-space);
+}
+
+.collapsible__chevron {
+  transition: transform 0.2s linear;
+}
+
+.collapsible__chevron:hover {
+  cursor: pointer;
+}
+
+.collapsible__chevron--rotate {
+  transform: rotate(180deg);
+}
+
+.collapsible__text {
+  color: var(--outer-space);
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.collapsible__text--strong {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.product-part__image {
+  width: clamp(15rem, 100%, 75rem);
+  margin: 0;
+}
+
+.product-part__name {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.4rem;
+}
+
+.product-part__description {
+  letter-spacing: 0.05rem;
+  font-weight: 400;
+  font-size: 1.6rem;
 }
