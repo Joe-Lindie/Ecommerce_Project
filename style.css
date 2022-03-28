@@ -11,8 +11,10 @@
 }
 
 body {
+  margin: 0;
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
+  color: var(--outer-space);
 }
 
 a {
@@ -249,11 +251,17 @@ button:hover {
 
 .product-part__image {
   width: clamp(15rem, 100%, 75rem);
+  margin: 0;
 }
 
 .product-part__name {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 1.4rem;
-  color: var(--outer-space);
+}
+
+.product-part__description {
+  letter-spacing: 0.05rem;
+  font-weight: 400;
+  font-size: 1.6rem;
 }
