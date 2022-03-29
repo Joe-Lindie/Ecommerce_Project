@@ -18,6 +18,7 @@ function handleColorClick({ currentTarget }) {
   );
   displayColorName(colorName);
   updateCarousel(media);
+  highlightIcon(currentTarget.id);
 }
 
 function displayColorName(colorName) {
@@ -41,6 +42,12 @@ function displayImg(imgSrc) {
   newImgEl.classList.add(".product__image");
   newImgEl.src = imgSrc;
   carouselEl.append(newImgEl);
+}
+
+function highlightIcon(selectedColor) {
+  const selectedColorIcon = document.querySelector(`#${selectedColor}`);
+  colorNodeList.forEach((color) => color.classList.remove("color--active"));
+  selectedColorIcon.classList.add("color--active");
 }
 
 // Collapsibles
