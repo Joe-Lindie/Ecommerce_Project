@@ -14,7 +14,7 @@
     <script defer type="module" src="../scripts/Product.js"></script>
     <title>Tree Runners</title>
   </head>
-  <body class="product">
+  <body>
     <!--        Components        -->
     <!-- Nav -->
     <nav class="product__nav">
@@ -36,88 +36,90 @@
       />
     </nav>
 
-    <header class="product__header">
-      <!-- Breadcrumbs -->
-      <div class="breadcrumbs">
-        <a class="breadcrumbs__item">Home</a>
-        <a class="breadcrumbs__item">Shoes</a>
-        <a class="breadcrumbs__item">Everyday Trainers</a>
-      </div>
-      <div class="product__details">
-        <h1 class="product__title">Tree Runners</h1>
-        <p class="product__price">£105</p>
-      </div>
-
-      <!-- Rating -->
-      <div class="product__rating">
-        <div class="product__stars">
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star-half-o" aria-hidden="true"></i>
+    <div class="product">
+      <header class="product__header">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+          <a class="breadcrumbs__item">Home</a>
+          <a class="breadcrumbs__item">Shoes</a>
+          <a class="breadcrumbs__item">Everyday Trainers</a>
         </div>
-        <a class="product__review-count">(629)</a>
-      </div>
-    </header>
+        <div class="product__details">
+          <h1 class="product__title">Tree Runners</h1>
+          <p class="product__price">£105</p>
+        </div>
 
-    <!-- Carousel -->
-    <div class="product__carousel full-width">
+        <!-- Rating -->
+        <div class="product__rating">
+          <div class="product__stars">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+          </div>
+          <a class="product__review-count">(629)</a>
+        </div>
+      </header>
+
+      <!-- Carousel -->
+      <div class="product__carousel full-width">
+        <img
+          class="product__image"
+          src="../Images/Tree_Runners_Mist.jpg"
+          alt=""
+        />
+      </div>
+
+      <!-- Selections -->
+      <section class="product__selection">
+        <p class="product__selected-value">
+          <label class="product__label">classics:</label> Mist (White Sole)
+        </p>
+        <div class="color">
+          <div class="color__icon">
+            <span class="color__icon--top"></span>
+            <span class="color__icon--bottom"></span>
+          </div>
+        </div>
+
+        <div class="size">
+          <p class="size__region">uk</p>
+          <p class="size__number">7</p>
+        </div>
+
+        <button class="product__button button--gray">Button Text</button>
+      </section>
+
+      <!-- Highlights -->
+      <div class="highlights">
+        <hr class="highlights__hr" />
+        <p class="highlights__item">
+          Lightweight, breathable eucalyptus fibre provides next-level comfort
+        </p>
+      </div>
+      <!-- Collapsible -->
+      <label class="collapsible__label">collapsible</label>
+      <i class="collapsible__chevron fa-solid fa-angle-down"></i>
+      <p class="collapsible__text">
+        Our breathable, silky-smooth sneaker made with responsibly sourced
+        eucalyptus tree fibre treads lightly in everything you do.
+        <a href="#id">our operations</a>
+        <strong class="collapsible__text--strong">Best For:</strong>
+      </p>
+
+      <!-- Product-parts -->
       <img
-        class="product__image"
-        src="../Images/Tree_Runners_Mist.jpg"
-        alt=""
+        class="product-part__image full-width"
+        src="../Images/Tree_Runners_Tree_Upper.png"
       />
-    </div>
-
-    <!-- Selections -->
-    <section class="product__selection">
-      <p class="product__selected-value">
-        <label class="product__label">classics:</label> Mist (White Sole)
-      </p>
-      <div class="color">
-        <div class="color__icon">
-          <span class="color__icon--top"></span>
-          <span class="color__icon--bottom"></span>
-        </div>
-      </div>
-
-      <div class="size">
-        <p class="size__region">uk</p>
-        <p class="size__number">7</p>
-      </div>
-
-      <button class="product__button button--gray">Button Text</button>
-    </section>
-
-    <!-- Highlights -->
-    <div class="highlights">
-      <hr class="highlights__hr" />
-      <p class="highlights__item">
-        Lightweight, breathable eucalyptus fibre provides next-level comfort
+      <h1 class="product-part__name">tree upper</h1>
+      <h2 class="product-part__title">Silky And Breezy</h2>
+      <p class="product-part__description">
+        Our proprietary knit feels silky smooth, breathable, and pleasantly cool
+        thanks to eucalyptus tree fibre responsibly sourced from FSC® Certified
+        forests.
       </p>
     </div>
-    <!-- Collapsible -->
-    <label class="collapsible__label">collapsible</label>
-    <i class="collapsible__chevron fa-solid fa-angle-down"></i>
-    <p class="collapsible__text">
-      Our breathable, silky-smooth sneaker made with responsibly sourced
-      eucalyptus tree fibre treads lightly in everything you do.
-      <a href="#id">our operations</a>
-      <strong class="collapsible__text--strong">Best For:</strong>
-    </p>
-
-    <!-- Product-parts -->
-    <img
-      class="product-part__image full-width"
-      src="../Images/Tree_Runners_Tree_Upper.png"
-    />
-    <h1 class="product-part__name">tree upper</h1>
-    <h2 class="product-part__title">Silky And Breezy</h2>
-    <p class="product-part__description">
-      Our proprietary knit feels silky smooth, breathable, and pleasantly cool
-      thanks to eucalyptus tree fibre responsibly sourced from FSC® Certified
-      forests.
-    </p>
   </body>
 </html>
