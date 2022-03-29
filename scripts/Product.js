@@ -17,11 +17,30 @@ function handleColorClick({ currentTarget }) {
     ({ colorId }) => colorId === currentTarget.id
   );
   displayColorName(colorName);
+  updateCarousel(media);
 }
 
-function displayColorName(selectedColorName) {
+function displayColorName(colorName) {
   const colorNameEl = document.querySelector(".product__color-name");
-  colorNameEl.innerText = selectedColorName;
+  colorNameEl.innerText = colorName;
+}
+
+function updateCarousel(media) {
+  clearCarousel();
+  media.forEach(displayImg);
+}
+
+function clearCarousel() {
+  const carouselEl = document.querySelector(".product__carousel");
+  carouselEl.innerHTML = "";
+}
+
+function displayImg(imgSrc) {
+  const carouselEl = document.querySelector(".product__carousel");
+  const newImgEl = document.createElement("img");
+  newImgEl.classList.add(".product__image");
+  newImgEl.src = imgSrc;
+  carouselEl.append(newImgEl);
 }
 
 // Collapsibles
