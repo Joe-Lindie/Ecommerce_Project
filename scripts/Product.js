@@ -58,10 +58,10 @@ function rotateCheveron({ currentTarget }) {
   currentTarget.classList.toggle("collapsible__chevron--rotate");
 }
 
+// On Load
+window.addEventListener("load", selectFirstColor);
+
 function selectFirstColor() {
-  // Used on load only
   const mockEvent = { currentTarget: { id: colorNodeList[0].id } };
   handleColorClick(mockEvent);
 }
-
-export { selectFirstColor };
