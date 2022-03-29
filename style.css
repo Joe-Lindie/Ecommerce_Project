@@ -174,6 +174,7 @@ nav {
   align-items: center;
   width: 100%;
   margin-left: -1.7rem;
+  user-select: none;
 }
 
 .product__stars {
@@ -242,11 +243,11 @@ nav {
   width: 100%;
 }
 
-.color__icon--top {
+#mist .color__icon--top {
   background-color: #888688;
 }
 
-.color__icon--bottom {
+#mist .color__icon--bottom {
   background-color: #fff;
 }
 
@@ -350,10 +351,4 @@ nav {
   letter-spacing: 0.05rem;
   font-weight: 400;
   font-size: 1.6rem;
-}
-
-.full-width {
-  width: 100%;
-  margin: 0;
-  padding: 0;
 }
