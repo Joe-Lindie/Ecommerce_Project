@@ -244,7 +244,18 @@ a {
 }
 
 .product__selected-value {
+  display: flex;
+  align-items: center;
   font-size: 1.2rem;
+}
+
+.product__color-name {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+.color-wrapper {
+  display: flex;
 }
 
 .color {
