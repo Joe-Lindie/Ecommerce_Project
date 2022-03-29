@@ -22,7 +22,9 @@ a {
   color: var(--outer-space);
 }
 
-button {
+button,
+.Homepage_Button_1,
+.Homepage_Button_2 {
   padding: 1.3rem 1.8rem;
   margin: auto;
   border: none;
@@ -76,7 +78,6 @@ button:hover {
 .container__homepage__mobile {
   position: relative;
   text-align: center;
-  color: white;
 }
 
 .homepage__text {
@@ -84,11 +85,38 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  color: var(--wild-sand);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  width: 100%;
 }
 
 .homepage_mobile_img {
   width: 100vw;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Homepage_Button_1 {
+  position: absolute;
+  bottom: 3rem;
+  right: 1rem;
+  color: black;
+  background-color: white;
+  padding: 1rem;
+}
+
+.Homepage_Button_2 {
+  position: absolute;
+  bottom: 3rem;
+  left: 1rem;
+  color: black;
+  background-color: white;
+  padding: 1rem;
 }
 
 /* 
