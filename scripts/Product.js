@@ -33,16 +33,16 @@ function updateCarousel(media) {
 }
 
 function clearCarousel() {
-  const viewportEl = document.querySelector(".carousel__viewport");
-  viewportEl.innerHTML = "";
+  const imagesWrapperEl = document.querySelector(".carousel__images-wrapper");
+  imagesWrapperEl.innerHTML = "";
 }
 
 function displayImg(imgSrc) {
-  const viewportEl = document.querySelector(".carousel__viewport");
+  const imagesWrapperEl = document.querySelector(".carousel__images-wrapper");
   const newImgEl = document.createElement("img");
   newImgEl.classList.add("carousel__image");
   newImgEl.src = imgSrc;
-  viewportEl.append(newImgEl);
+  imagesWrapperEl.append(newImgEl);
 }
 
 function highlightIcon(selectedColor) {
