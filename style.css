@@ -285,6 +285,7 @@ a {
 }
 
 .product__selected-value {
+  width: 100%;
   display: flex;
   align-items: center;
   font-size: 1.2rem;
@@ -352,13 +353,20 @@ a {
   background-color: #ffffff;
 }
 
+.size-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .size {
+  --size-width: clamp(5rem, 20vw, 8rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 6.5rem;
-  height: 6.5rem;
+  width: var(--size-width);
+  height: var(--size-width);
+  margin: 0.5rem;
   border: 1px solid gray;
   transition: background-color 0.2s linear;
 }
@@ -368,10 +376,18 @@ a {
   cursor: pointer;
 }
 
+.size--active {
+  color: white;
+  background-color: var(--outer-space);
+}
+
+.size--active:hover {
+  background-color: var(--outer-space);
+}
+
 .size * {
   margin: 0;
   font-size: 1.2rem;
-  color: var(--outer-space);
 }
 
 .size__region {
