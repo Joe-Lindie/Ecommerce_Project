@@ -57,8 +57,9 @@ function createButton(index) {
 }
 
 function handleButtonClick({ currentTarget }) {
-  currentImgIndex = currentTarget.dataset.imgid;
+  currentImgIndex = Number(currentTarget.dataset.imgid);
   offsetImgWrapper();
+  updateButtons();
 }
 
 function updateButtons() {
