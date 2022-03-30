@@ -224,15 +224,26 @@ a {
   cursor: pointer;
 }
 
-.product__carousel {
+.carousel {
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0;
   background-color: var(--wild-sand);
+  cursor: grab;
 }
 
-.product__image {
-  width: 100%;
-  max-width: 42rem;
+.carousel__viewport {
+  display: flex;
+  overflow: hidden;
+  width: clamp(15rem, 100vw, 45rem);
+  background-color: transparent;
+}
+
+.carousel__image {
+  width: clamp(15rem, 100vw, 45rem);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .product__label,
@@ -398,7 +409,7 @@ a {
 
 .product-part__image {
   width: clamp(15rem, 100%, 75rem);
-  margin: 0;
+  padding: 0;
 }
 
 .product-part__name {
