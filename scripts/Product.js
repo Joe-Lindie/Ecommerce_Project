@@ -1,5 +1,6 @@
+import "./Nav.js";
+import "./Carousel.js";
 import products from "../data/products.js";
-
 // Shared
 const currentProductId = document.querySelector("body").id;
 const currentProductObj = products.find(
@@ -32,16 +33,16 @@ function updateCarousel(media) {
 }
 
 function clearCarousel() {
-  const carouselEl = document.querySelector(".product__carousel");
-  carouselEl.innerHTML = "";
+  const viewportEl = document.querySelector(".carousel__viewport");
+  viewportEl.innerHTML = "";
 }
 
 function displayImg(imgSrc) {
-  const carouselEl = document.querySelector(".product__carousel");
+  const viewportEl = document.querySelector(".carousel__viewport");
   const newImgEl = document.createElement("img");
-  newImgEl.classList.add(".product__image");
+  newImgEl.classList.add("carousel__image");
   newImgEl.src = imgSrc;
-  carouselEl.append(newImgEl);
+  viewportEl.append(newImgEl);
 }
 
 function highlightIcon(selectedColor) {
