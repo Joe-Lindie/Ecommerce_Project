@@ -369,6 +369,7 @@ a {
   margin: 0.5rem;
   border: 1px solid gray;
   transition: background-color 0.2s linear;
+  user-select: none;
 }
 
 .size:hover {
