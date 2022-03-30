@@ -79,6 +79,7 @@ nav {
 }
 
 .btn {
+  width: 100%;
   padding: 1.3rem 1.8rem;
   margin: auto;
   border: none;
@@ -223,6 +224,7 @@ a {
 }
 
 .carousel {
+  height: clamp(15rem, 100vw, 45rem);
   position: relative;
   display: flex;
   justify-content: center;
