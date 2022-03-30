@@ -1,6 +1,7 @@
 import "./Nav.js";
-import "./Carousel.js";
+import { updateButtons, updateCarousel } from "./Carousel.js";
 import products from "../data/products.js";
+
 // Shared
 const currentProductId = document.querySelector("body").id;
 const currentProductObj = products.find(
@@ -19,30 +20,13 @@ function handleColorClick({ currentTarget }) {
   );
   displayColorName(colorName);
   updateCarousel(media);
+  updateButtons();
   highlightIcon(currentTarget.id);
 }
 
 function displayColorName(colorName) {
   const colorNameEl = document.querySelector(".product__color-name");
   colorNameEl.innerText = colorName;
-}
-
-function updateCarousel(media) {
-  clearCarousel();
-  media.forEach(displayImg);
-}
-
-function clearCarousel() {
-  const imagesWrapperEl = document.querySelector(".carousel__images-wrapper");
-  imagesWrapperEl.innerHTML = "";
-}
-
-function displayImg(imgSrc) {
-  const imagesWrapperEl = document.querySelector(".carousel__images-wrapper");
-  const newImgEl = document.createElement("img");
-  newImgEl.classList.add("carousel__image");
-  newImgEl.src = imgSrc;
-  imagesWrapperEl.append(newImgEl);
 }
 
 function highlightIcon(selectedColor) {

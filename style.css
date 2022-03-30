@@ -24,23 +24,6 @@ a {
   color: var(--outer-space);
 }
 
-button,
-.Homepage_Button_1,
-.Homepage_Button_2 {
-  padding: 1.3rem 1.8rem;
-  margin: auto;
-  border: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-button:hover {
-  filter: invert(1);
-  cursor: pointer;
-}
-
 nav {
   display: flex;
   position: fixed;
@@ -93,6 +76,21 @@ nav {
 
 .nav--active .nav__menu-icon--bot {
   transform: rotate(-45deg);
+}
+
+.btn {
+  padding: 1.3rem 1.8rem;
+  margin: auto;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.btn:hover {
+  filter: invert(1);
+  cursor: pointer;
 }
 
 /* 
@@ -249,6 +247,24 @@ a {
   width: clamp(15rem, 100vw, 45rem);
   pointer-events: none;
   z-index: 0;
+}
+
+.carousel__button {
+  --carousel-btn-size: 0.5rem;
+  height: var(--carousel-btn-size);
+  width: var(--carousel-btn-size);
+  margin: 0.6rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--french-gray);
+  cursor: pointer;
+}
+
+.carousel__button--active {
+  --carousel-active-btn-size: 1rem;
+  height: var(--carousel-active-btn-size);
+  width: var(--carousel-active-btn-size);
 }
 
 .product__label,
