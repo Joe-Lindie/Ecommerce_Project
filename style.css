@@ -78,6 +78,32 @@ nav {
   transform: rotate(-45deg);
 }
 
+.all_birds_logo {
+  height: 3.5rem;
+}
+
+.nav_menu_links {
+  padding-left: 3rem;
+}
+
+.nav_menu_links:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 990px) {
+  .nav__menu-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 990px) {
+  .nav_menu_links,
+  .homepage_icons {
+    display: none;
+  }
+}
+
+
 .btn {
   width: 100%;
   padding: 1.3rem 1.8rem;
@@ -103,54 +129,78 @@ hr {
   opacity: 0.9;
 }
 
+
 /* 
     ########
     # HOME #
     ######## 
 */
 
-.container__homepage__mobile {
+.Container__Image {
   position: relative;
-  text-align: center;
+  max-width: 100vw;
+  height: 60rem;
 }
 
-.homepage__text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--wild-sand);
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.25;
-  letter-spacing: 0.5px;
+.homepage_mobile_img,
+.homepage_desktop_img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.homepage_mobile_img {
-  width: 100vw;
+.homepage_desktop_img {
+  display: none;
 }
+
+/* Desktop View;*/
+@media (min-width: 750px) {
+  .homepage_mobile_img {
+    display: none;
+  }
+
+  .homepage_desktop_img {
+    display: block;
+  }
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
 }
 
-.Homepage_Button_1 {
+.homepage__text {
   position: absolute;
-  bottom: 3rem;
-  right: 1rem;
-  color: black;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+}
+
+.Homepage_Button_1,
+.Homepage_Button_2 {
+  position: absolute;
+  bottom: 20px;
+  left: 5rem;
   background-color: white;
-  padding: 1rem;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .Homepage_Button_2 {
-  position: absolute;
-  bottom: 3rem;
-  left: 1rem;
-  color: black;
-  background-color: white;
-  padding: 1rem;
+  left: 20rem;
+}
+
+.Homepage_Button_1:hover,
+.Homepage_Button_2:hover {
+  background-color: black;
+  color: white;
 }
 
 /* 
