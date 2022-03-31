@@ -60,7 +60,7 @@ function expandCollapsible({ currentTarget }) {
   setTimeout(
     // Timeout created to give enough time to remove class from other collapsibles
     () => currentTarget.classList.add("collapsible__item--active"),
-    150
+    180
   );
 }
 

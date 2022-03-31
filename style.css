@@ -450,7 +450,7 @@ a {
 }
 
 .collapsible {
-  min-height: 42rem;
+  /* min-height: 20rem; */
 }
 
 .collapsible__item {
@@ -506,8 +506,28 @@ a {
   opacity: 1;
 }
 
+#sustainability .collapsible__text {
+  margin-bottom: 0;
+}
+
 .collapsible__br {
-  margin: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.collapsible__list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.collapsible__list li:before {
+  content: "";
+  display: inline-block;
+  height: 0.5rem;
+  width: 0.5rem;
+  margin: 0.25rem 0.5rem;
+  border-radius: 50%;
+  background-color: var(--outer-space);
 }
 
 .product-part__image {
