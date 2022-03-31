@@ -10,14 +10,13 @@
       src="https://kit.fontawesome.com/248cd170f1.js"
       crossorigin="anonymous"
     ></script>
-    <script defer type="module" src="../scripts/main.js"></script>
     <script defer type="module" src="../scripts/Product.js"></script>
     <title>Tree Runners</title>
   </head>
   <body id="tree-runners">
     <!--        Components        -->
     <!-- Nav -->
-    <nav class="product__nav">
+    <nav>
       <div class="nav__menu-icon">
         <div class="nav__menu-icon--top"></div>
         <div class="nav__menu-icon--mid"></div>
@@ -28,7 +27,6 @@
         src="../Images/Shoe_Icon.png"
         alt="shoe icon"
       />
-
       <img
         class="nav__cart-icon"
         src="../Images/Cart_Icon.png"
@@ -63,12 +61,11 @@
       </header>
 
       <!-- Carousel -->
-      <div class="product__carousel full-width">
-        <img
-          class="product__image"
-          src="../Images/Tree_Runners_Mist.jpg"
-          alt=""
-        />
+      <div class="carousel">
+        <div class="carousel__viewport">
+          <div class="carousel__images-wrapper"></div>
+        </div>
+        <div class="carousel__button-wrapper"></div>
       </div>
 
       <!-- Selections -->
@@ -77,57 +74,190 @@
           <label class="product__label">classics:</label>
           <p class="product__color-name"></p>
         </div>
-        <div class="color" id="mist">
-          <div class="color__icon">
-            <span class="color__icon--top"></span>
-            <span class="color__icon--bottom"></span>
+        <div class="color-wrapper">
+          <div class="color" id="mist">
+            <div class="color__icon">
+              <span class="color__icon--top"></span>
+              <span class="color__icon--bottom"></span>
+            </div>
           </div>
-        </div>
-        <div class="color" id="buoyant-blue">
-          <div class="color__icon">
-            <span class="color__icon--top"></span>
-            <span class="color__icon--bottom"></span>
+          <div class="color" id="buoyant-blue">
+            <div class="color__icon">
+              <span class="color__icon--top"></span>
+              <span class="color__icon--bottom"></span>
+            </div>
           </div>
-        </div>
-        <div class="color" id="wasatch">
-          <div class="color__icon">
-            <span class="color__icon--top"></span>
-            <span class="color__icon--bottom"></span>
+          <div class="color" id="wasatch">
+            <div class="color__icon">
+              <span class="color__icon--top"></span>
+              <span class="color__icon--bottom"></span>
+            </div>
           </div>
         </div>
 
-        <div class="size">
-          <p class="size__region">uk</p>
-          <p class="size__number">7</p>
+        <label class="product__label">size:</label>
+        <div class="size-wrapper">
+          <div class="size">
+            <p class="size__region">uk</p>
+            <p class="size__number" data-size="7">7</p>
+          </div>
+          <div class="size">
+            <p class="size__region">uk</p>
+            <p class="size__number" data-size="8">8</p>
+          </div>
+          <div class="size">
+            <p class="size__region">uk</p>
+            <p class="size__number" data-size="9">9</p>
+          </div>
+          <div class="size">
+            <p class="size__region">uk</p>
+            <p class="size__number" data-size="10">10</p>
+          </div>
+          <div class="size">
+            <p class="size__region">uk</p>
+            <p class="size__number" data-size="11">11</p>
+          </div>
+          <div class="size">
+            <p class="size__region">uk</p>
+            <p class="size__number" data-size="12">12</p>
+          </div>
+          <div class="size">
+            <p class="size__region">uk</p>
+            <p class="size__number" data-size="13">13</p>
+          </div>
         </div>
 
-        <button class="product__button button--gray">Button Text</button>
+        <button class="btn product__button button--gray">Button Text</button>
       </section>
 
       <!-- Highlights -->
-      <div class="highlights">
-        <hr class="highlights__hr" />
-        <p class="highlights__item">
+      <section class="highlights">
+        <h2 class="highlights__title product__title">Tree Runner Highlights</h2>
+        <hr class="product__hr" />
+        <p class="highlights__text">
           Lightweight, breathable eucalyptus fibre provides next-level comfort
         </p>
-      </div>
+        <hr class="highglights__hr" />
+        <p class="highlights__text">
+          Cushioned midsole gives wear-all-day support
+        </p>
+        <hr class="product__hr" />
+        <p class="highlights__text">
+          Machine-washable materials keep shoes looking like new
+        </p>
+      </section>
+
       <!-- Collapsible -->
-      <label class="collapsible__label">collapsible</label>
-      <i class="collapsible__chevron fa-solid fa-angle-down"></i>
-      <p class="collapsible__text">
-        Our breathable, silky-smooth sneaker made with responsibly sourced
-        eucalyptus tree fibre treads lightly in everything you do.
-        <a href="#id">our operations</a>
-        <strong class="collapsible__text--strong">Best For:</strong>
-      </p>
+      <section class="collapsible">
+        <div class="collapsible__item">
+          <hr />
+          <label class="collapsible__label"
+            >details
+            <i class="collapsible__chevron fa-solid fa-angle-down"></i>
+          </label>
+          <p class="collapsible__text">
+            Our breathable, silky-smooth sneaker made with responsibly sourced
+            eucalyptus tree fibre treads lightly in everything you do.
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Best For:</strong>
+            Walking, warmer weather, everyday wear Thermoregulating
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Material:</strong>
+            Lightweight, breathable eucalyptus fiber provides next-level comfort
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Versatile Design:</strong>
+            Wear-with-everything classic style, great for travel
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Where It’s Made:</strong>
+            Vietnam/China. Learn more about
+            <a class="collapsible__link">our operations </a>
+            <br class="collapsible__br" />
+          </p>
+        </div>
+        <div class="collapsible__item" id="sustainability">
+          <hr />
+          <label class="collapsible__label"
+            >sustainability
+            <i class="collapsible__chevron fa-solid fa-angle-down"></i>
+          </label>
+          <p class="collapsible__text">
+            Our Tree Runner is carbon neutral thanks to sustainable practices,
+            like using natural materials funding high impact carbon projects.
+            But before we balance the emissions, its footprint starts at 9.6 kg
+            CO2e. Learn more about carbon footprint labeling and our commitments
+            to reduce our impact.
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong"
+              >Sustainable Materials:</strong
+            >
+          </p>
+          <ul class="collapsible__list">
+            <li>FSC-certified TENCEL™ Lyocell (eucalyptus tree fibre) upper</li>
+            <li>SweetFoam® midsole made with sugarcane-based green EVA</li>
+            <li>Bio-based TPU eyelets</li>
+            <li>Shoe laces made from recycled plastic bottles</li>
+            <li>Castor bean oil-based insole foam</li>
+          </ul>
+        </div>
+        <div class="collapsible__item">
+          <hr />
+          <label class="collapsible__label"
+            >details
+            <i class="collapsible__chevron fa-solid fa-angle-down"></i>
+          </label>
+          <p class="collapsible__text">
+            Our breathable, silky-smooth sneaker made with responsibly sourced
+            eucalyptus tree fibre treads lightly in everything you do.
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Best For:</strong>
+            Walking, warmer weather, everyday wear Thermoregulating
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Material:</strong>
+            Lightweight, breathable eucalyptus fiber provides next-level comfort
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Versatile Design:</strong>
+            Wear-with-everything classic style, great for travel
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Where It’s Made:</strong>
+            Vietnam/China. Learn more about
+            <a class="collapsible__link">our operations </a>
+            <br class="collapsible__br" />
+          </p>
+        </div>
+        <div class="collapsible__item">
+          <hr />
+          <label class="collapsible__label"
+            >details
+            <i class="collapsible__chevron fa-solid fa-angle-down"></i>
+          </label>
+          <p class="collapsible__text">
+            Our breathable, silky-smooth sneaker made with responsibly sourced
+            eucalyptus tree fibre treads lightly in everything you do.
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Best For:</strong>
+            Walking, warmer weather, everyday wear Thermoregulating
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Material:</strong>
+            Lightweight, breathable eucalyptus fiber provides next-level comfort
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Versatile Design:</strong>
+            Wear-with-everything classic style, great for travel
+            <br class="collapsible__br" />
+            <strong class="collapsible__text--strong">Where It’s Made:</strong>
+            Vietnam/China. Learn more about
+            <a class="collapsible__link">our operations </a>
+            <br class="collapsible__br" />
+          </p>
+        </div>
+      </section>
 
       <!-- Product-parts -->
       <img
-        class="product-part__image full-width"
+        class="product-part__image"
         src="../Images/Tree_Runners_Tree_Upper.png"
       />
       <h1 class="product-part__name">tree upper</h1>
-      <h2 class="product-part__title">Silky And Breezy</h2>
+      <h3 class="product-part__title">Silky And Breezy</h3>
       <p class="product-part__description">
         Our proprietary knit feels silky smooth, breathable, and pleasantly cool
         thanks to eucalyptus tree fibre responsibly sourced from FSC® Certified
