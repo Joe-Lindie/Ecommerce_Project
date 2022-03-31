@@ -94,6 +94,15 @@ nav {
   cursor: pointer;
 }
 
+hr {
+  width: 100%;
+  margin: 0;
+  height: 0.1rem;
+  background-color: var(--french-gray);
+  border: none;
+  opacity: 0.9;
+}
+
 /* 
     ########
     # HOME #
@@ -429,15 +438,6 @@ a {
   text-align: center;
 }
 
-.highlights__hr {
-  width: 100%;
-  margin: 0;
-  height: 0.1rem;
-  background-color: var(--french-gray);
-  border: none;
-  opacity: 0.9;
-}
-
 .highlights__text {
   width: fit-content;
   padding: 0 2.4rem;
@@ -449,15 +449,44 @@ a {
   text-align: center;
 }
 
+.collapsible {
+  min-height: 42rem;
+}
+
+.collapsible__item {
+  max-height: 3.8rem;
+  overflow: hidden;
+  transition: max-height 0.3s linear;
+}
+
+.collapsible__item--active {
+  max-height: 50rem;
+}
+
+.collapsible__item--active .collapsible__text {
+  opacity: 1;
+}
+
+.collapsible__label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  letter-spacing: 0.17rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
 .collapsible__chevron {
-  transition: transform 0.2s linear;
+  transform: rotate(360deg);
+  transition: transform 0.3s linear;
+  opacity: 1;
 }
 
 .collapsible__chevron:hover {
   cursor: pointer;
 }
 
-.collapsible__chevron--rotate {
+.collapsible__item--active .collapsible__chevron {
   transform: rotate(180deg);
 }
 
@@ -467,12 +496,18 @@ a {
   letter-spacing: 0.05rem;
   font-size: 1.4rem;
   font-weight: 400;
-  opacity: 0.9;
+  opacity: 0;
+  transition: all 0.3s linear;
 }
 
 .collapsible__text--strong {
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 900;
+  opacity: 1;
+}
+
+.collapsible__br {
+  margin: 1rem 0;
 }
 
 .product-part__image {

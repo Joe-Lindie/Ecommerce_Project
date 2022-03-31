@@ -45,11 +45,23 @@ function selectSize({ currentTarget }) {
 }
 
 // Collapsibles
-const chevron = document.querySelector(".collapsible__chevron");
-chevron.addEventListener("click", rotateCheveron);
+const collapsibleItemNodeList = document.querySelectorAll(".collapsible__item");
+collapsibleItemNodeList.forEach((item) =>
+  item.addEventListener("click", expandCollapsible)
+);
+function expandCollapsible({ currentTarget }) {
+  if ([...currentTarget.classList].includes("collapsible__item--active")) {
+    return currentTarget.classList.remove("collapsible__item--active");
+  }
 
-function rotateCheveron({ currentTarget }) {
-  currentTarget.classList.toggle("collapsible__chevron--rotate");
+  collapsibleItemNodeList.forEach((item) =>
+    item.classList.remove("collapsible__item--active")
+  );
+  setTimeout(
+    // Timeout created to give enough time to remove class from other collapsibles
+    () => currentTarget.classList.add("collapsible__item--active"),
+    150
+  );
 }
 
 // On Load
