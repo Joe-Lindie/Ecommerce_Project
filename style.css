@@ -368,7 +368,8 @@ a {
   justify-content: center;
   width: var(--size-width);
   height: var(--size-width);
-  margin: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   border: 1px solid gray;
   transition: background-color 0.2s linear;
   user-select: none;
@@ -408,26 +409,44 @@ a {
 }
 
 .highlights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
   background-color: var(--wild-sand);
-}
-
-.highlights__hr {
-  height: 0.1rem;
-  margin: 0;
-  background-color: var(--french-gray);
-  border: none;
+  padding: 0;
 }
 
 .highlights__item {
-  width: 80%;
-  margin: 0;
-  padding: 1.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlights__title {
+  padding: 1.8rem 2.4rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.05rem;
   text-align: center;
+}
+
+.highlights__hr {
+  width: 100%;
+  margin: 0;
+  height: 0.1rem;
+  background-color: var(--french-gray);
+  border: none;
+  opacity: 0.9;
+}
+
+.highlights__text {
+  width: fit-content;
+  padding: 0 2.4rem;
   letter-spacing: 0.1rem;
   line-height: 2rem;
   font-size: 1.4rem;
   font-weight: 400;
   color: var(--outer-space);
+  text-align: center;
 }
 
 .collapsible__chevron {
