@@ -575,15 +575,28 @@ a {
   background-color: var(--outer-space);
 }
 
+.product-part {
+  margin: 2rem 0;
+  padding: 0;
+}
+
 .product-part__image {
   width: clamp(15rem, 100%, 75rem);
   padding: 0;
+}
+
+.product-part__text-wrapper {
+  padding: 2rem;
 }
 
 .product-part__name {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 1.4rem;
+}
+
+.product-part__title {
+  font-size: 2.5rem;
 }
 
 .product-part__description {
