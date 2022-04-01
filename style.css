@@ -132,6 +132,11 @@ br {
   margin-bottom: 1rem;
 }
 
+.title {
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+}
+
 /* 
     ########
     # HOME #
@@ -595,10 +600,6 @@ a {
   font-size: 1.4rem;
 }
 
-.product-part__title {
-  font-size: 2.5rem;
-}
-
 .product-part__description {
   letter-spacing: 0.1rem;
   line-height: 1.5;
@@ -623,4 +624,11 @@ a {
   width: 100%;
   height: 0.2rem;
   background-color: var(--outer-space);
+}
+
+.reviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
 }
