@@ -103,7 +103,6 @@ nav {
   }
 }
 
-
 .btn {
   width: 100%;
   padding: 1.3rem 1.8rem;
@@ -128,7 +127,6 @@ hr {
   border: none;
   opacity: 0.9;
 }
-
 
 /* 
     ########
@@ -499,10 +497,6 @@ a {
   text-align: center;
 }
 
-.collapsible {
-  /* min-height: 20rem; */
-}
-
 .collapsible__item {
   max-height: 3.8rem;
   overflow: hidden;
@@ -566,6 +560,7 @@ a {
 
 .collapsible__list {
   margin: 0;
+  margin-bottom: 2rem;
   padding-left: 0;
   list-style: none;
 }
