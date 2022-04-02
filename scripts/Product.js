@@ -2,11 +2,19 @@ import "./Nav.js";
 import { updateButtons, updateCarousel } from "./Carousel.js";
 import products from "../data/products.js";
 
-// Shared
+// Current product info
 const currentProductId = document.querySelector("body").id;
 const currentProductObj = products.find(
   ({ productName }) => productName === currentProductId
 );
+
+// On Load
+window.addEventListener("load", selectFirstColor);
+
+function selectFirstColor() {
+  const mockEvent = { currentTarget: { id: colorNodeList[0].id } };
+  handleColorClick(mockEvent);
+}
 
 // Colors
 const colorNodeList = document.querySelectorAll(".color");
@@ -57,17 +65,17 @@ function expandCollapsible({ currentTarget }) {
   collapsibleItemNodeList.forEach((item) =>
     item.classList.remove("collapsible__item--active")
   );
-  setTimeout(
-    // Timeout created to give enough time to remove class from other collapsibles
-    () => currentTarget.classList.add("collapsible__item--active"),
-    150
-  );
+
+  currentTarget.classList.add("collapsible__item--active");
 }
 
-// On Load
-window.addEventListener("load", selectFirstColor);
+// Reviews
+const reviewRatingEl = document.querySelector("#reviews__numbered-rating");
+const reviewCountEl = document.querySelector("#reviews__count");
+const averageReviewRating = (
+  currentProductObj.reviews.reduce((sum, { rating }) => sum + rating, 0) /
+  currentProductObj.reviews.length
+).toFixed(1);
 
-function selectFirstColor() {
-  const mockEvent = { currentTarget: { id: colorNodeList[0].id } };
-  handleColorClick(mockEvent);
-}
+reviewRatingEl.innerText = averageReviewRating;
+reviewCountEl.innerText = `${currentProductObj.reviews.length} Reviews`;

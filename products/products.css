@@ -288,14 +288,20 @@
   text-align: center;
 }
 
+.collapsible {
+  margin-top: 4rem;
+}
+
 .collapsible__item {
   max-height: 3.8rem;
   overflow: hidden;
-  transition: max-height 0.3s linear;
+  transition: max-height 0.5s ease-out;
 }
 
 .collapsible__item--active {
   max-height: 50rem;
+  transition: max-height 1s ease-out;
+  transition-delay: 0.2s;
 }
 
 .collapsible__item--active .collapsible__text {
@@ -412,5 +418,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 5hyrem;
   background-color: #f5f5f5;
+}
+
+.reviews__score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+#reviews__numbered-rating {
+  margin: 0;
+}
+
+.reviews__stars {
+  margin-left: -0.5rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.3rem;
+  user-select: none;
+}
+
+.reviews__stars * {
+  font-size: 2.2rem;
+}
+
+.reviews__text {
+  font-weight: 400;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
