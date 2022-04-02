@@ -14,7 +14,6 @@
     <title>Tree Runners</title>
   </head>
   <body id="tree-runners">
-    <!--        Components        -->
     <!-- Nav -->
     <nav class="product__nav">
       <div class="nav__menu-icon">
@@ -53,25 +52,23 @@
 
     <div class="product">
       <header class="product__header">
-        <!-- Breadcrumbs -->
         <div class="breadcrumbs">
           <a class="breadcrumbs__item">Home</a>
           <a class="breadcrumbs__item">Shoes</a>
           <a class="breadcrumbs__item">Everyday Trainers</a>
         </div>
+
         <div class="product__details">
           <h1 class="product__title">Tree Runners</h1>
           <p class="product__price">£105</p>
         </div>
 
-        <!-- Rating -->
         <div class="product__rating">
           <div class="product__stars"></div>
           <a class="product__review-count">(629)</a>
         </div>
       </header>
 
-      <!-- Carousel -->
       <div class="carousel">
         <div class="carousel__viewport">
           <div class="carousel__images-wrapper"></div>
@@ -79,7 +76,6 @@
         <div class="carousel__button-wrapper"></div>
       </div>
 
-      <!-- Selections -->
       <section class="product__selection">
         <div class="product__selected-value">
           <label class="product__label">classics:</label>
@@ -158,7 +154,6 @@
         </p>
       </section>
 
-      <!-- Collapsible -->
       <section class="collapsible">
         <div class="collapsible__item collapsible__item--active">
           <hr />
@@ -185,6 +180,7 @@
             <br />
           </p>
         </div>
+
         <div class="collapsible__item" id="sustainability">
           <hr />
           <label class="collapsible__label"
@@ -202,6 +198,7 @@
               >Sustainable Materials:</strong
             >
           </p>
+
           <ul class="collapsible__list">
             <li>FSC-certified TENCEL™ Lyocell (eucalyptus tree fibre) upper</li>
             <li>SweetFoam® midsole made with sugarcane-based green EVA</li>
@@ -210,6 +207,7 @@
             <li>Castor bean oil-based insole foam</li>
           </ul>
         </div>
+
         <div class="collapsible__item" id="delivery-returns">
           <hr />
           <label class="collapsible__label"
@@ -221,6 +219,7 @@
             Lightly worn shoes get donated to Soles4Souls.
           </p>
         </div>
+
         <div class="collapsible__item" id="care-guide">
           <hr />
           <label class="collapsible__label"
@@ -240,7 +239,6 @@
         </div>
       </section>
 
-      <!-- Product-parts -->
       <div class="product-part">
         <img
           class="product-part__image"
@@ -256,6 +254,7 @@
           </p>
         </div>
       </div>
+
       <div class="product-part">
         <img
           class="product-part__image"
@@ -271,6 +270,7 @@
           </p>
         </div>
       </div>
+
       <div class="product-part">
         <img
           class="product-part__image"
@@ -286,6 +286,7 @@
           </p>
         </div>
       </div>
+
       <div class="product-part">
         <img
           class="product-part__image"
@@ -300,6 +301,7 @@
           </p>
         </div>
       </div>
+
       <div class="product-part">
         <img
           class="product-part__image"
@@ -326,9 +328,10 @@
         <h2 class="reviews__title title">Tree Runners Reviews</h2>
         <div class="reviews__score">
           <p id="reviews__numbered-rating">4.7</p>
-          <div class="product__stars reviews__stars"></div>
+          <div class="reviews__stars product__stars"></div>
         </div>
-        <p class="reviews__text" id="reviews__count"></p>
+        <p class="reviews__text reviews__count"></p>
+
         <div class="size-comparison">
           <h2 class="size-comparison__title title">Size</h2>
           <div class="size-comparison__bar">
@@ -340,10 +343,26 @@
             <p class="size-comparison__name">Runs Large</p>
           </div>
         </div>
+
         <p class="reviews__text">
           This style is available in whole sizes only. Half size? We suggest you
           size down.
         </p>
+      </div>
+
+      <div class="reviews__container">
+        <h2 class="reviews__count reviews__count--big"></h2>
+        <input
+          class="reviews__search"
+          type="text"
+          placeholder="Enter Search Term"
+        />
+        <select name="reviews" id="reviews__sort">
+          <option value="newest">Newest</option>
+          <option value="newest">Oldest</option>
+          <option value="newest">Higher Rated</option>
+          <option value="newest">Lower Rated</option>
+        </select>
       </div>
     </section>
     <script type="module" src="../scripts/Product/index.js"></script>

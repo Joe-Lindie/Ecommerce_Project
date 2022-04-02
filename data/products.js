@@ -47,6 +47,13 @@ const products = [
         date: new Date().toLocaleDateString("en-US", dateOptions),
       },
       {
+        rating: 1,
+        title: "New shoeeees",
+        text: "Love them",
+        author: "Andrew",
+        date: new Date().toLocaleDateString("en-US", dateOptions),
+      },
+      {
         rating: 5,
         title: "Excellent product",
         text: "Excellent product",

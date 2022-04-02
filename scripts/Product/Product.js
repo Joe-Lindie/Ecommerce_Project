@@ -10,7 +10,7 @@ const currentProductObj = products.find(
 const currentProductRating = (
   currentProductObj.reviews.reduce((sum, { rating }) => sum + rating, 0) /
   currentProductObj.reviews.length
-).toFixed(1);
+).toFixed(1); // Adds all ratings and divides by the amount of reviews. This returns the average rating with 1 tenth after the decimal
 
 // Star Generation
 const starsContainerNodeList = document.querySelectorAll(".product__stars");
