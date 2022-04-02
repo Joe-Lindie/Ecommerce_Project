@@ -11,7 +11,6 @@
       src="https://kit.fontawesome.com/248cd170f1.js"
       crossorigin="anonymous"
     ></script>
-    <script defer type="module" src="../scripts/Product.js"></script>
     <title>Tree Runners</title>
   </head>
   <body id="tree-runners">
@@ -320,20 +319,20 @@
             balance the emissions, its footprint starts at 9.6 kg CO2e. Think of
             this measurement like a nutrition label for your closet.
             <br />
-            <div class="product-part__link">
-              <a>Dig Into How We’re Measuring CO2e</a>
-            </div>
           </p>
+          <div class="product-part__link">
+            <a>Dig Into How We’re Measuring CO2e</a>
+          </div>
         </div>
       </div>
     </div>
 
     <section class="reviews">
       <div class="reviews__overview">
-        <h1 class='reviews__title title'>Tree Runners Reviews</h1>
-        <div class='reviews__score'>
-            <p id='reviews__numbered-rating'>4.7</p>
-            <div class="product__stars reviews__stars">
+        <h2 class="reviews__title title">Tree Runners Reviews</h2>
+        <div class="reviews__score">
+          <p id="reviews__numbered-rating">4.7</p>
+          <div class="product__stars reviews__stars">
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -341,9 +340,24 @@
             <i class="fa fa-star-half-o" aria-hidden="true"></i>
           </div>
         </div>
-        <p class='reviews__text' id='reviews__count'></p>
-        
+        <p class="reviews__text" id="reviews__count"></p>
+        <div class="size-comparison">
+          <h2 class="size-comparison__title title">Size</h2>
+          <div class="size-comparison__bar">
+            <div class="size-comparison__sphere"></div>
+          </div>
+          <div class="size-comparison__name-wrapper">
+            <p class="size-comparison__name">Runs Small</p>
+            <p class="size-comparison__name">True to Size</p>
+            <p class="size-comparison__name">Runs Large</p>
+          </div>
+        </div>
+        <p class="reviews__text">
+          This style is available in whole sizes only. Half size? We suggest you
+          size down.
+        </p>
       </div>
     </section>
+    <script type="module" src="../scripts/Product.js"></script>
   </body>
 </html>

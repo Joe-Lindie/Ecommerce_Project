@@ -418,8 +418,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5hyrem;
+  padding: 5rem 2rem;
   background-color: #f5f5f5;
+}
+
+.reviews__title {
+  text-align: center;
 }
 
 .reviews__score {
@@ -453,4 +457,61 @@
   text-align: center;
   padding: 0;
   margin: 0;
+}
+
+.size-comparison {
+  background-color: white;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+.size-comparison__title {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.size-comparison__bar {
+  position: relative;
+  height: 0.3rem;
+  width: 80%;
+  margin: auto;
+  background-color: #dddedf;
+}
+
+.size-comparison__bar::before,
+.size-comparison__bar::after {
+  content: "";
+  display: inline-block;
+  height: 1.5rem;
+  width: 0.3rem;
+  transform: translateY(-45%);
+  background-color: inherit;
+}
+
+.size-comparison__bar::after {
+  position: absolute;
+  transform: translateY(-45%);
+  right: -0.3rem; /* pseudo-element width */
+}
+
+.size-comparison__sphere {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  transform: translate(-50%, -45%);
+  background-color: var(--outer-space);
+}
+
+.size-comparison__name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.size-comparison__name {
+  font-size: 1.3rem;
 }
