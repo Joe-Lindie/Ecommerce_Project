@@ -53,6 +53,8 @@
 }
 
 .product__stars {
+  display: flex;
+  margin: 1rem;
   width: fit-content;
   transform: scale(0.7);
 }
