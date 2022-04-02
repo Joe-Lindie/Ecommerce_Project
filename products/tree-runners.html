@@ -350,21 +350,31 @@
         </p>
       </div>
 
+      <h2 class="reviews__count reviews__count--big"></h2>
+      <input
+        class="reviews__search"
+        type="text"
+        placeholder="Enter Search Term"
+      />
+      <select name="reviews" id="reviews__sort">
+        <option value="newest">Newest</option>
+        <option value="newest">Oldest</option>
+        <option value="newest">Higher Rated</option>
+        <option value="newest">Lower Rated</option>
+      </select>
+
       <div class="reviews__container">
-        <h2 class="reviews__count reviews__count--big"></h2>
-        <input
-          class="reviews__search"
-          type="text"
-          placeholder="Enter Search Term"
-        />
-        <select name="reviews" id="reviews__sort">
-          <option value="newest">Newest</option>
-          <option value="newest">Oldest</option>
-          <option value="newest">Higher Rated</option>
-          <option value="newest">Lower Rated</option>
-        </select>
+        <template class="reviews__template">
+          <hr class="reviews__hr" />
+          <div class="reviews__stars"></div>
+          <h2 class="reviews__title"></h2>
+          <p class="reviews__text"></p>
+          <h3 class="reviews__author"></h3>
+          <p class="reviews__date"></p>
+        </template>
       </div>
     </section>
     <script type="module" src="../scripts/Product/index.js"></script>
+    <script type="module" src="../scripts/firebase.js"></script>
   </body>
 </html>
