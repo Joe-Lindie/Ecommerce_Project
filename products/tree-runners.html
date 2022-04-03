@@ -353,14 +353,23 @@
       <div class="new-review">
         <h2 class="new-review__title title">Leave a review</h2>
         <div class="new-review__stars"></div>
+
         <div class="new-review__item">
           <label class="new-review__label" for="new-review__name"
             >Your Name</label
           >
           <input id="new-review__name" type="text" />
         </div>
+
         <div class="new-review__item">
-          <label class="new-review__label" for="new-review__name"
+          <label class="new-review__label" for="new-review__title"
+            >Review Title</label
+          >
+          <input id="new-review__title" type="text" />
+        </div>
+
+        <div class="new-review__item">
+          <label class="new-review__label" for="new-review__text"
             >Write your review</label
           >
           <textarea
@@ -370,6 +379,7 @@
             rows="10"
           ></textarea>
         </div>
+
         <button class="new-review__button">Submit</button>
       </div>
 
@@ -387,16 +397,15 @@
         <option value="newest">Lower Rated</option>
       </select>
 
-      <div class="reviews__container">
-        <template class="reviews__template">
-          <hr class="reviews__hr" />
-          <div class="reviews__stars"></div>
-          <h2 class="reviews__title"></h2>
-          <p class="reviews__text"></p>
-          <h3 class="reviews__author"></h3>
-          <p class="reviews__date"></p>
-        </template>
-      </div>
+      <div class="reviews__container"></div>
+      <template class="reviews__template">
+        <hr class="reviews__hr" />
+        <div class="reviews__stars"></div>
+        <h2 class="reviews__title"></h2>
+        <p class="reviews__text"></p>
+        <h3 class="reviews__author"></h3>
+        <p class="reviews__date"></p>
+      </template>
     </section>
     <script type="module" src="../scripts/Product/index.js"></script>
   </body>

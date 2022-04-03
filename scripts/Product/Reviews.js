@@ -1,33 +1,38 @@
 import { firestore, db } from "../firebase.js";
-import { $, $$, nodeListAddEventListeners } from "../utils.js";
+import { $, $$, clearElement, nodeListAddEventListeners } from "../utils.js";
 import {
   currentProductData,
   currentProductId,
   currentProductRating,
+  reloadProductData,
 } from "./Product.js";
 import { createStars } from "./Stars.js";
 
 // Overview of Reviews
-const reviewHeaderCount = $(".product__review-count");
-const reviewOverviewRating = $("#reviews__numbered-rating");
-const reviewsCountNodeList = $$(".reviews__count");
-const reviewsCountStr = `${currentProductData.reviews.length} Reviews`;
+function displayReviewStats() {
+  const reviewHeaderCount = $(".product__review-count");
+  const reviewOverviewRating = $("#reviews__numbered-rating");
+  const reviewsCountNodeList = $$(".reviews__count");
+  const reviewsCountStr = `${currentProductData.reviews.length} Reviews`;
 
-reviewHeaderCount.innerText = `(${currentProductData.reviews.length})`;
-reviewOverviewRating.innerText = currentProductRating;
-reviewsCountNodeList.forEach((div) => (div.innerText = reviewsCountStr));
+  reviewHeaderCount.innerText = `(${currentProductData.reviews.length})`;
+  reviewOverviewRating.innerText = currentProductRating;
+  reviewsCountNodeList.forEach((div) => (div.innerText = reviewsCountStr));
+}
 
 // New Review
 createStars(0, $(".new-review__stars"));
-const newReviewStarsNodeList = $$(".new-review__stars i");
 const newReviewButton = $(".new-review__button");
+const newReviewStarsNodeList = $$(".new-review__stars i");
 let rating = 0;
 let hasSelectedRating = false;
 
-nodeListAddEventListeners(newReviewStarsNodeList, "mousemove", preSelectStars);
-nodeListAddEventListeners(newReviewStarsNodeList, "mouseout", clearStars);
-nodeListAddEventListeners(newReviewStarsNodeList, "click", updateRating);
 newReviewButton.addEventListener("click", addReviewToDb);
+newReviewStarsNodeList.forEach((item) => {
+  item.addEventListener("mousemove", preSelectStars);
+  item.addEventListener("mouseout", clearStars);
+  item.addEventListener("click", updateRating);
+});
 
 function preSelectStars({ currentTarget }) {
   const hoveredStarIndex = currentTarget.dataset.starindex;
@@ -57,40 +62,55 @@ function updateRating({ currentTarget }) {
 }
 
 async function addReviewToDb() {
-  const currentProductRef = firestore.doc(
-    db,
-    "products",
-    currentProductId,
-    "reviews"
-  );
-  const currentProductSnap = await firestore.getDoc(currentProductRef);
-  const currentProductData = currentProductSnap.data();
-  // const nameValue = $("#new-review__name").value;
-  // const textValue = $("#new-review__text").value;
-  // const collectionRef = doc(db, "products", currentProductId);
-  // firestore.setDoc(collectionRef, {
-  //   rating,
-  //   name: nameValue,
-  //   text: textValue,
-  // });
+  const collectionRef = firestore.doc(db, "products", currentProductId);
+  const nameValue = $("#new-review__name").value;
+  const titleValue = $("#new-review__title").value;
+  const textValue = $("#new-review__text").value;
+  const dateOptions = {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  };
+
+  await firestore.updateDoc(collectionRef, {
+    reviews: firestore.arrayUnion({
+      rating,
+      title: titleValue,
+      text: textValue,
+      author: nameValue,
+      date: new Date().toLocaleDateString("en-US", dateOptions),
+    }),
+  });
+  updateReviews();
+}
+
+async function updateReviews() {
+  await reloadProductData();
+  displayReviewStats();
+  renderUserReviews();
 }
 
 // Users reviews rendering
-const reviewsContainer = $(".reviews__container");
-const reviewTemplate = $(".reviews__template");
 
-currentProductData.reviews.forEach(({ rating, title, text, author, date }) => {
-  const newReview = reviewTemplate.content.cloneNode(true);
-  const newReviewRating = $(".reviews__stars", newReview);
-  const newReviewTitle = $(".reviews__title", newReview);
-  const newReviewText = $(".reviews__text", newReview);
-  const newReviewAuthor = $(".reviews__author", newReview);
-  const newReviewDate = $(".reviews__date", newReview);
+function renderUserReviews() {
+  const reviewsContainer = $(".reviews__container");
+  const reviewTemplate = $(".reviews__template");
+  clearElement(".reviews__container");
+  currentProductData.reviews.forEach(
+    ({ rating, title, text, author, date }) => {
+      const newReview = reviewTemplate.content.cloneNode(true);
+      const newReviewRating = $(".reviews__stars", newReview);
+      const newReviewTitle = $(".reviews__title", newReview);
+      const newReviewText = $(".reviews__text", newReview);
+      const newReviewAuthor = $(".reviews__author", newReview);
+      const newReviewDate = $(".reviews__date", newReview);
 
-  createStars(rating, newReviewRating);
-  newReviewTitle.innerText = title;
-  newReviewText.innerText = text;
-  newReviewAuthor.innerText = author;
-  newReviewDate.innerText = date;
-  reviewsContainer.append(newReview);
-});
+      createStars(rating, newReviewRating);
+      newReviewTitle.innerText = title;
+      newReviewText.innerText = text;
+      newReviewAuthor.innerText = author;
+      newReviewDate.innerText = date;
+      reviewsContainer.append(newReview);
+    }
+  );
+}
