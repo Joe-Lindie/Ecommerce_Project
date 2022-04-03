@@ -1,3 +1,5 @@
+import { clearElement } from "../utils.js";
+
 const carousel = document.querySelector(".carousel");
 
 let previousX = 0;
@@ -78,11 +80,6 @@ function updateCarousel(media) {
     displayImg(img);
     createButton(index);
   });
-}
-
-function clearElement(selector) {
-  const element = document.querySelector(`${selector}`);
-  element.innerHTML = "";
 }
 
 function displayImg(imgSrc) {
