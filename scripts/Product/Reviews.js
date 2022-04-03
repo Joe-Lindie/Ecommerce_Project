@@ -50,8 +50,8 @@ function fillStar(star, boolean = true) {
 
 function clearStars() {
   if (hasSelectedRating)
-    return newReviewStarsNodeList.forEach(
-      (star, index) => index <= rating - 1 && fillStar(star)
+    return newReviewStarsNodeList.forEach((star, index) =>
+      index <= rating - 1 ? fillStar(star) : fillStar(star, false)
     );
   newReviewStarsNodeList.forEach((star) => fillStar(star, false));
 }
@@ -114,3 +114,5 @@ function renderUserReviews() {
     }
   );
 }
+
+renderUserReviews();

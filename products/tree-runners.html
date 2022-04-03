@@ -352,34 +352,39 @@
 
       <div class="new-review">
         <h2 class="new-review__title title">Leave a review</h2>
-        <div class="new-review__stars"></div>
-
         <div class="new-review__item">
-          <label class="new-review__label" for="new-review__name"
-            >Your Name</label
-          >
-          <input id="new-review__name" type="text" />
+          <p>Rate Your Experience</p>
+          <div class="new-review__stars"></div>
         </div>
 
         <div class="new-review__item">
-          <label class="new-review__label" for="new-review__title"
-            >Review Title</label
-          >
-          <input id="new-review__title" type="text" />
+          <input class="new-review__input" id="new-review__name" type="text" />
+          <label class="new-review__label" for="new-review__name">Name</label>
         </div>
 
         <div class="new-review__item">
-          <label class="new-review__label" for="new-review__text"
-            >Write your review</label
+          <input
+            class="new-review__input"
+            id="new-review__title-input"
+            type="text"
+          />
+          <label class="new-review__label" for="new-review__title-input"
+            >Title</label
           >
+        </div>
+
+        <div class="new-review__item">
           <textarea
             name="text"
+            class="new-review__input"
             id="new-review__text"
             cols="30"
             rows="10"
+            placeholder="Write your review..."
           ></textarea>
+          <!-- <label class="new-review__label" for="new-review__text"
+            >Write your review</label -->
         </div>
-
         <button class="new-review__button">Submit</button>
       </div>
 
