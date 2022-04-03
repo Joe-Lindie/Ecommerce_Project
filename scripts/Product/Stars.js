@@ -19,6 +19,7 @@ function createStars(rating, parentDiv) {
 function newStar(classes, parentDiv) {
   const newStarEl = document.createElement("i");
   newStarEl.classList.add(...classes);
+  newStarEl.dataset.starindex = parentDiv.children.length;
   parentDiv.append(newStarEl);
 }
 
