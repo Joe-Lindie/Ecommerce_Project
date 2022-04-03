@@ -5,28 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="./products.css" />
     <!-- Font Awesome Icon Library -->
     <script
       src="https://kit.fontawesome.com/248cd170f1.js"
       crossorigin="anonymous"
     ></script>
-    <script defer type="module" src="../scripts/Product.js"></script>
     <title>Tree Runners</title>
   </head>
   <body id="tree-runners">
-    <!--        Components        -->
     <!-- Nav -->
-    <nav>
+    <nav class="product__nav">
       <div class="nav__menu-icon">
         <div class="nav__menu-icon--top"></div>
         <div class="nav__menu-icon--mid"></div>
         <div class="nav__menu-icon--bot"></div>
       </div>
+
+      <!-- Desktop Nav Bar Links(HOMEPAGE) -->
+      <div>
+        <a href="#" class="nav_menu_links">MEN</a>
+        <a href="#" class="nav_menu_links">WOMEN</a>
+        <a href="#" class="nav_menu_links">NEW ARRIVALS</a>
+      </div>
       <img
-        class="nav__shoe-icon"
-        src="../Images/Shoe_Icon.png"
+        class="nav__shoe-icon all_birds_logo"
+        src="../Images/allbirds-logo.svg"
         alt="shoe icon"
       />
+
+      <!-- Desktop Nav Bar Links (HOMEPAGE) -->
+      <div>
+        <a href="#" class="nav_menu_links">SUSTAINABILITY</a>
+        <a href="#" class="nav_menu_links">STORES</a>
+      </div>
+
+      <img src="../Images/user.svg" class="homepage_icons" alt="User icon" />
+      <img src="../Images/help.svg" class="homepage_icons" alt="help icon" />
+
       <img
         class="nav__cart-icon"
         src="../Images/Cart_Icon.png"
@@ -36,31 +52,23 @@
 
     <div class="product">
       <header class="product__header">
-        <!-- Breadcrumbs -->
         <div class="breadcrumbs">
           <a class="breadcrumbs__item">Home</a>
           <a class="breadcrumbs__item">Shoes</a>
           <a class="breadcrumbs__item">Everyday Trainers</a>
         </div>
+
         <div class="product__details">
           <h1 class="product__title">Tree Runners</h1>
           <p class="product__price">£105</p>
         </div>
 
-        <!-- Rating -->
         <div class="product__rating">
-          <div class="product__stars">
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-          </div>
+          <div class="product__stars"></div>
           <a class="product__review-count">(629)</a>
         </div>
       </header>
 
-      <!-- Carousel -->
       <div class="carousel">
         <div class="carousel__viewport">
           <div class="carousel__images-wrapper"></div>
@@ -68,7 +76,6 @@
         <div class="carousel__button-wrapper"></div>
       </div>
 
-      <!-- Selections -->
       <section class="product__selection">
         <div class="product__selected-value">
           <label class="product__label">classics:</label>
@@ -147,9 +154,8 @@
         </p>
       </section>
 
-      <!-- Collapsible -->
       <section class="collapsible">
-        <div class="collapsible__item">
+        <div class="collapsible__item collapsible__item--active">
           <hr />
           <label class="collapsible__label"
             >details
@@ -158,22 +164,23 @@
           <p class="collapsible__text">
             Our breathable, silky-smooth sneaker made with responsibly sourced
             eucalyptus tree fibre treads lightly in everything you do.
-            <br class="collapsible__br" />
+            <br />
             <strong class="collapsible__text--strong">Best For:</strong>
             Walking, warmer weather, everyday wear Thermoregulating
-            <br class="collapsible__br" />
+            <br />
             <strong class="collapsible__text--strong">Material:</strong>
             Lightweight, breathable eucalyptus fiber provides next-level comfort
-            <br class="collapsible__br" />
+            <br />
             <strong class="collapsible__text--strong">Versatile Design:</strong>
             Wear-with-everything classic style, great for travel
-            <br class="collapsible__br" />
+            <br />
             <strong class="collapsible__text--strong">Where It’s Made:</strong>
             Vietnam/China. Learn more about
             <a class="collapsible__link">our operations </a>
-            <br class="collapsible__br" />
+            <br />
           </p>
         </div>
+
         <div class="collapsible__item" id="sustainability">
           <hr />
           <label class="collapsible__label"
@@ -186,11 +193,12 @@
             But before we balance the emissions, its footprint starts at 9.6 kg
             CO2e. Learn more about carbon footprint labeling and our commitments
             to reduce our impact.
-            <br class="collapsible__br" />
+            <br />
             <strong class="collapsible__text--strong"
               >Sustainable Materials:</strong
             >
           </p>
+
           <ul class="collapsible__list">
             <li>FSC-certified TENCEL™ Lyocell (eucalyptus tree fibre) upper</li>
             <li>SweetFoam® midsole made with sugarcane-based green EVA</li>
@@ -199,70 +207,174 @@
             <li>Castor bean oil-based insole foam</li>
           </ul>
         </div>
-        <div class="collapsible__item">
+
+        <div class="collapsible__item" id="delivery-returns">
           <hr />
           <label class="collapsible__label"
-            >details
+            >delivery & returns
             <i class="collapsible__chevron fa-solid fa-angle-down"></i>
           </label>
           <p class="collapsible__text">
-            Our breathable, silky-smooth sneaker made with responsibly sourced
-            eucalyptus tree fibre treads lightly in everything you do.
-            <br class="collapsible__br" />
-            <strong class="collapsible__text--strong">Best For:</strong>
-            Walking, warmer weather, everyday wear Thermoregulating
-            <br class="collapsible__br" />
-            <strong class="collapsible__text--strong">Material:</strong>
-            Lightweight, breathable eucalyptus fiber provides next-level comfort
-            <br class="collapsible__br" />
-            <strong class="collapsible__text--strong">Versatile Design:</strong>
-            Wear-with-everything classic style, great for travel
-            <br class="collapsible__br" />
-            <strong class="collapsible__text--strong">Where It’s Made:</strong>
-            Vietnam/China. Learn more about
-            <a class="collapsible__link">our operations </a>
-            <br class="collapsible__br" />
+            Free delivery and our 30 days, no questions asked return policy.
+            Lightly worn shoes get donated to Soles4Souls.
           </p>
         </div>
-        <div class="collapsible__item">
+
+        <div class="collapsible__item" id="care-guide">
           <hr />
           <label class="collapsible__label"
-            >details
+            >care guide
             <i class="collapsible__chevron fa-solid fa-angle-down"></i>
           </label>
           <p class="collapsible__text">
-            Our breathable, silky-smooth sneaker made with responsibly sourced
-            eucalyptus tree fibre treads lightly in everything you do.
-            <br class="collapsible__br" />
-            <strong class="collapsible__text--strong">Best For:</strong>
-            Walking, warmer weather, everyday wear Thermoregulating
-            <br class="collapsible__br" />
-            <strong class="collapsible__text--strong">Material:</strong>
-            Lightweight, breathable eucalyptus fiber provides next-level comfort
-            <br class="collapsible__br" />
-            <strong class="collapsible__text--strong">Versatile Design:</strong>
-            Wear-with-everything classic style, great for travel
-            <br class="collapsible__br" />
-            <strong class="collapsible__text--strong">Where It’s Made:</strong>
-            Vietnam/China. Learn more about
-            <a class="collapsible__link">our operations </a>
-            <br class="collapsible__br" />
+            Searching for machine-washable sneakers that won’t lose their shape?
+            All our shoes can go right into the wash. To prep, pull out the
+            laces and insoles and place your shoes in a delicates bag (pro tip:
+            a pillowcase works too) and toss them in the washing machines.
+            Choose a gentle cycle with cold water and mild detergent. Next,
+            steer clear of the dryer, and instead shake out any excess water and
+            set aside to air dry. Shoes need a little extra TLC? Swap in some
+            brand new laces and insoles.
           </p>
         </div>
       </section>
 
-      <!-- Product-parts -->
-      <img
-        class="product-part__image"
-        src="../Images/Tree_Runners_Tree_Upper.png"
-      />
-      <h1 class="product-part__name">tree upper</h1>
-      <h3 class="product-part__title">Silky And Breezy</h3>
-      <p class="product-part__description">
-        Our proprietary knit feels silky smooth, breathable, and pleasantly cool
-        thanks to eucalyptus tree fibre responsibly sourced from FSC® Certified
-        forests.
-      </p>
+      <div class="product-part">
+        <img
+          class="product-part__image"
+          src="../Images/products/tree-runners/tree-upper.avif"
+        />
+        <div class="product-part__text-wrapper">
+          <h1 class="product-part__name">tree upper</h1>
+          <h3 class="product-part__title title">Silky And Breezy</h3>
+          <p class="product-part__description">
+            Our proprietary knit feels silky smooth, breathable, and pleasantly
+            cool thanks to eucalyptus tree fibre responsibly sourced from FSC®
+            Certified forests.
+          </p>
+        </div>
+      </div>
+
+      <div class="product-part">
+        <img
+          class="product-part__image"
+          src="../Images/products/tree-runners/sugarcane-midsole.avif"
+        />
+        <div class="product-part__text-wrapper">
+          <h1 class="product-part__name">Sugarcane Midsole</h1>
+          <h3 class="product-part__title title">Sweet On The Planet</h3>
+          <p class="product-part__description">
+            Contoured and delightfully bouncy, our Brazilian sugarcane midsole
+            is called SweetFoam®, which is made with the world’s first carbon
+            negative green EVA.
+          </p>
+        </div>
+      </div>
+
+      <div class="product-part">
+        <img
+          class="product-part__image"
+          src="../Images/products/tree-runners/castor-bean-insole.avif"
+        />
+        <div class="product-part__text-wrapper">
+          <h1 class="product-part__name">Castor Bean Insole</h1>
+          <h3 class="product-part__title title">Plant Your Feet In Comfort</h3>
+          <p class="product-part__description">
+            We layered castor bean oil, which emits less carbon than
+            petroleum-based foam, and ZQ Merino wool for a cushiony, moisture
+            wicking, and odor reducing insole.
+          </p>
+        </div>
+      </div>
+
+      <div class="product-part">
+        <img
+          class="product-part__image"
+          src="../Images/products/tree-runners/recycled-laces.avif"
+        />
+        <div class="product-part__text-wrapper">
+          <h1 class="product-part__name">Recycled Laces</h1>
+          <h3 class="product-part__title title">Loop And Swoop</h3>
+          <p class="product-part__description">
+            Our laces are made from 100% post-consumer recycled polyester. One
+            old plastic bottle becomes one pair of shoelaces.
+          </p>
+        </div>
+      </div>
+
+      <div class="product-part">
+        <img
+          class="product-part__image"
+          src="../Images/products/tree-runners/carbon-footprint.png"
+        />
+        <div class="product-part__text-wrapper">
+          <h3 class="product-part__title title">Tread Lighter</h3>
+          <p class="product-part__description">
+            Our Tree Runner is carbon neutral thanks to sustainable practices,
+            like using natural materials and buying offsets. But before we
+            balance the emissions, its footprint starts at 9.6 kg CO2e. Think of
+            this measurement like a nutrition label for your closet.
+            <br />
+          </p>
+          <div class="product-part__link">
+            <a>Dig Into How We’re Measuring CO2e</a>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <section class="reviews">
+      <div class="reviews__overview">
+        <h2 class="reviews__title title">Tree Runners Reviews</h2>
+        <div class="reviews__score">
+          <p id="reviews__numbered-rating">4.7</p>
+          <div class="reviews__stars product__stars"></div>
+        </div>
+        <p class="reviews__text reviews__count"></p>
+
+        <div class="size-comparison">
+          <h2 class="size-comparison__title title">Size</h2>
+          <div class="size-comparison__bar">
+            <div class="size-comparison__sphere"></div>
+          </div>
+          <div class="size-comparison__name-wrapper">
+            <p class="size-comparison__name">Runs Small</p>
+            <p class="size-comparison__name">True to Size</p>
+            <p class="size-comparison__name">Runs Large</p>
+          </div>
+        </div>
+
+        <p class="reviews__text">
+          This style is available in whole sizes only. Half size? We suggest you
+          size down.
+        </p>
+      </div>
+
+      <h2 class="reviews__count reviews__count--big"></h2>
+      <input
+        class="reviews__search"
+        type="text"
+        placeholder="Enter Search Term"
+      />
+      <select name="reviews" id="reviews__sort">
+        <option value="newest">Newest</option>
+        <option value="newest">Oldest</option>
+        <option value="newest">Higher Rated</option>
+        <option value="newest">Lower Rated</option>
+      </select>
+
+      <div class="reviews__container">
+        <template class="reviews__template">
+          <hr class="reviews__hr" />
+          <div class="reviews__stars"></div>
+          <h2 class="reviews__title"></h2>
+          <p class="reviews__text"></p>
+          <h3 class="reviews__author"></h3>
+          <p class="reviews__date"></p>
+        </template>
+      </div>
+    </section>
+    <script type="module" src="../scripts/Product/index.js"></script>
+    <script type="module" src="../scripts/firebase.js"></script>
   </body>
 </html>
