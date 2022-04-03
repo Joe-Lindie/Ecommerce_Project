@@ -1,4 +1,4 @@
-import { currentProductObj, currentProductRating } from "./Product.js";
+import { currentProductData, currentProductRating } from "./Product.js";
 import { createStars } from "./Stars.js";
 
 const reviewHeaderCount = document.querySelector(".product__review-count");
@@ -6,9 +6,9 @@ const reviewOverviewRating = document.querySelector(
   "#reviews__numbered-rating"
 );
 const reviewsCountNodeList = document.querySelectorAll(".reviews__count");
-const reviewsCountStr = `${currentProductObj.reviews.length} Reviews`;
+const reviewsCountStr = `${currentProductData.reviews.length} Reviews`;
 
-reviewHeaderCount.innerText = `(${currentProductObj.reviews.length})`;
+reviewHeaderCount.innerText = `(${currentProductData.reviews.length})`;
 reviewOverviewRating.innerText = currentProductRating;
 reviewsCountNodeList.forEach((div) => (div.innerText = reviewsCountStr));
 
@@ -16,7 +16,7 @@ reviewsCountNodeList.forEach((div) => (div.innerText = reviewsCountStr));
 const reviewsContainer = document.querySelector(".reviews__container");
 const reviewTemplate = document.querySelector(".reviews__template");
 
-currentProductObj.reviews.forEach(({ rating, title, text, author, date }) => {
+currentProductData.reviews.forEach(({ rating, title, text, author, date }) => {
   const newReview = reviewTemplate.content.cloneNode(true);
   const newReviewRating = newReview.querySelector(".reviews__stars");
   const newReviewTitle = newReview.querySelector(".reviews__title");

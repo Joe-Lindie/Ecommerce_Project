@@ -1,12 +1,16 @@
-import { currentProductObj } from "./Product.js";
+import colors from "../../data/colors.js";
 import { updateButtons, updateCarousel } from "./Carousel.js";
 
 const colorNodeList = document.querySelectorAll(".color");
-colorNodeList.forEach((color) =>
-  color.addEventListener("click", handleColorClick)
+const currentProductId = document.querySelector("body").id;
+const currentProductColorObj = colors.find(
+  ({ productName }) => productName === currentProductId
 );
 
 window.addEventListener("load", selectFirstColor);
+colorNodeList.forEach((color) =>
+  color.addEventListener("click", handleColorClick)
+);
 
 function selectFirstColor() {
   const mockEvent = { currentTarget: { id: colorNodeList[0].id } };
@@ -14,7 +18,7 @@ function selectFirstColor() {
 }
 
 function handleColorClick({ currentTarget }) {
-  const { colorName, media } = currentProductObj.colors.find(
+  const { colorName, media } = currentProductColorObj.colors.find(
     ({ colorId }) => colorId === currentTarget.id
   );
   displayColorName(colorName);

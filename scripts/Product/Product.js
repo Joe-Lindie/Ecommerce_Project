@@ -1,15 +1,15 @@
 // Current product info
+import { db, firestore } from "../firebase.js";
 import "../Nav.js";
 import { createStars } from "./Stars.js";
-import products from "../../data/products.js";
 
 const currentProductId = document.querySelector("body").id;
-const currentProductObj = products.find(
-  ({ productName }) => productName === currentProductId
-);
+const currentProductRef = firestore.doc(db, "products", currentProductId);
+const currentProductSnap = await firestore.getDoc(currentProductRef);
+const currentProductData = currentProductSnap.data();
 const currentProductRating = (
-  currentProductObj.reviews.reduce((sum, { rating }) => sum + rating, 0) /
-  currentProductObj.reviews.length
+  currentProductData.reviews.reduce((sum, { rating }) => sum + rating, 0) /
+  currentProductData.reviews.length
 ).toFixed(1); // Adds all ratings and divides by the amount of reviews. This returns the average rating with 1 tenth after the decimal
 
 // Star Generation
@@ -18,4 +18,4 @@ starsContainerNodeList.forEach((container) =>
   createStars(currentProductRating, container)
 );
 
-export { currentProductObj, currentProductId, currentProductRating };
+export { currentProductData, currentProductId, currentProductRating };
