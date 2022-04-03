@@ -1,5 +1,5 @@
 import { firestore, db } from "../firebase.js";
-import { $, $$, clearElement, nodeListAddEventListeners } from "../utils.js";
+import { $, $$, clearElement } from "../utils.js";
 import {
   currentProductData,
   currentProductId,
@@ -24,15 +24,20 @@ function displayReviewStats() {
 createStars(0, $(".new-review__stars"));
 const newReviewButton = $(".new-review__button");
 const newReviewStarsNodeList = $$(".new-review__stars i");
+const newReviewInputsNodeList = $$(".new-review__input");
 let rating = 0;
 let hasSelectedRating = false;
 
-newReviewButton.addEventListener("click", addReviewToDb);
-newReviewStarsNodeList.forEach((item) => {
-  item.addEventListener("mousemove", preSelectStars);
-  item.addEventListener("mouseout", clearStars);
-  item.addEventListener("click", updateRating);
+newReviewStarsNodeList.forEach((star) => {
+  star.addEventListener("mousemove", preSelectStars);
+  star.addEventListener("mouseout", clearStars);
+  star.addEventListener("click", updateRating);
 });
+newReviewInputsNodeList.forEach((input) => {
+  input.addEventListener("focus", toggleActiveInput, true);
+  input.addEventListener("blur", toggleActiveInput, true);
+});
+newReviewButton.addEventListener("click", validateReview);
 
 function preSelectStars({ currentTarget }) {
   const hoveredStarIndex = currentTarget.dataset.starindex;
@@ -57,8 +62,23 @@ function clearStars() {
 }
 
 function updateRating({ currentTarget }) {
-  rating = Number(currentTarget.dataset.starindex) + 1; // star index starts at 0, rating value starts at 1. 1 added to fix discrepancy between starting
+  rating = Number(currentTarget.dataset.starindex) + 1; // star index starts at 0, rating value starts at 1. 1 added to fix discrepancy between starting values
   hasSelectedRating = true;
+}
+function toggleActiveInput({ currentTarget }) {
+  if (currentTarget.value.length > 0) return;
+  currentTarget.parentNode.classList.toggle("new-review__item--active");
+}
+
+function validateReview() {
+  if (
+    rating > 0 &&
+    $("#new-review__name").value.length > 0 &&
+    $("#new-review__title").value.length > 0 &&
+    $("#new-review__text").value.length > 0
+  )
+    return addReviewToDb();
+  console.log("Invalid review");
 }
 
 async function addReviewToDb() {
@@ -90,6 +110,8 @@ async function updateReviews() {
   renderUserReviews();
 }
 
+updateReviews();
+
 // Users reviews rendering
 
 function renderUserReviews() {
@@ -114,5 +136,3 @@ function renderUserReviews() {
     }
   );
 }
-
-renderUserReviews();

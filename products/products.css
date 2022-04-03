@@ -557,6 +557,9 @@
 }
 
 .new-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   margin: 4rem 0;
   padding: 2rem 0;
@@ -608,14 +611,15 @@
 .new-review__item--active .new-review__label {
   top: 0;
   transform: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 #new-review__text {
-  color: var(--outer-space);
-  line-height: 2.2rem;
   min-height: 8rem;
+  margin-bottom: 4rem;
+  line-height: 2.2rem;
   resize: vertical;
+  color: var(--outer-space);
 }
 
 #new-review__text::placeholder {
@@ -626,7 +630,13 @@
 #new-review__text:focus {
   transition: none;
 }
+
 .new-review__stars {
   font-size: 2.5rem;
   cursor: pointer;
+}
+
+.new-review__button {
+  width: 95%;
+  margin: auto;
 }
