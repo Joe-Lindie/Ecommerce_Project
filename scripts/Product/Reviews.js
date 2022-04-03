@@ -1,5 +1,10 @@
-import { $, $$, clearElement, nodeListAddEventListeners } from "../utils.js";
-import { currentProductData, currentProductRating } from "./Product.js";
+import { firestore, db } from "../firebase.js";
+import { $, $$, nodeListAddEventListeners } from "../utils.js";
+import {
+  currentProductData,
+  currentProductId,
+  currentProductRating,
+} from "./Product.js";
 import { createStars } from "./Stars.js";
 
 // Overview of Reviews
@@ -13,11 +18,16 @@ reviewOverviewRating.innerText = currentProductRating;
 reviewsCountNodeList.forEach((div) => (div.innerText = reviewsCountStr));
 
 // New Review
-const newReviewStarsContainer = $(".new-review__stars");
-createStars(0, newReviewStarsContainer);
-
+createStars(0, $(".new-review__stars"));
 const newReviewStarsNodeList = $$(".new-review__stars i");
+const newReviewButton = $(".new-review__button");
+let rating = 0;
+let hasSelectedRating = false;
+
 nodeListAddEventListeners(newReviewStarsNodeList, "mousemove", preSelectStars);
+nodeListAddEventListeners(newReviewStarsNodeList, "mouseout", clearStars);
+nodeListAddEventListeners(newReviewStarsNodeList, "click", updateRating);
+newReviewButton.addEventListener("click", addReviewToDb);
 
 function preSelectStars({ currentTarget }) {
   const hoveredStarIndex = currentTarget.dataset.starindex;
@@ -31,6 +41,38 @@ function fillStar(star, boolean = true) {
   const shouldFill = (boolean) => (boolean ? "fa-star" : "fa-star-o");
   star.classList.remove(shouldFill(!boolean));
   star.classList.add(shouldFill(boolean));
+}
+
+function clearStars() {
+  if (hasSelectedRating)
+    return newReviewStarsNodeList.forEach(
+      (star, index) => index <= rating - 1 && fillStar(star)
+    );
+  newReviewStarsNodeList.forEach((star) => fillStar(star, false));
+}
+
+function updateRating({ currentTarget }) {
+  rating = Number(currentTarget.dataset.starindex) + 1; // star index starts at 0, rating value starts at 1. 1 added to fix discrepancy between starting
+  hasSelectedRating = true;
+}
+
+async function addReviewToDb() {
+  const currentProductRef = firestore.doc(
+    db,
+    "products",
+    currentProductId,
+    "reviews"
+  );
+  const currentProductSnap = await firestore.getDoc(currentProductRef);
+  const currentProductData = currentProductSnap.data();
+  // const nameValue = $("#new-review__name").value;
+  // const textValue = $("#new-review__text").value;
+  // const collectionRef = doc(db, "products", currentProductId);
+  // firestore.setDoc(collectionRef, {
+  //   rating,
+  //   name: nameValue,
+  //   text: textValue,
+  // });
 }
 
 // Users reviews rendering
