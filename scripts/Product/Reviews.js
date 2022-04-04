@@ -71,7 +71,6 @@ function toggleActiveInput({ currentTarget }) {
 }
 
 function validateReview() {
-  const validationResultDiv = $(".new-review__missing-fields");
   const name = $("#new-review__name");
   const title = $("#new-review__title-input");
   const text = $("#new-review__text");
@@ -81,10 +80,27 @@ function validateReview() {
     text.value.length > 0
   ) {
     addReviewToDb();
-    return clearInputs(name, title, text);
+    clearInputs(name, title, text);
+    displayValidationResult("Review Submitted. Thank you!");
+    return;
   }
 
-  validationResultDiv.innerText = "All fields are required";
+  displayValidationResult("All fields are required", false);
+}
+
+function displayValidationResult(text, boolean = true) {
+  const validationResultDiv = $(".new-review__missing-fields");
+
+  validationResultDiv.innerText = text;
+  boolean &&
+    validationResultDiv.classList.add("new-review__missing-fields--success");
+  setTimeout(() => {
+    validationResultDiv.innerHTML = "";
+    boolean &&
+      validationResultDiv.classList.remove(
+        "new-review__missing-fields--success"
+      );
+  }, 2000);
 }
 
 async function addReviewToDb() {
@@ -105,13 +121,6 @@ async function addReviewToDb() {
   updateReviews();
 }
 
-async function updateReviews() {
-  await reloadProductData();
-  displayReviewStats();
-  renderUserReviews();
-}
-updateReviews();
-
 function clearInputs(...inputs) {
   inputs.forEach((input) => {
     const inputEvent = { currentTarget: input };
@@ -123,6 +132,13 @@ function clearInputs(...inputs) {
 }
 
 // Users reviews rendering
+updateReviews();
+
+async function updateReviews() {
+  await reloadProductData();
+  displayReviewStats();
+  renderUserReviews();
+}
 
 function renderUserReviews() {
   const reviewsContainer = $(".reviews__container");

@@ -653,6 +653,10 @@
   color: rgba(255, 0, 0, 0.624);
 }
 
+.new-review__missing-fields--success {
+  color: var(--outer-space) !important;
+}
+
 .new-review__button {
   margin: auto;
   padding: 2rem;

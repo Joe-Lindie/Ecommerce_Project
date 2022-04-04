@@ -20,7 +20,7 @@ async function reloadProductData() {
   ).toFixed(1); // Adds all ratings and divides by the amount of reviews. This returns the average rating with 1 tenth after the decimal
 }
 
-reloadProductData();
+await reloadProductData();
 
 // Star Generation
 const starsContainerNodeList = document.querySelectorAll(".product__stars");
@@ -32,5 +32,6 @@ export {
   currentProductData,
   currentProductId,
   currentProductRating,
+  currentProductRef,
   reloadProductData,
 };
