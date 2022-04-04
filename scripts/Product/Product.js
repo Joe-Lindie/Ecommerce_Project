@@ -1,7 +1,6 @@
 // Current product info
 import { $ } from "../utils.js";
 import { db, firestore } from "../firebase.js";
-import { createStars } from "./Stars.js";
 import { addToCart } from "../Cart.js";
 
 // Product Data
@@ -29,12 +28,6 @@ async function reloadProductData() {
 }
 
 await reloadProductData();
-
-// Header Star Generation
-const starsContainerNodeList = document.querySelectorAll(".product__stars");
-starsContainerNodeList.forEach((container) =>
-  createStars(currentProductRating, container)
-);
 
 // Product selection
 const addToCartButton = $(".product__button");
