@@ -250,14 +250,27 @@
   text-transform: uppercase;
 }
 
-.button--gray {
+.btn--inactive {
   background-color: var(--iron);
   color: white;
 }
 
-.button--gray:hover {
+.btn--inactive:hover {
   cursor: not-allowed;
   filter: none;
+}
+
+.btn--active {
+  background-color: var(--outer-space);
+  border: 1px solid var(--outer-space);
+  color: white;
+}
+
+.btn--active:hover {
+  filter: none;
+  background-color: white;
+  border: 1px solid var(--outer-space);
+  color: var(--outer-space);
 }
 
 .highlights {
