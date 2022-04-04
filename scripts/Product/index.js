@@ -5,3 +5,4 @@ import "./SizePicker.js";
 import "./Collapsible.js";
 import "./Reviews.js";
 import "./Stars.js";
+import "../Cart.js";
