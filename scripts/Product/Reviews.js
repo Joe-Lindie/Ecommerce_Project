@@ -71,26 +71,27 @@ function toggleActiveInput({ currentTarget }) {
 }
 
 function validateReview() {
+  const validationResultDiv = $(".new-review__missing-fields");
+  const name = $("#new-review__name");
+  const title = $("#new-review__title-input");
+  const text = $("#new-review__text");
   if (
-    rating > 0 &&
-    $("#new-review__name").value.length > 0 &&
-    $("#new-review__title").value.length > 0 &&
-    $("#new-review__text").value.length > 0
-  )
-    return addReviewToDb();
-  console.log("Invalid review");
+    name.value.length > 0 &&
+    title.value.length > 0 &&
+    text.value.length > 0
+  ) {
+    addReviewToDb();
+    return clearInputs(name, title, text);
+  }
+
+  validationResultDiv.innerText = "All fields are required";
 }
 
 async function addReviewToDb() {
   const collectionRef = firestore.doc(db, "products", currentProductId);
   const nameValue = $("#new-review__name").value;
-  const titleValue = $("#new-review__title").value;
+  const titleValue = $("#new-review__title-input").value;
   const textValue = $("#new-review__text").value;
-  const dateOptions = {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  };
 
   await firestore.updateDoc(collectionRef, {
     reviews: firestore.arrayUnion({
@@ -98,7 +99,7 @@ async function addReviewToDb() {
       title: titleValue,
       text: textValue,
       author: nameValue,
-      date: new Date().toLocaleDateString("en-US", dateOptions),
+      date: new Date(),
     }),
   });
   updateReviews();
@@ -109,8 +110,17 @@ async function updateReviews() {
   displayReviewStats();
   renderUserReviews();
 }
-
 updateReviews();
+
+function clearInputs(...inputs) {
+  inputs.forEach((input) => {
+    const inputEvent = { currentTarget: input };
+    input.value = "";
+    toggleActiveInput(inputEvent);
+  });
+  rating = 0;
+  clearStars();
+}
 
 // Users reviews rendering
 
@@ -126,12 +136,20 @@ function renderUserReviews() {
       const newReviewText = $(".reviews__text", newReview);
       const newReviewAuthor = $(".reviews__author", newReview);
       const newReviewDate = $(".reviews__date", newReview);
+      const dateOptions = {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      };
+      const convertedDate = date
+        .toDate()
+        .toLocaleDateString("en-US", dateOptions);
 
       createStars(rating, newReviewRating);
       newReviewTitle.innerText = title;
       newReviewText.innerText = text;
       newReviewAuthor.innerText = author;
-      newReviewDate.innerText = date;
+      newReviewDate.innerText = convertedDate;
       reviewsContainer.append(newReview);
     }
   );
