@@ -11,6 +11,7 @@ closeButton.addEventListener("click", toggleCartActive);
 
 function toggleCartActive() {
   shoppingCartDiv.classList.toggle("shopping-cart--active");
+  updateCart();
 }
 
 function addToCart(item) {
@@ -25,6 +26,7 @@ function updateCart() {
   const cartArr = JSON.parse(localStorage.cart);
   const cartItemTemplate = $(".shopping-cart__template");
   cartArr.forEach(({ name, size, color, price }) => {
+    const newItemWrapper = document.createElement("div");
     const newItem = cartItemTemplate.content.cloneNode(true);
     const newItemName = $(".shopping-cart__name", newItem);
     const newItemColor = $(".shopping-cart__color", newItem);
@@ -37,7 +39,9 @@ function updateCart() {
     newItemSize.innerText = size;
     newItemPrice.innerText = price;
     newItemImage.src = color.img;
-    shoppingCartDiv.append(newItem);
+    newItemWrapper.classList.add("shopping-cart__item");
+    newItemWrapper.append(newItem);
+    shoppingCartDiv.append(newItemWrapper);
   });
 }
 

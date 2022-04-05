@@ -153,6 +153,7 @@ br {
   height: 100vh;
   width: 100%;
   background-color: white;
+  overflow: scroll;
   transition: all 0.5s ease-in-out;
 }
 
@@ -196,6 +197,14 @@ br {
 .shopping-cart__close::after {
   transform-origin: left;
   transform: rotate(45deg) translate(20%);
+}
+
+.shopping-cart__item {
+  display: flex;
+}
+
+.shopping-cart__image {
+  max-height: 10rem;
 }
 
 /* 
