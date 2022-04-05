@@ -8,6 +8,7 @@ const currentProductColorObj = colors.find(
   ({ productName }) => productName === currentProductId
 );
 
+window.addEventListener("resize", selectFirstColor);
 colorNodeList.forEach((color) =>
   color.addEventListener("click", handleColorClick)
 );
