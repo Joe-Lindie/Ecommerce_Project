@@ -18,6 +18,7 @@ function handleMouseDown({ clientX }) {
 }
 
 function handleMouseMove({ clientX }) {
+  if (window.innerWidth >= 768) return;
   if (!isMouseDown || hasImgChanged) return;
   clientX - previousX < 0
     ? updateCurrentImgIndex(1)
@@ -40,6 +41,7 @@ function updateCurrentImgIndex(addOrSubtract) {
 }
 
 function offsetImgWrapper() {
+  if (window.innerWidth >= 768) return;
   const imagesWrapper = $(".carousel__images-wrapper");
   const imagesNodeList = $$(".carousel__image");
   const imageWidth = imagesNodeList[0].width;
@@ -59,6 +61,7 @@ function createButton(index) {
 }
 
 function handleButtonClick({ currentTarget }) {
+  if (window.innerWidth >= 768) return;
   currentImgIndex = Number(currentTarget.dataset.imgid);
   offsetImgWrapper();
   updateButtons();
