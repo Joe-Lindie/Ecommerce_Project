@@ -1,5 +1,5 @@
 import colors from "../../data/colors.js";
-import { updateButtons, updateCarousel } from "./Carousel.js";
+import { updateButtons, updateMedia } from "./Carousel.js";
 import { currentProductDetails } from "./Product.js";
 
 const colorNodeList = document.querySelectorAll(".color");
@@ -24,7 +24,7 @@ function handleColorClick({ currentTarget }) {
     ({ colorId }) => colorId === currentTarget.id
   );
   displayColorName(colorName);
-  updateCarousel(media);
+  updateMedia(media);
   updateButtons();
   highlightIcon(currentTarget.id);
   currentProductDetails.color = { name: colorName, id: currentTarget.id };

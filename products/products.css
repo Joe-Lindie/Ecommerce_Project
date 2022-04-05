@@ -75,6 +75,10 @@
   cursor: pointer;
 }
 
+.grid {
+  display: none;
+}
+
 .carousel {
   height: clamp(15rem, 100vw, 45rem);
   position: relative;
@@ -244,6 +248,11 @@
 .size * {
   margin: 0;
   font-size: 1.2rem;
+}
+
+.size__label {
+  display: block;
+  margin-top: 2rem;
 }
 
 .size__region {
@@ -673,4 +682,14 @@
 .new-review__button {
   margin: auto;
   padding: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel {
+    display: none;
+  }
+
+  .grid {
+    display: grid;
+  }
 }

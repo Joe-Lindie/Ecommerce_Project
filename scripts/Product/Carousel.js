@@ -1,6 +1,6 @@
-import { clearElement } from "../utils.js";
+import { $, $$, clearElement } from "../utils.js";
 
-const carousel = document.querySelector(".carousel");
+const carousel = $(".carousel");
 
 let previousX = 0;
 let currentImgIndex = 0;
@@ -33,15 +33,15 @@ function handleMouseUp() {
 }
 
 function updateCurrentImgIndex(addOrSubtract) {
-  const imagesNodeList = document.querySelectorAll(".carousel__image");
+  const imagesNodeList = $$(".carousel__image");
   if (addOrSubtract < 0 && currentImgIndex - 1 < 0) return;
   if (addOrSubtract > 0 && currentImgIndex + 1 >= imagesNodeList.length) return;
   currentImgIndex += addOrSubtract;
 }
 
 function offsetImgWrapper() {
-  const imagesWrapper = document.querySelector(".carousel__images-wrapper");
-  const imagesNodeList = document.querySelectorAll(".carousel__image");
+  const imagesWrapper = $(".carousel__images-wrapper");
+  const imagesNodeList = $$(".carousel__image");
   const imageWidth = imagesNodeList[0].width;
   imagesWrapper.style = `transform: translateX(-${
     currentImgIndex * imageWidth
@@ -50,7 +50,7 @@ function offsetImgWrapper() {
 
 // Buttons
 function createButton(index) {
-  const buttonWrapper = document.querySelector(".carousel__button-wrapper");
+  const buttonWrapper = $(".carousel__button-wrapper");
   const newButton = document.createElement("button");
   newButton.classList.add("carousel__button");
   newButton.dataset.imgid = index;
@@ -65,7 +65,8 @@ function handleButtonClick({ currentTarget }) {
 }
 
 function updateButtons() {
-  const buttons = document.querySelectorAll(".carousel__button");
+  if (window.innerWidth >= 768) return;
+  const buttons = $$(".carousel__button");
   buttons.forEach((button) =>
     button.classList.remove("carousel__button--active")
   );
@@ -73,7 +74,8 @@ function updateButtons() {
 }
 
 // Export
-function updateCarousel(media) {
+function updateMedia(media) {
+  if (window.innerWidth >= 768) return updateGrid(media);
   clearElement(".carousel__images-wrapper");
   clearElement(".carousel__button-wrapper");
   media.forEach((img, index) => {
@@ -83,11 +85,23 @@ function updateCarousel(media) {
 }
 
 function displayImg(imgSrc) {
-  const imagesWrapperEl = document.querySelector(".carousel__images-wrapper");
+  const imagesWrapperEl = $(".carousel__images-wrapper");
   const newImgEl = document.createElement("img");
   newImgEl.classList.add("carousel__image");
   newImgEl.src = imgSrc;
   imagesWrapperEl.append(newImgEl);
 }
 
-export { updateCarousel, updateButtons };
+// View width greater than 768px
+function updateGrid(media) {
+  clearElement(".grid");
+  media.forEach((imgSrc) => {
+    const gridContainer = $(".grid");
+    const newImgEl = document.createElement("img");
+    newImgEl.classList.add("grid__image");
+    newImgEl.src = imgSrc;
+    gridContainer.append(newImgEl);
+  });
+}
+
+export { updateMedia, updateButtons };
