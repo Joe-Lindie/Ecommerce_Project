@@ -1,7 +1,7 @@
 import "../Nav.js";
 import "../Cart.js";
-import "./Product.js";
 import "./Carousel.js";
+import "./Product.js";
 import "./ColorPicker.js";
 import "./SizePicker.js";
 import "./Collapsible.js";

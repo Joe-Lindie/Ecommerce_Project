@@ -1,4 +1,3 @@
-const dateOptions = { year: "numeric", month: "long", day: "numeric" };
 const colors = [
   {
     productName: "tree-runners",

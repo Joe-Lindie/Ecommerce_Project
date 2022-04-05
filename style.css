@@ -69,6 +69,11 @@ nav {
   margin-right: 2rem;
 }
 
+.nav__cart-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 .nav--active .nav__menu-icon--top {
   transform: rotate(45deg);
 }
@@ -138,6 +143,59 @@ br {
 .title {
   font-size: 2.5rem;
   letter-spacing: 0.1rem;
+}
+
+.shopping-cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  right: -200%;
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.shopping-cart--active {
+  right: 0;
+}
+
+.shopping-cart__header {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.shopping-cart__close {
+  position: relative;
+  cursor: pointer;
+  margin: 0.8rem 4rem;
+  height: 36px;
+  width: 36px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.shopping-cart__close:hover {
+  transform: rotate(90deg);
+}
+
+.shopping-cart__close::after,
+.shopping-cart__close::before {
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 36px;
+  position: absolute;
+  background-color: var(--outer-space);
+}
+
+.shopping-cart__close::before {
+  transform-origin: right;
+  transform: rotate(-45deg) translate(-20%);
+}
+
+.shopping-cart__close::after {
+  transform-origin: left;
+  transform: rotate(45deg) translate(20%);
 }
 
 /* 

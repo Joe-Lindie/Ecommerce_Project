@@ -31,7 +31,11 @@ function handleColorClick({ currentTarget }) {
   updateMedia(media);
   updateButtons();
   highlightIcon(currentColor);
-  currentProductDetails.color = { name: colorName, id: currentColor };
+  currentProductDetails.color = {
+    name: colorName,
+    id: currentColor,
+    img: media[0],
+  };
 }
 
 function displayColorName(colorName) {
