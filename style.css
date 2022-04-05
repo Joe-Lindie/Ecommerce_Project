@@ -10,6 +10,9 @@
   --french-gray: #cfcfd0;
   --iron: #d3d4d5;
 }
+html {
+  background-color: var(--white);
+}
 
 body {
   margin-top: 6rem;
@@ -106,8 +109,7 @@ nav {
 
 .btn {
   width: 100%;
-  padding: 1.3rem 1.8rem;
-  margin: auto;
+  padding: 1.3rem 0;
   border: none;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
@@ -182,7 +184,6 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
-
 }
 
 .homepage__text {
@@ -193,7 +194,6 @@ a {
   letter-spacing: 0.5px;
 }
 
-
 .Homepage_Button {
   margin-right: 1rem;
   padding: 1rem;
@@ -203,7 +203,7 @@ a {
 
 .Homepage_Button:hover {
   background-color: black;
-  color: white; 
+  color: white;
 }
 
 /* 
@@ -221,13 +221,12 @@ a {
   text-decoration: underline;
 }
 
-
 .slideshow_title h2 {
   text-align: center;
 }
 
 .slideshow_container {
- display: flex;
+  display: flex;
 }
 
 .slideshow {
@@ -251,11 +250,11 @@ a {
 
 .slide hr {
   width: 90%;
-  margin-left:  1rem;
+  margin-left: 1rem;
 }
 
 .slide h2 {
-  margin-left:  1rem;
+  margin-left: 1rem;
 }
 
 .slide h3 {
@@ -274,5 +273,5 @@ a {
 .slide .Homepage_Button:hover {
   background-color: white;
   color: black;
-  border: 1px solid black
+  border: 1px solid black;
 }

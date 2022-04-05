@@ -1,3 +1,5 @@
+import "../Nav.js";
+import "../Cart.js";
 import "./Product.js";
 import "./Carousel.js";
 import "./ColorPicker.js";

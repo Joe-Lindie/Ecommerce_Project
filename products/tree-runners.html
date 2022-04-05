@@ -65,9 +65,11 @@
 
         <div class="product__rating">
           <div class="product__stars"></div>
-          <a class="product__review-count">(629)</a>
+          <a class="product__review-count"></a>
         </div>
       </header>
+
+      <div class="grid"></div>
 
       <div class="carousel">
         <div class="carousel__viewport">
@@ -78,7 +80,7 @@
 
       <section class="product__selection">
         <div class="product__selected-value">
-          <label class="product__label">classics:</label>
+          <label class="product__label">color:</label>
           <p class="product__color-name"></p>
         </div>
         <div class="color-wrapper">
@@ -102,39 +104,39 @@
           </div>
         </div>
 
-        <label class="product__label">size:</label>
+        <label class="product__label size__label">size:</label>
         <div class="size-wrapper">
-          <div class="size">
+          <div class="size" data-size="7">
             <p class="size__region">uk</p>
-            <p class="size__number" data-size="7">7</p>
+            <p class="size__number">7</p>
           </div>
-          <div class="size">
+          <div class="size" data-size="8">
             <p class="size__region">uk</p>
-            <p class="size__number" data-size="8">8</p>
+            <p class="size__number">8</p>
           </div>
-          <div class="size">
+          <div class="size" data-size="9">
             <p class="size__region">uk</p>
-            <p class="size__number" data-size="9">9</p>
+            <p class="size__number">9</p>
           </div>
-          <div class="size">
+          <div class="size" data-size="10">
             <p class="size__region">uk</p>
-            <p class="size__number" data-size="10">10</p>
+            <p class="size__number">10</p>
           </div>
-          <div class="size">
+          <div class="size" data-size="11">
             <p class="size__region">uk</p>
-            <p class="size__number" data-size="11">11</p>
+            <p class="size__number">11</p>
           </div>
-          <div class="size">
+          <div class="size" data-size="12">
             <p class="size__region">uk</p>
-            <p class="size__number" data-size="12">12</p>
+            <p class="size__number">12</p>
           </div>
-          <div class="size">
+          <div class="size" data-size="13">
             <p class="size__region">uk</p>
-            <p class="size__number" data-size="13">13</p>
+            <p class="size__number">13</p>
           </div>
         </div>
 
-        <button class="btn product__button button--gray">Button Text</button>
+        <button class="btn product__button btn--inactive">Select a Size</button>
       </section>
 
       <!-- Highlights -->
@@ -238,7 +240,9 @@
           </p>
         </div>
       </section>
+    </div>
 
+    <div class="product-parts-container">
       <div class="product-part">
         <img
           class="product-part__image"
@@ -325,12 +329,12 @@
 
     <section class="reviews">
       <div class="reviews__overview">
-        <h2 class="reviews__title title">Tree Runners Reviews</h2>
+        <h1 class="reviews__title title">Tree Runners Reviews</h1>
         <div class="reviews__score">
-          <p id="reviews__numbered-rating">4.7</p>
+          <p id="reviews__numbered-rating"></p>
           <div class="reviews__stars product__stars"></div>
         </div>
-        <p class="reviews__text reviews__count"></p>
+        <p class="reviews__count"></p>
 
         <div class="size-comparison">
           <h2 class="size-comparison__title title">Size</h2>
@@ -344,37 +348,75 @@
           </div>
         </div>
 
-        <p class="reviews__text">
+        <p class="reviews__subtext">
           This style is available in whole sizes only. Half size? We suggest you
           size down.
         </p>
       </div>
 
+      <div class="new-review">
+        <h2 class="new-review__title title">Leave a review</h2>
+        <div class="new-review__item">
+          <p>Rate Your Experience</p>
+          <div class="new-review__stars"></div>
+        </div>
+
+        <div class="new-review__item">
+          <input class="new-review__input" id="new-review__name" type="text" />
+          <label class="new-review__label" for="new-review__name">Name</label>
+        </div>
+
+        <div class="new-review__item">
+          <input
+            class="new-review__input"
+            id="new-review__title-input"
+            type="text"
+          />
+          <label class="new-review__label" for="new-review__title-input"
+            >Title</label
+          >
+        </div>
+
+        <div class="new-review__item">
+          <textarea
+            name="text"
+            class="new-review__input"
+            id="new-review__text"
+            cols="30"
+            rows="10"
+            placeholder="Write your review..."
+          ></textarea>
+        </div>
+        <div class="new-review__item">
+          <p class="new-review__missing-fields"></p>
+          <button class="new-review__button btn">Submit</button>
+        </div>
+      </div>
+
       <h2 class="reviews__count reviews__count--big"></h2>
-      <input
-        class="reviews__search"
-        type="text"
-        placeholder="Enter Search Term"
-      />
+      <!-- <div class="search">
+        <label class="reviews__label" for="search__input">Search</label>
+        <input id="search__input" type="text" placeholder="Enter Search Term" />
+        <button class="reviews__button">Go</button>
+      </div>
+      <label class="reviews__label" for="reviews__sort">Sort by</label>
       <select name="reviews" id="reviews__sort">
         <option value="newest">Newest</option>
         <option value="newest">Oldest</option>
         <option value="newest">Higher Rated</option>
         <option value="newest">Lower Rated</option>
-      </select>
+      </select> -->
 
-      <div class="reviews__container">
-        <template class="reviews__template">
-          <hr class="reviews__hr" />
-          <div class="reviews__stars"></div>
-          <h2 class="reviews__title"></h2>
-          <p class="reviews__text"></p>
-          <h3 class="reviews__author"></h3>
-          <p class="reviews__date"></p>
-        </template>
-      </div>
+      <div class="reviews__container"></div>
+      <template class="reviews__template">
+        <hr class="reviews__hr" />
+        <div class="reviews__stars"></div>
+        <h2 class="reviews__title"></h2>
+        <p class="reviews__text"></p>
+        <h3 class="reviews__author"></h3>
+        <p class="reviews__date"></p>
+      </template>
     </section>
     <script type="module" src="../scripts/Product/index.js"></script>
-    <script type="module" src="../scripts/firebase.js"></script>
   </body>
 </html>

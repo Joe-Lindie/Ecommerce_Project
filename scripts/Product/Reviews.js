@@ -1,33 +1,172 @@
-import { currentProductObj, currentProductRating } from "./Product.js";
+import { firestore, db } from "../firebase.js";
+import { $, $$, clearElement } from "../utils.js";
+import {
+  currentProductData,
+  currentProductId,
+  currentProductRating,
+  reloadProductData,
+} from "./Product.js";
 import { createStars } from "./Stars.js";
 
-const reviewHeaderCount = document.querySelector(".product__review-count");
-const reviewOverviewRating = document.querySelector(
-  "#reviews__numbered-rating"
-);
-const reviewsCountNodeList = document.querySelectorAll(".reviews__count");
-const reviewsCountStr = `${currentProductObj.reviews.length} Reviews`;
+// Overview of Reviews
+function displayReviewStats() {
+  const reviewHeaderCount = $(".product__review-count");
+  const reviewOverviewRating = $("#reviews__numbered-rating");
+  const reviewsCountNodeList = $$(".reviews__count");
+  const reviewsCountStr = `${currentProductData.reviews.length} Reviews`;
 
-reviewHeaderCount.innerText = `(${currentProductObj.reviews.length})`;
-reviewOverviewRating.innerText = currentProductRating;
-reviewsCountNodeList.forEach((div) => (div.innerText = reviewsCountStr));
+  reviewHeaderCount.innerText = `(${currentProductData.reviews.length})`;
+  reviewOverviewRating.innerText = currentProductRating;
+  reviewsCountNodeList.forEach((div) => (div.innerText = reviewsCountStr));
+}
 
-// Individual reviews rendering
-const reviewsContainer = document.querySelector(".reviews__container");
-const reviewTemplate = document.querySelector(".reviews__template");
+// New Review
+createStars(0, $(".new-review__stars"));
+const newReviewButton = $(".new-review__button");
+const newReviewStarsNodeList = $$(".new-review__stars i");
+const newReviewInputsNodeList = $$(".new-review__input");
+let rating = 0;
+let hasSelectedRating = false;
 
-currentProductObj.reviews.forEach(({ rating, title, text, author, date }) => {
-  const newReview = reviewTemplate.content.cloneNode(true);
-  const newReviewRating = newReview.querySelector(".reviews__stars");
-  const newReviewTitle = newReview.querySelector(".reviews__title");
-  const newReviewText = newReview.querySelector(".reviews__text");
-  const newReviewAuthor = newReview.querySelector(".reviews__author");
-  const newReviewDate = newReview.querySelector(".reviews__date");
-
-  createStars(rating, newReviewRating);
-  newReviewTitle.innerText = title;
-  newReviewText.innerText = text;
-  newReviewAuthor.innerText = author;
-  newReviewDate.innerText = date;
-  reviewsContainer.append(newReview);
+newReviewStarsNodeList.forEach((star) => {
+  star.addEventListener("mousemove", preSelectStars);
+  star.addEventListener("mouseout", clearStars);
+  star.addEventListener("click", updateRating);
 });
+newReviewInputsNodeList.forEach((input) => {
+  input.addEventListener("focus", toggleActiveInput, true);
+  input.addEventListener("blur", toggleActiveInput, true);
+});
+newReviewButton.addEventListener("click", validateReview);
+
+function preSelectStars({ currentTarget }) {
+  const hoveredStarIndex = currentTarget.dataset.starindex;
+  newReviewStarsNodeList.forEach((star, index) => {
+    if (index <= hoveredStarIndex) return fillStar(star);
+    fillStar(star, false);
+  });
+}
+
+function fillStar(star, boolean = true) {
+  const shouldFill = (boolean) => (boolean ? "fa-star" : "fa-star-o");
+  star.classList.remove(shouldFill(!boolean));
+  star.classList.add(shouldFill(boolean));
+}
+
+function clearStars() {
+  if (hasSelectedRating)
+    return newReviewStarsNodeList.forEach((star, index) =>
+      index <= rating - 1 ? fillStar(star) : fillStar(star, false)
+    );
+  newReviewStarsNodeList.forEach((star) => fillStar(star, false));
+}
+
+function updateRating({ currentTarget }) {
+  rating = Number(currentTarget.dataset.starindex) + 1; // star index starts at 0, rating value starts at 1. 1 added to fix discrepancy between starting values
+  hasSelectedRating = true;
+}
+function toggleActiveInput({ currentTarget }) {
+  if (currentTarget.value.length > 0) return;
+  currentTarget.parentNode.classList.toggle("new-review__item--active");
+}
+
+function validateReview() {
+  const name = $("#new-review__name");
+  const title = $("#new-review__title-input");
+  const text = $("#new-review__text");
+  if (
+    name.value.length > 0 &&
+    title.value.length > 0 &&
+    text.value.length > 0
+  ) {
+    addReviewToDb();
+    clearInputs(name, title, text);
+    displayValidationResult("Review Submitted. Thank you!");
+    return;
+  }
+
+  displayValidationResult("All fields are required", false);
+}
+
+function displayValidationResult(text, boolean = true) {
+  const validationResultDiv = $(".new-review__missing-fields");
+
+  validationResultDiv.innerText = text;
+  boolean &&
+    validationResultDiv.classList.add("new-review__missing-fields--success");
+  setTimeout(() => {
+    validationResultDiv.innerHTML = "";
+    boolean &&
+      validationResultDiv.classList.remove(
+        "new-review__missing-fields--success"
+      );
+  }, 2000);
+}
+
+async function addReviewToDb() {
+  const collectionRef = firestore.doc(db, "products", currentProductId);
+  const nameValue = $("#new-review__name").value;
+  const titleValue = $("#new-review__title-input").value;
+  const textValue = $("#new-review__text").value;
+
+  await firestore.updateDoc(collectionRef, {
+    reviews: firestore.arrayUnion({
+      rating,
+      title: titleValue,
+      text: textValue,
+      author: nameValue,
+      date: new Date(),
+    }),
+  });
+  updateReviews();
+}
+
+function clearInputs(...inputs) {
+  inputs.forEach((input) => {
+    const inputEvent = { currentTarget: input };
+    input.value = "";
+    toggleActiveInput(inputEvent);
+  });
+  rating = 0;
+  clearStars();
+}
+
+// Users reviews rendering
+updateReviews();
+
+async function updateReviews() {
+  await reloadProductData();
+  displayReviewStats();
+  renderUserReviews();
+}
+
+function renderUserReviews() {
+  const reviewsContainer = $(".reviews__container");
+  const reviewTemplate = $(".reviews__template");
+  clearElement(".reviews__container");
+  currentProductData.reviews.forEach(
+    ({ rating, title, text, author, date }) => {
+      const newReview = reviewTemplate.content.cloneNode(true);
+      const newReviewRating = $(".reviews__stars", newReview);
+      const newReviewTitle = $(".reviews__title", newReview);
+      const newReviewText = $(".reviews__text", newReview);
+      const newReviewAuthor = $(".reviews__author", newReview);
+      const newReviewDate = $(".reviews__date", newReview);
+      const dateOptions = {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      };
+      const convertedDate = date
+        .toDate()
+        .toLocaleDateString("en-US", dateOptions);
+
+      createStars(rating, newReviewRating);
+      newReviewTitle.innerText = title;
+      newReviewText.innerText = text;
+      newReviewAuthor.innerText = author;
+      newReviewDate.innerText = convertedDate;
+      reviewsContainer.append(newReview);
+    }
+  );
+}

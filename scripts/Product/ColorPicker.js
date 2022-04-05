@@ -1,26 +1,37 @@
-import { currentProductObj } from "./Product.js";
-import { updateButtons, updateCarousel } from "./Carousel.js";
+import colors from "../../data/colors.js";
+import { updateButtons, updateMedia } from "./Carousel.js";
+import { currentProductDetails } from "./Product.js";
 
+const currentProductId = document.querySelector("body").id;
+const currentProductColorObj = colors.find(
+  ({ productName }) => productName === currentProductId
+);
 const colorNodeList = document.querySelectorAll(".color");
+let currentColor;
+window.addEventListener("resize", selectFirstColor);
 colorNodeList.forEach((color) =>
   color.addEventListener("click", handleColorClick)
 );
 
-window.addEventListener("load", selectFirstColor);
+selectFirstColor();
 
 function selectFirstColor() {
-  const mockEvent = { currentTarget: { id: colorNodeList[0].id } };
+  const mockEvent = {
+    currentTarget: { id: currentColor || colorNodeList[0].id },
+  };
   handleColorClick(mockEvent);
 }
 
 function handleColorClick({ currentTarget }) {
-  const { colorName, media } = currentProductObj.colors.find(
-    ({ colorId }) => colorId === currentTarget.id
+  currentColor = currentTarget.id;
+  const { colorName, media } = currentProductColorObj.colors.find(
+    ({ colorId }) => colorId === currentColor
   );
   displayColorName(colorName);
-  updateCarousel(media);
+  updateMedia(media);
   updateButtons();
-  highlightIcon(currentTarget.id);
+  highlightIcon(currentColor);
+  currentProductDetails.color = { name: colorName, id: currentColor };
 }
 
 function displayColorName(colorName) {
