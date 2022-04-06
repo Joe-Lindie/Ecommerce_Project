@@ -9,12 +9,11 @@ const closeButton = $(".shopping-cart__close");
 
 cartIcon.addEventListener("click", toggleCartActive);
 closeButton.addEventListener("click", toggleCartActive);
+updateCart();
 
 function toggleCartActive() {
   shoppingCartDiv.classList.toggle("shopping-cart--active");
   updateCart();
-  if (cartItemsDiv.children.length === 0) return displayEmptyCart();
-  displayCheckoutDiv();
 }
 
 function addToCart(item) {
@@ -71,6 +70,7 @@ function updateCart() {
   });
   updateTotal();
   cartTotalItemCountEl.innerText = cartTotalItemCount;
+  cartTotalItemCount === 0 ? displayEmptyCart() : displayCheckoutDiv();
 }
 
 function addOrSubtract({ currentTarget }) {
@@ -82,7 +82,7 @@ function addOrSubtract({ currentTarget }) {
   if (cartArr[currentItemId].qty === 0) return deleteItem(currentItemId);
   currentQuantityEl.innerText = cartArr[currentItemId].qty;
   localStorage.cart = JSON.stringify(cartArr);
-  updateTotal();
+  updateCart();
 }
 
 function handleDeleteClick({ currentTarget }) {
