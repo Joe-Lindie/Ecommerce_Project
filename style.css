@@ -64,6 +64,10 @@ nav {
   height: 5rem;
 }
 
+.nav__cart-icon-wrapper {
+  position: relative;
+}
+
 .nav__cart-icon {
   height: 4rem;
   margin-right: 2rem;
@@ -72,6 +76,15 @@ nav {
 .nav__cart-icon:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.nav__cart-count {
+  position: absolute;
+  top: 0;
+  right: 3.4rem;
+  font-size: 1rem;
+  font-weight: 900;
+  z-index: -1;
 }
 
 .nav--active .nav__menu-icon--top {
@@ -155,7 +168,7 @@ br {
   width: 100%;
   padding: 0 3rem;
   background-color: white;
-  overflow-y: scroll;
+  overflow-y: auto;
   transition: all 0.5s ease-in-out;
 }
 
@@ -276,10 +289,17 @@ br {
 .shopping-cart__price {
   margin: 0;
 }
+
 .shopping-cart__item hr {
   position: absolute;
   bottom: 0;
   margin: 1rem 0;
+}
+
+.shopping-cart__totals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* 

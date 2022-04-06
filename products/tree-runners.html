@@ -42,12 +42,14 @@
 
       <img src="../Images/user.svg" class="homepage_icons" alt="User icon" />
       <img src="../Images/help.svg" class="homepage_icons" alt="help icon" />
-
-      <img
-        class="nav__cart-icon"
-        src="../Images/Cart_Icon.png"
-        alt="cart icon"
-      />
+      <div class="nav__cart-icon-wrapper">
+        <img
+          class="nav__cart-icon"
+          src="../Images/Cart_Icon.png"
+          alt="cart icon"
+        />
+        <p class="nav__cart-count"></p>
+      </div>
       <div class="shopping-cart">
         <div class="shopping-cart__header">
           <div class="shopping-cart__close"></div>
@@ -73,13 +75,19 @@
               ></i>
             </div>
           </div>
-
           <div class="shopping-cart__delete-wrapper">
             <i class="shopping-cart__delete fa fa-times" aria-hidden="true"></i>
             <p class="shopping-cart__price"></p>
           </div>
           <hr />
         </template>
+        <div class="shopping-cart__checkout">
+          <div class="shopping-cart__totals">
+            <h4 class="shopping-cart__subtotal">Total</h4>
+            <p class="shopping-cart__total"></p>
+          </div>
+          <button class="btn btn--active">proceed to checkout</button>
+        </div>
       </div>
     </nav>
 
