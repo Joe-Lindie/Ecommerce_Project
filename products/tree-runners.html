@@ -51,23 +51,35 @@
       <div class="shopping-cart">
         <div class="shopping-cart__header">
           <div class="shopping-cart__close"></div>
-          <div class="shopping-cart__items"></div>
-          <template class="shopping-cart__template">
-            <img class="shopping-cart__image" src="" />
-            <div class="shopping-cart__selections">
-              <h2 class="shopping-cart__name"></h2>
-              <p class="shopping-cart__color"></p>
-              <p class="shopping-cart__size"></p>
-            </div>
-            <div class="shopping-cart__delete-wrapper">
+        </div>
+        <div class="shopping-cart__items"></div>
+        <template class="shopping-cart__template">
+          <img class="shopping-cart__image" src="" />
+          <div class="shopping-cart__selections">
+            <h2 class="shopping-cart__name"></h2>
+            <p class="shopping-cart__color"></p>
+            <p class="shopping-cart__size"></p>
+            <div class="shopping-cart__quantity-wrapper">
               <i
-                class="shopping-cart__delete fa fa-times"
+                class="shopping-cart__minus fa fa-minus"
+                data-add="-1"
                 aria-hidden="true"
               ></i>
-              <p class="shopping-cart__price"></p>
+              <p class="shopping-cart__quantity">3</p>
+              <i
+                class="shopping-cart__plus fa fa-plus"
+                data-add="1"
+                aria-hidden="true"
+              ></i>
             </div>
-          </template>
-        </div>
+          </div>
+
+          <div class="shopping-cart__delete-wrapper">
+            <i class="shopping-cart__delete fa fa-times" aria-hidden="true"></i>
+            <p class="shopping-cart__price"></p>
+          </div>
+          <hr />
+        </template>
       </div>
     </nav>
 

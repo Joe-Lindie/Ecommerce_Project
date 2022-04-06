@@ -29,6 +29,7 @@ const currentProductDetails = {
   size: "",
   color: "",
   price: currentProductData.price,
+  qty: 1,
 };
 const addToCartButton = $(".product__button");
 

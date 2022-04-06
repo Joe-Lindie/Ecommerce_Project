@@ -150,10 +150,12 @@ br {
   top: 0;
   right: 0;
   right: -200%;
+  box-sizing: border-box;
   height: 100vh;
   width: 100%;
+  padding: 0 3rem;
   background-color: white;
-  overflow: scroll;
+  overflow-y: scroll;
   transition: all 0.5s ease-in-out;
 }
 
@@ -168,8 +170,6 @@ br {
 
 .shopping-cart__close {
   position: relative;
-  cursor: pointer;
-  margin: 0.8rem 4rem;
   height: 36px;
   width: 36px;
   transition: transform 0.25s ease-in-out;
@@ -177,6 +177,7 @@ br {
 
 .shopping-cart__close:hover {
   transform: rotate(90deg);
+  cursor: pointer;
 }
 
 .shopping-cart__close::after,
@@ -199,12 +200,86 @@ br {
   transform: rotate(45deg) translate(20%);
 }
 
+.shopping-cart__items {
+  margin-top: 4rem;
+  margin-left: 0;
+  width: 100%;
+}
+
 .shopping-cart__item {
+  position: relative;
   display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.shopping-cart__product-selection {
 }
 
 .shopping-cart__image {
   max-height: 10rem;
+  margin: 0 2rem 2rem 0;
+}
+
+.shopping-cart__name {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.shopping-cart__selections p {
+  margin: 0;
+  margin-top: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.shopping-cart__quantity-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+  height: 3rem;
+  width: 9rem;
+  border: 2px solid var(--iron);
+}
+
+.shopping-cart__quantity-wrapper .fa {
+  font-size: 1.3rem;
+  color: var(--iron);
+  transition: all 0.2s linear;
+}
+
+.shopping-cart__quantity-wrapper .fa:hover {
+  color: var(--outer-space);
+  cursor: pointer;
+}
+
+.shopping-cart__delete-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: auto;
+  height: 10rem;
+}
+
+.shopping-cart__delete {
+  transition: transform 0.2s ease-in-out;
+}
+
+.shopping-cart__delete:hover {
+  cursor: pointer;
+  transform: rotate(-90deg);
+}
+
+.shopping-cart__price {
+  margin: 0;
+}
+.shopping-cart__item hr {
+  position: absolute;
+  bottom: 0;
+  margin: 1rem 0;
 }
 
 /* 
