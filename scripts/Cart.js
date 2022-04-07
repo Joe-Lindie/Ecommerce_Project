@@ -1,6 +1,4 @@
 import { $, $$, clearElement, nodeListAddEventListeners } from "./utils.js";
-import colors from "../data/colors.js";
-import { currentProductId } from "./Product/Product.js";
 
 const cartIcon = $(".nav__cart-icon");
 const shoppingCartDiv = $(".shopping-cart");
