@@ -104,12 +104,7 @@ function updateTotal() {
 
 function displayEmptyCart() {
   const cartIsEmptyTextEl = document.createElement("p");
-  const buttonsTextList = [
-    "shop shoes",
-    "shop socks",
-    "shop laces",
-    "shop insoles",
-  ];
+  const buttonsTextList = ["shoes", "socks", "laces", "insoles"];
   cartIsEmptyTextEl.innerText = "Your Cart is Empty";
   cartIsEmptyTextEl.classList.add("shopping-cart__text");
   cartItemsDiv.append(cartIsEmptyTextEl);
@@ -117,10 +112,16 @@ function displayEmptyCart() {
   $(".shopping-cart__checkout").style = "display: none;";
   cartItemsDiv.append();
   buttonsTextList.forEach((item) => {
-    const newButton = document.createElement("button");
-    newButton.classList.add("btn", "shopping-cart__button--empty");
-    newButton.innerText = item;
+    const newButton = document.createElement("a");
+    newButton.classList.add(
+      "btn",
+      "shopping-cart__button--empty",
+      "btn--anchor"
+    );
+    newButton.innerText = `shop ${item}`;
+    newButton.href = `../collections/${item}.html`;
     cartItemsDiv.append(newButton);
+    console.log(newButton.href);
   });
 }
 

@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="./collections.css" />
+    <link rel="stylesheet" type="text/css" href="../products/products.css" />
+
     <!-- Font Awesome Icon Library -->
     <script
       src="https://kit.fontawesome.com/248cd170f1.js"
@@ -12,7 +15,7 @@
     ></script>
     <title>Shoes</title>
   </head>
-  <body>
+  <body id="shoes">
     <!-- Nav -->
     <nav class="product__nav">
       <div class="nav__menu-icon">
@@ -92,22 +95,32 @@
 
     <div class="breadcrumbs">
       <a class="breadcrumbs__item">Home</a>
-      <a class="breadcrumbs__item">Shoes</a>
-      <a class="breadcrumbs__item">Everyday Trainers</a>
-      <h1 class="title">Tree Runners</h1>
+      <h1 class="title">Shoes</h1>
     </div>
-    <div class="product">
-      <header class="product__header">
-
-        <div class="product__details">
-          <p class="product__price">£105</p>
+    <hr class="collection__hr" />
+    <div class="collection-wrapper">
+      <template class="item">
+        <h1 class="item__title"></h1>
+        <p class="item__subtitle"></p>
+        <img class="item__image" />
+        <div class="item__details">
+          <h2 class="item__title--small"></h2>
+          <p class="product__color-name"></p>
+          <p class="item__price"></p>
+          <div class="color-wrapper">
+            <template class="color-template">
+              <div class="color">
+                <div class="color__icon">
+                  <span class="color__icon--top"></span>
+                  <span class="color__icon--bottom"></span>
+                </div>
+              </div>
+            </template>
+          </div>
         </div>
+      </template>
+    </div>
 
-        <div class="product__rating">
-          <div class="product__stars"></div>
-          <a class="product__review-count"></a>
-        </div>
-      </header>
-    <!-- <script type="module" src="../scripts/Product/index.js"></script> -->
+    <script type="module" src="../scripts/Collection/index.js"></script>
   </body>
 </html>

@@ -132,9 +132,15 @@ nav {
   padding: 1.3rem 0;
   border: none;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 0.05rem;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
+}
+
+.btn--anchor {
+  letter-spacing: 0.11rem;
 }
 
 .btn:hover {

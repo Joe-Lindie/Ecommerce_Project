@@ -9,12 +9,6 @@ const currentProductObj = products.find(
 );
 
 (function createColorIcons() {
-  // <div class="color" id="buoyant-blue">
-  //   <div class="color__icon">
-  //     <span class="color__icon--top"></span>
-  //     <span class="color__icon--bottom"></span>
-  //   </div>
-  // </div>;
   const colorWrapper = $(".color-wrapper");
   const colorTemplate = $(".color-template");
   currentProductObj.colors.forEach(({ colorId, colorsHexValues }) => {
