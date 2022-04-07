@@ -12,6 +12,7 @@
 }
 html {
   background-color: var(--white);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -154,8 +155,10 @@ br {
 }
 
 .title {
-  font-size: 2.5rem;
-  letter-spacing: 0.1rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.05rem;
 }
 
 .shopping-cart {
@@ -322,6 +325,28 @@ br {
   filter: none;
   background-color: var(--outer-space);
   color: var(--white);
+}
+
+.breadcrumbs {
+  margin-top: 7rem;
+}
+
+.breadcrumbs__item {
+  width: fit-content;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  color: var(--outer-space);
+  cursor: pointer;
+}
+
+.breadcrumbs__item::after {
+  content: "";
+  display: inline-block;
+  height: 0.15rem;
+  width: 1rem;
+  transform: translate(15%, -250%) rotate(-65deg);
+  background-color: var(--outer-space);
 }
 
 /* 
