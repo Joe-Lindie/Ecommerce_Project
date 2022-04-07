@@ -15,7 +15,7 @@
     ></script>
     <title>Shoes</title>
   </head>
-  <body id="shoes">
+  <body id="shoe">
     <!-- Nav -->
     <nav class="product__nav">
       <div class="nav__menu-icon">
@@ -100,22 +100,30 @@
     <hr class="collection__hr" />
     <div class="collection-wrapper">
       <template class="item">
-        <h1 class="item__title"></h1>
+        <h2 class="item__title"></h2>
         <p class="item__subtitle"></p>
-        <img class="item__image" />
         <div class="item__details">
           <h2 class="item__title--small"></h2>
           <p class="product__color-name"></p>
           <p class="item__price"></p>
-          <div class="color-wrapper">
-            <template class="color-template">
-              <div class="color">
-                <div class="color__icon">
-                  <span class="color__icon--top"></span>
-                  <span class="color__icon--bottom"></span>
-                </div>
-              </div>
-            </template>
+          <img class="item__image" />
+          <div class="color-wrapper"></div>
+          <div class="item__size-wrapper">
+            <div class="size item__size">7</div>
+            <div class="size item__size">8</div>
+            <div class="size item__size">9</div>
+            <div class="size item__size">10</div>
+            <div class="size item__size">11</div>
+            <div class="size item__size">12</div>
+            <div class="size item__size">13</div>
+          </div>
+        </div>
+      </template>
+      <template class="color-template">
+        <div class="color">
+          <div class="color__icon">
+            <span class="color__icon--top"></span>
+            <span class="color__icon--bottom"></span>
           </div>
         </div>
       </template>

@@ -121,7 +121,6 @@ function displayEmptyCart() {
     newButton.innerText = `shop ${item}`;
     newButton.href = `../collections/${item}.html`;
     cartItemsDiv.append(newButton);
-    console.log(newButton.href);
   });
 }
 

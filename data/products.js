@@ -3,7 +3,8 @@ const products = [
     productId: "tree-runners",
     productName: "Tree Runners",
     productType: "shoe",
-    subTitle: "Our lightweight, breathable everyday sneaker.",
+    subtitle: "Our lightweight, breathable everyday sneaker.",
+    price: 105,
     colors: [
       {
         colorId: "mist",
@@ -53,8 +54,9 @@ const products = [
     productId: "tree-pipers",
     productName: "Tree Pipers",
     productType: "shoe",
-    subTitle:
+    subtitle:
       "Our low top sneaker, made with light and breezy eucalyptus tree fiber.",
+    price: 100,
     colors: [
       {
         colorId: "moonrise",
@@ -101,7 +103,57 @@ const products = [
     productId: "wool-runners",
     productName: "Wool Runners",
     productType: "shoe",
-    subTitle: "Our signature sneaker made in cosy ZQ merino wool.",
+    subtitle: "Our signature sneaker made in cosy ZQ merino wool.",
+    price: 110,
+    colors: [
+      {
+        colorId: "black",
+        colorName: "Natural Black (Black Sole)",
+        colorsHexValues: { top: "#000", bottom: "#000" },
+        media: [
+          "../Images/products/wool-runners/black1.avif",
+          "../Images/products/wool-runners/black2.avif",
+          "../Images/products/wool-runners/black3.avif",
+          "../Images/products/wool-runners/black4.avif",
+          "../Images/products/wool-runners/black5.avif",
+          "../Images/products/wool-runners/black6.avif",
+        ],
+      },
+      {
+        colorId: "hazy-burgundy",
+        colorName: "Hazy Burgundy (Hazy Sienna Sole)",
+        colorsHexValues: { top: "#592a30", bottom: "#965657" },
+        media: [
+          "../Images/products/wool-runners/hazy-burgundy1.avif",
+          "../Images/products/wool-runners/hazy-burgundy2.avif",
+          "../Images/products/wool-runners/hazy-burgundy3.avif",
+          "../Images/products/wool-runners/hazy-burgundy4.avif",
+          "../Images/products/wool-runners/hazy-burgundy5.avif",
+          "../Images/products/wool-runners/hazy-burgundy6.avif",
+          "../Images/products/wool-runners/hazy-burgundy7.avif",
+        ],
+      },
+      {
+        colorId: "medjool",
+        colorName: "Medjool (Cream Sole)",
+        colorsHexValues: { top: "#4f2f40", bottom: "#e6e7e2" },
+        media: [
+          "../Images/products/wool-runners/medjool1.avif",
+          "../Images/products/wool-runners/medjool2.avif",
+          "../Images/products/wool-runners/medjool3.avif",
+          "../Images/products/wool-runners/medjool4.avif",
+          "../Images/products/wool-runners/medjool5.avif",
+          "../Images/products/wool-runners/medjool6.avif",
+          "../Images/products/wool-runners/medjool7.avif",
+        ],
+      },
+    ],
+  },
+  {
+    productId: "sock",
+    productName: "Wool Runners",
+    productType: "sock",
+    subtitle: "Our signature sneaker made in cosy ZQ merino wool.",
     colors: [
       {
         colorId: "black",

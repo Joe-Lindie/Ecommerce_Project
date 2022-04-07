@@ -25,6 +25,7 @@ const currentProductObj = products.find(
     colorWrapper.append(newColor);
   });
 })();
+
 const colorNodeList = document.querySelectorAll(".color");
 let currentColor;
 window.addEventListener("resize", selectFirstColor);
