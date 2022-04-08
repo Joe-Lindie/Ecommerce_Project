@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../style.css" />
-    <link rel="stylesheet" type="text/css" href="./collections.css" />
     <link rel="stylesheet" type="text/css" href="../products/products.css" />
+    <link rel="stylesheet" type="text/css" href="./collections.css" />
 
     <!-- Font Awesome Icon Library -->
     <script
@@ -99,16 +99,37 @@
     </div>
     <hr class="collection__hr" />
     <div class="collection-wrapper">
-      <template class="item">
-        <h2 class="item__title"></h2>
-        <p class="item__subtitle"></p>
-        <div class="item__details">
-          <img class="item__image" />
-          <h2 class="item__title--small"></h2>
-          <p class="product__color-name"></p>
-          <p class="item__price"></p>
-          <div class="color-wrapper"></div>
-          <div class="item__size-wrapper"></div>
+      <template class="item-template">
+        <div class="item">
+          <div class="item__header">
+            <h2 class="item__title"></h2>
+            <p class="item__subtitle"></p>
+          </div>
+          <div class="item__details">
+            <img class="item__image" />
+            <h2 class="item__title--small"></h2>
+            <p class="product__color-name"></p>
+            <p class="item__price"></p>
+            <div class="color-wrapper"></div>
+            <hr />
+            <div class="quick-add">
+              <div class="quick-add__button-wrapper">
+                <h2 class="quick-add__title item__title--small">Quick Add</h2>
+                <div class="quick-add__button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                    <defs />
+                    <path
+                      d="M26 0h12v64H26z"
+                      class="quick-add__button--vertical"
+                    />
+                    <path d="M0 38V26h64v12z" />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="item__size-wrapper"></div>
+            </div>
+          </div>
         </div>
       </template>
       <template class="color-template">
@@ -119,7 +140,7 @@
           </div>
         </div>
       </template>
-      <template class="size__template">
+      <template class="size-template">
         <div class="size">
           <p class="size__region">uk</p>
           <p class="size__number">7</p>

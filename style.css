@@ -235,11 +235,7 @@ br {
   position: relative;
   display: flex;
   align-items: flex-start;
-  width: 100%;
   padding: 1rem 0;
-}
-
-.shopping-cart__product-selection {
 }
 
 .shopping-cart__image {
@@ -249,6 +245,10 @@ br {
 
 .shopping-cart__name {
   margin: 0;
+  overflow: hidden;
+  width: 10rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: 1.6rem;
 }
 
@@ -319,6 +319,10 @@ br {
   font-size: 1.8rem;
   font-weight: 900;
   letter-spacing: 0.08rem;
+}
+
+.shopping-cart .btn {
+  margin-bottom: 2rem;
 }
 
 .shopping-cart__button--empty {

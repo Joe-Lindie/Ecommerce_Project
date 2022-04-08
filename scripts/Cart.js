@@ -129,4 +129,4 @@ function displayCheckoutDiv() {
   $(".shopping-cart__checkout").style = "display: block";
 }
 
-export { addToCart };
+export { addToCart, toggleCartActive };

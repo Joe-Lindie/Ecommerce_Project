@@ -1,6 +1,6 @@
 import { $, $$ } from "../utils.js";
 import products from "../../data/products.js";
-import { addToCart } from "../Cart.js";
+import { addToCart, toggleCartActive } from "../Cart.js";
 
 const currentCollectionId = $("body").id;
 
@@ -17,13 +17,15 @@ class Product {
   constructor({ subtitle, productId, productName, colors, price }) {
     // DOM Elements
     this.collectionWrapper = $(".collection-wrapper");
-    this.itemTemplate = $(".item");
+    this.itemTemplate = $(".item-template");
     this.item = this.itemTemplate.content.cloneNode(true);
     this.itemTitle = $(".item__title", this.item);
     this.itemSubtitle = $(".item__subtitle", this.item);
     this.itemImage = $(".item__image", this.item);
     this.itemSmallTitle = $(".item__title--small", this.item);
     this.itemColorName = $(".product__color-name", this.item);
+    this.itemPrice = $(".item__price", this.item);
+    this.itemQuickAdd = $(".quick-add", this.item);
     this.itemColorWrapper = $(".color-wrapper", this.item);
     this.itemSizeWrapper = $(".item__size-wrapper", this.item);
 
@@ -45,13 +47,15 @@ class Product {
   }
 
   createProduct() {
+    this.itemTitle.innerText = this.productName;
+    this.itemSubtitle.innerText = this.subtitle;
+    this.itemSmallTitle.innerText = this.productName;
+    this.itemPrice.innerText = `£${this.price}`;
     this.colors.forEach((color) => this.createColorIcon(color));
     this.itemColors = $$(".color", this.item);
     this.selectFirstColor();
     this.createSizes();
-    this.itemTitle.innerText = this.productName;
-    this.itemSubtitle.innerText = this.subtitle;
-    this.itemSmallTitle.innerText = this.productName;
+    this.itemQuickAdd.addEventListener("click", this.toggleQuickAdd);
     this.collectionWrapper.append(this.item);
   }
 
@@ -107,9 +111,13 @@ class Product {
   }
 
   // Size
+  toggleQuickAdd({ currentTarget }) {
+    currentTarget.classList.toggle("quick-add--active");
+  }
+
   createSizes() {
     for (let size = 7; size <= 14; size++) {
-      const sizeTemplate = $(".size__template");
+      const sizeTemplate = $(".size-template");
       const sizeClone = sizeTemplate.content.cloneNode(true);
       const sizeDiv = $(".size", sizeClone);
       const sizeRegion = $(".size__region", sizeClone);
@@ -123,9 +131,9 @@ class Product {
   }
 
   selectSize({ currentTarget }) {
-    console.log(this.productDetails);
     this.productDetails.size = currentTarget.dataset.size;
     addToCart(this.productDetails);
+    toggleCartActive();
   }
 }
 
