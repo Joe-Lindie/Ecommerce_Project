@@ -13,7 +13,6 @@ function displayProducts() {
 }
 
 class Product {
-  // Title, subtitle, image, title--small, colorName, price, colorPicker, size
   constructor({ subtitle, productId, productName, colors, price }) {
     // DOM Elements
     this.collectionWrapper = $(".collection-wrapper");
@@ -21,6 +20,7 @@ class Product {
     this.item = this.itemTemplate.content.cloneNode(true);
     this.itemTitle = $(".item__title", this.item);
     this.itemSubtitle = $(".item__subtitle", this.item);
+    this.itemLink = $(".item__link", this.item);
     this.itemImage = $(".item__image", this.item);
     this.itemSmallTitle = $(".item__title--small", this.item);
     this.itemColorName = $(".product__color-name", this.item);
@@ -49,6 +49,7 @@ class Product {
   createProduct() {
     this.itemTitle.innerText = this.productName;
     this.itemSubtitle.innerText = this.subtitle;
+    this.itemLink.href = `../../products/${this.productId}.html`;
     this.itemSmallTitle.innerText = this.productName;
     this.itemPrice.innerText = `£${this.price}`;
     this.colors.forEach((color) => this.createColorIcon(color));

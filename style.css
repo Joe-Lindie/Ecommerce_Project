@@ -176,6 +176,7 @@ br {
   box-sizing: border-box;
   height: 100vh;
   width: 100%;
+  max-width: 48rem;
   padding: 0 3rem;
   background-color: white;
   overflow-y: auto;
@@ -184,6 +185,25 @@ br {
 
 .shopping-cart--active {
   right: 0;
+}
+
+.shopping-cart--active ~ .shopping-cart__overlay {
+  visibility: visible;
+  opacity: 0.6;
+  transition: all 0.5s ease-in-out;
+}
+
+.shopping-cart__overlay {
+  position: absolute;
+  visibility: hidden;
+  background-color: black;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
 }
 
 .shopping-cart__header {

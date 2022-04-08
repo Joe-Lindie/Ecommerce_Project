@@ -105,7 +105,7 @@ function updateTotal() {
 
 function displayEmptyCart() {
   const cartIsEmptyTextEl = document.createElement("p");
-  const buttonsTextList = ["shoes", "socks", "laces", "insoles"];
+  const buttonsTextList = ["shoes"];
   cartIsEmptyTextEl.innerText = "Your Cart is Empty";
   cartIsEmptyTextEl.classList.add("shopping-cart__text");
   cartItemsDiv.append(cartIsEmptyTextEl);
