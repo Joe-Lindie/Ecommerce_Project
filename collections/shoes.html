@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="../products/products.css" />
+    <link rel="stylesheet" type="text/css" href="./collections.css" />
+
+    <!-- Font Awesome Icon Library -->
+    <script
+      src="https://kit.fontawesome.com/248cd170f1.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Shoes</title>
+  </head>
+  <body id="shoe">
+    <!-- Nav -->
+    <nav class="product__nav">
+      <div class="nav__menu-icon">
+        <div class="nav__menu-icon--top"></div>
+        <div class="nav__menu-icon--mid"></div>
+        <div class="nav__menu-icon--bot"></div>
+      </div>
+
+      <!-- Desktop Nav Bar Links(HOMEPAGE) -->
+      <div>
+        <a href="#" class="nav_menu_links">MEN</a>
+        <a href="#" class="nav_menu_links">WOMEN</a>
+        <a href="#" class="nav_menu_links">NEW ARRIVALS</a>
+      </div>
+      <img
+        class="nav__shoe-icon all_birds_logo"
+        src="../Images/allbirds-logo.svg"
+        alt="shoe icon"
+      />
+
+      <!-- Desktop Nav Bar Links (HOMEPAGE) -->
+      <div>
+        <a href="#" class="nav_menu_links">SUSTAINABILITY</a>
+        <a href="#" class="nav_menu_links">STORES</a>
+      </div>
+
+      <img src="../Images/user.svg" class="homepage_icons" alt="User icon" />
+      <img src="../Images/help.svg" class="homepage_icons" alt="help icon" />
+      <div class="nav__cart-icon-wrapper">
+        <img
+          class="nav__cart-icon"
+          src="../Images/Cart_Icon.png"
+          alt="cart icon"
+        />
+        <p class="nav__cart-count"></p>
+      </div>
+      <div class="shopping-cart">
+        <div class="shopping-cart__header">
+          <div class="shopping-cart__close"></div>
+        </div>
+        <div class="shopping-cart__items"></div>
+        <template class="shopping-cart__template">
+          <img class="shopping-cart__image" src="" />
+          <div class="shopping-cart__selections">
+            <h2 class="shopping-cart__name"></h2>
+            <p class="shopping-cart__color"></p>
+            <p class="shopping-cart__size"></p>
+            <div class="shopping-cart__quantity-wrapper">
+              <i
+                class="shopping-cart__minus fa fa-minus"
+                data-add="-1"
+                aria-hidden="true"
+              ></i>
+              <p class="shopping-cart__quantity">3</p>
+              <i
+                class="shopping-cart__plus fa fa-plus"
+                data-add="1"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+          <div class="shopping-cart__delete-wrapper">
+            <i class="shopping-cart__delete fa fa-times" aria-hidden="true"></i>
+            <p class="shopping-cart__price"></p>
+          </div>
+          <hr />
+        </template>
+        <div class="shopping-cart__checkout">
+          <div class="shopping-cart__totals">
+            <h4 class="shopping-cart__subtotal">Total</h4>
+            <p class="shopping-cart__total"></p>
+          </div>
+          <button class="btn btn--active">proceed to checkout</button>
+        </div>
+      </div>
+      <div class="shopping-cart__overlay"></div>
+    </nav>
+
+    <div class="breadcrumbs">
+      <a class="breadcrumbs__item">Home</a>
+      <h1 class="title">Shoes</h1>
+    </div>
+    <hr class="collection__hr" />
+    <div class="collection-wrapper">
+      <template class="item-template">
+        <div class="item">
+          <div class="item__header">
+            <h2 class="item__title"></h2>
+            <p class="item__subtitle"></p>
+          </div>
+          <div class="item__details">
+            <a class="item__link">
+              <img class="item__image" />
+              <h2 class="item__title--small"></h2>
+              <p class="product__color-name"></p>
+              <p class="item__price"></p>
+            </a>
+            <div class="color-wrapper"></div>
+            <hr />
+            <div class="quick-add">
+              <div class="quick-add__button-wrapper">
+                <h2 class="quick-add__title item__title--small">Quick Add</h2>
+                <div class="quick-add__button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                    <defs />
+                    <path
+                      d="M26 0h12v64H26z"
+                      class="quick-add__button--vertical"
+                    />
+                    <path d="M0 38V26h64v12z" />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="item__size-wrapper"></div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template class="color-template">
+        <div class="color">
+          <div class="color__icon">
+            <span class="color__icon--top"></span>
+            <span class="color__icon--bottom"></span>
+          </div>
+        </div>
+      </template>
+      <template class="size-template">
+        <div class="size">
+          <p class="size__region">uk</p>
+          <p class="size__number">7</p>
+        </div>
+      </template>
+    </div>
+
+    <script type="module" src="../scripts/Collection/index.js"></script>
+  </body>
+</html>

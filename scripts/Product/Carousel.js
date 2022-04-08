@@ -11,7 +11,6 @@ window.addEventListener("resize", offsetImgWrapper);
 carousel.addEventListener("mousedown", handleMouseDown);
 carousel.addEventListener("mousemove", handleMouseMove);
 carousel.addEventListener("mouseup", handleMouseUp);
-
 function handleMouseDown({ clientX }) {
   previousX = clientX;
   isMouseDown = true;

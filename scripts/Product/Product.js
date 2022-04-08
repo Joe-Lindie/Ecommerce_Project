@@ -1,15 +1,9 @@
 // Current product info
-import { $ } from "../utils.js";
+import { $, $$ } from "../utils.js";
 import { db, firestore } from "../firebase.js";
 import { addToCart } from "../Cart.js";
 
 // Product Data
-const currentProductPrice = $(".product__price").innerText;
-const currentProductDetails = {
-  size: "",
-  color: "",
-  price: currentProductPrice,
-};
 let currentProductId,
   currentProductRef,
   currentProductSnap,
@@ -30,6 +24,13 @@ async function reloadProductData() {
 await reloadProductData();
 
 // Product selection
+const currentProductDetails = {
+  name: $(".product__title").innerText,
+  size: "",
+  color: "",
+  price: currentProductData.price,
+  qty: 1,
+};
 const addToCartButton = $(".product__button");
 
 addToCartButton.addEventListener("click", handleAddToCartClick);
@@ -37,14 +38,13 @@ addToCartButton.addEventListener("click", handleAddToCartClick);
 function activateButton() {
   addToCartButton.classList.remove("btn--inactive");
   addToCartButton.classList.add("btn--active");
-  addToCartButton.innerText = `add to cart - ${currentProductPrice}`;
+  addToCartButton.innerText = `add to cart - £${currentProductData.price}`;
 }
 
 function handleAddToCartClick() {
   const isButtonActive = [...addToCartButton.classList].includes("btn--active");
   if (!isButtonActive) return;
   addToCart(currentProductDetails);
-  console.log(JSON.parse(localStorage.cart));
 }
 
 export {
