@@ -48,6 +48,10 @@
   box-shadow: 0px 5px 10px #dcddde;
 }
 
+.item__image {
+  width: 100%;
+}
+
 .item__title--small,
 .item__price {
   font-size: 1.4rem;
