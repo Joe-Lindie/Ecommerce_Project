@@ -74,7 +74,7 @@ const products = [
       {
         colorId: "lux-purple",
         colorName: "Lux Purple (Blizzard Sole)",
-        colorsHexValues: { top: "#592a30", bottom: "#965657" },
+        colorsHexValues: { top: "#865c89", bottom: "#e0e2dc" },
         media: [
           "../Images/products/tree-pipers/lux-purple1.avif",
           "../Images/products/tree-pipers/lux-purple2.avif",

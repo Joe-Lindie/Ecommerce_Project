@@ -21,7 +21,8 @@ class Product {
     this.itemTitle = $(".item__title", this.item);
     this.itemSubtitle = $(".item__subtitle", this.item);
     this.itemImage = $(".item__image", this.item);
-    this.itemColors = $(".color-wrapper", this.item);
+    this.itemColorWrapper = $(".color-wrapper", this.item);
+    this.itemColorName = $(".product__color-name", this.item);
 
     // Product obj values
     this.productId = productId;
@@ -33,6 +34,7 @@ class Product {
 
   createProduct() {
     this.colors.forEach((color) => this.createColorIcon(color));
+    this.itemColors = $$(".color", this.item);
     this.selectFirstColor();
     this.itemTitle = this.productName;
     this.itemSubtitle = this.subtitle;
@@ -57,7 +59,7 @@ class Product {
   }
 
   selectFirstColor() {
-    const colorsNodeList = $$(".color", this.itemColors);
+    const colorsNodeList = $$(".color", this.itemColorWrapper);
     const mockEvent = {
       currentTarget: {
         dataset: { colorid: colorsNodeList[0].dataset.colorid },
@@ -67,10 +69,20 @@ class Product {
   }
 
   selectColor({ currentTarget }) {
-    const firstImg = this.colors.find(
+    const currentColorObj = this.colors.find(
       (color) => color.colorId === currentTarget.dataset.colorid
-    ).media[0];
-    this.itemImage.src = firstImg;
+    );
+    this.itemImage.src = currentColorObj.media[0];
+    this.itemColorName.innerText = currentColorObj.colorName;
+    this.highlightSelectedColor(currentTarget);
+  }
+
+  highlightSelectedColor(selectedColor) {
+    this.itemColors.forEach((color) => color.classList.remove("color--active"));
+    const selectedColorEl = this.itemColors.find(
+      (color) => color.dataset.colorid === selectedColor.dataset.colorid
+    );
+    selectedColorEl.classList.add("color--active");
   }
 }
 
