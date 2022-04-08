@@ -15,7 +15,6 @@ function toggleCartActive() {
 }
 
 function addToCart(item) {
-  if (!localStorage.cart) localStorage.cart = "[]";
   let cartArr = JSON.parse(localStorage.cart);
   const itemInCart = cartArr.find(
     ({ name, size, color }) =>
@@ -27,6 +26,7 @@ function addToCart(item) {
 }
 
 function updateCart() {
+  if (!localStorage.cart) localStorage.cart = "[]";
   clearElement(".shopping-cart__items");
   const cartArr = JSON.parse(localStorage.cart);
   const cartItemTemplate = $(".shopping-cart__template");
@@ -60,6 +60,7 @@ function updateCart() {
     newItemQuantity.innerText = qty;
     nodeListAddEventListeners(newItemQuantityButtons, "click", addOrSubtract);
     newItemDelete.addEventListener("click", handleDeleteClick);
+    newItemDelete.dataset.itemid = index;
     newItemWrapper.dataset.itemid = index;
     newItemWrapper.classList.add("shopping-cart__item");
     newItemWrapper.append(newItem);
