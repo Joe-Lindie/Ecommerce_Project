@@ -1,5 +1,4 @@
 import "../Nav.js";
-import "../Cart.js";
 import "./Carousel.js";
 import "./Product.js";
 import "./ColorPicker.js";

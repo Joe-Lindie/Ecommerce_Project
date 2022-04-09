@@ -15,82 +15,89 @@
   </head>
   <body id="tree-dasher">
     <!-- Nav -->
-    <nav class="product__nav">
-      <div class="nav__menu-icon">
-        <div class="nav__menu-icon--top"></div>
-        <div class="nav__menu-icon--mid"></div>
-        <div class="nav__menu-icon--bot"></div>
-      </div>
-
-      <!-- Desktop Nav Bar Links(HOMEPAGE) -->
-      <div>
-        <a href="#" class="nav_menu_links">MEN</a>
-        <a href="#" class="nav_menu_links">WOMEN</a>
-        <a href="#" class="nav_menu_links">NEW ARRIVALS</a>
-      </div>
-      <img
-        class="nav__shoe-icon all_birds_logo"
-        src="../Images/allbirds-logo.svg"
-        alt="shoe icon"
-      />
-
-      <!-- Desktop Nav Bar Links (HOMEPAGE) -->
-      <div>
-        <a href="#" class="nav_menu_links">SUSTAINABILITY</a>
-        <a href="#" class="nav_menu_links">STORES</a>
-      </div>
-
-      <img src="../Images/user.svg" class="homepage_icons" alt="User icon" />
-      <img src="../Images/help.svg" class="homepage_icons" alt="help icon" />
-      <div class="nav__cart-icon-wrapper">
-        <img
-          class="nav__cart-icon"
-          src="../Images/Cart_Icon.png"
-          alt="cart icon"
-        />
-        <p class="nav__cart-count"></p>
-      </div>
-      <div class="shopping-cart">
-        <div class="shopping-cart__header">
-          <div class="shopping-cart__close"></div>
+<nav>
+        <div class="nav__menu-icon">
+          <div class="nav__menu-icon--top"></div>
+          <div class="nav__menu-icon--mid"></div>
+          <div class="nav__menu-icon--bot"></div>
         </div>
-        <div class="shopping-cart__items"></div>
-        <template class="shopping-cart__template">
-          <img class="shopping-cart__image" src="" />
-          <div class="shopping-cart__selections">
-            <h2 class="shopping-cart__name"></h2>
-            <p class="shopping-cart__color"></p>
-            <p class="shopping-cart__size"></p>
-            <div class="shopping-cart__quantity-wrapper">
-              <i
-                class="shopping-cart__minus fa fa-minus"
-                data-add="-1"
-                aria-hidden="true"
-              ></i>
-              <p class="shopping-cart__quantity">3</p>
-              <i
-                class="shopping-cart__plus fa fa-plus"
-                data-add="1"
-                aria-hidden="true"
-              ></i>
+
+        <div class="nav__menu--desktop">
+          <a class="nav__menu-item nav__link" href="/collections/shoes.html"
+            >Shoes</a
+          >
+          <a class="nav__menu-item nav__link" href="/account.html">
+            <img src="/Images/user.svg" class="nav__user-icon" alt="User icon"
+          /></a>
+        </div>
+        <a class="logo" href="/index.html">
+          <img
+            class="logo"
+            src="../Images/allbirds-logo.svg"
+            alt="company logo"
+          />
+        </a>
+
+        <div class="nav__cart-icon-wrapper">
+          <img
+            class="nav__cart-icon"
+            src="../Images/Cart_Icon.png"
+            alt="cart icon"
+          />
+          <p class="nav__cart-count"></p>
+        </div>
+        <div class="shopping-cart">
+          <div class="shopping-cart__header">
+            <div class="shopping-cart__close"></div>
+          </div>
+          <div class="shopping-cart__items"></div>
+          <template class="shopping-cart__template">
+            <img class="shopping-cart__image" src="" />
+            <div class="shopping-cart__selections">
+              <h2 class="shopping-cart__name"></h2>
+              <p class="shopping-cart__color"></p>
+              <p class="shopping-cart__size"></p>
+              <div class="shopping-cart__quantity-wrapper">
+                <i
+                  class="shopping-cart__minus fa fa-minus"
+                  data-add="-1"
+                  aria-hidden="true"
+                ></i>
+                <p class="shopping-cart__quantity">3</p>
+                <i
+                  class="shopping-cart__plus fa fa-plus"
+                  data-add="1"
+                  aria-hidden="true"
+                ></i>
+              </div>
             </div>
+            <div class="shopping-cart__delete-wrapper">
+              <i
+                class="shopping-cart__delete fa fa-times"
+                aria-hidden="true"
+              ></i>
+              <p class="shopping-cart__price"></p>
+            </div>
+            <hr />
+          </template>
+          <div class="shopping-cart__checkout">
+            <div class="shopping-cart__totals">
+              <h4 class="shopping-cart__subtotal">Total</h4>
+              <p class="shopping-cart__total"></p>
+            </div>
+            <button class="btn btn--active">proceed to checkout</button>
           </div>
-          <div class="shopping-cart__delete-wrapper">
-            <i class="shopping-cart__delete fa fa-times" aria-hidden="true"></i>
-            <p class="shopping-cart__price"></p>
-          </div>
-          <hr />
-        </template>
-        <div class="shopping-cart__checkout">
-          <div class="shopping-cart__totals">
-            <h4 class="shopping-cart__subtotal">Total</h4>
-            <p class="shopping-cart__total"></p>
-          </div>
-          <button class="btn btn--active">proceed to checkout</button>
         </div>
+        <div class="shopping-cart__overlay"></div>
+      </nav>
+
+      <div class="nav__menu">
+        <a class="nav__menu-item nav__link" href="/collections/shoes.html"
+          >Shoes</a
+        >
+        <hr />
+        <a class="nav__menu-item nav__link" href="/account.html">Account</a>
       </div>
-      <div class="shopping-cart__overlay"></div>
-    </nav>
 
     <div class="product">
       <header class="product__header">

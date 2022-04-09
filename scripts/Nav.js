@@ -1,3 +1,5 @@
+import "./Cart.js";
+
 // DOM containers
 const nav = document.querySelector("nav");
 const menuIcon = document.querySelector(".nav__menu-icon");

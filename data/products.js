@@ -154,6 +154,7 @@ const products = [
     productName: "Tree Dasher 2",
     productType: "shoe",
     subtitle: "Our everyday running shoe.",
+    price: 125,
     colors: [
       {
         colorId: "natural-black",

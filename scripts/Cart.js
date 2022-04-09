@@ -23,6 +23,7 @@ function addToCart(item) {
   itemInCart ? itemInCart.qty++ : cartArr.push(item);
   localStorage.setItem("cart", JSON.stringify(cartArr));
   updateCart();
+  toggleCartActive();
 }
 
 function updateCart() {
