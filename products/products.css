@@ -636,10 +636,9 @@ body {
   }
 }
 @media screen and (min-width: 768px) {
-  .breadcrumbs {
+  .product__header .breadcrumbs {
     margin-top: 0;
   }
-
   .product {
     display: grid;
     grid-template-columns: 1.8fr 1fr;
