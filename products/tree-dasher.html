@@ -11,90 +11,93 @@
       src="https://kit.fontawesome.com/248cd170f1.js"
       crossorigin="anonymous"
     ></script>
-    <title>Wool Runners</title>
+    <title>Tree Dasher 2</title>
   </head>
-  <body id="wool-runners">
+  <body id="tree-dasher">
     <!-- Nav -->
-    <nav>
-      <div class="nav__menu-icon">
-        <div class="nav__menu-icon--top"></div>
-        <div class="nav__menu-icon--mid"></div>
-        <div class="nav__menu-icon--bot"></div>
-      </div>
+<nav>
+        <div class="nav__menu-icon">
+          <div class="nav__menu-icon--top"></div>
+          <div class="nav__menu-icon--mid"></div>
+          <div class="nav__menu-icon--bot"></div>
+        </div>
 
-      <div class="nav__menu--desktop">
+        <div class="nav__menu--desktop">
+          <a class="nav__menu-item nav__link" href="/collections/shoes.html"
+            >Shoes</a
+          >
+          <a class="nav__menu-item nav__link" href="/account.html">
+            <img src="/Images/user.svg" class="nav__user-icon" alt="User icon"
+          /></a>
+        </div>
+        <a class="logo" href="/index.html">
+          <img
+            class="logo"
+            src="../Images/allbirds-logo.svg"
+            alt="company logo"
+          />
+        </a>
+
+        <div class="nav__cart-icon-wrapper">
+          <img
+            class="nav__cart-icon"
+            src="../Images/Cart_Icon.png"
+            alt="cart icon"
+          />
+          <p class="nav__cart-count"></p>
+        </div>
+        <div class="shopping-cart">
+          <div class="shopping-cart__header">
+            <div class="shopping-cart__close"></div>
+          </div>
+          <div class="shopping-cart__items"></div>
+          <template class="shopping-cart__template">
+            <img class="shopping-cart__image" src="" />
+            <div class="shopping-cart__selections">
+              <h2 class="shopping-cart__name"></h2>
+              <p class="shopping-cart__color"></p>
+              <p class="shopping-cart__size"></p>
+              <div class="shopping-cart__quantity-wrapper">
+                <i
+                  class="shopping-cart__minus fa fa-minus"
+                  data-add="-1"
+                  aria-hidden="true"
+                ></i>
+                <p class="shopping-cart__quantity">3</p>
+                <i
+                  class="shopping-cart__plus fa fa-plus"
+                  data-add="1"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
+            <div class="shopping-cart__delete-wrapper">
+              <i
+                class="shopping-cart__delete fa fa-times"
+                aria-hidden="true"
+              ></i>
+              <p class="shopping-cart__price"></p>
+            </div>
+            <hr />
+          </template>
+          <div class="shopping-cart__checkout">
+            <div class="shopping-cart__totals">
+              <h4 class="shopping-cart__subtotal">Total</h4>
+              <p class="shopping-cart__total"></p>
+            </div>
+            <button class="btn btn--active">proceed to checkout</button>
+          </div>
+        </div>
+        <div class="shopping-cart__overlay"></div>
+      </nav>
+
+      <div class="nav__menu">
         <a class="nav__menu-item nav__link" href="/collections/shoes.html"
           >Shoes</a
         >
-        <a class="nav__menu-item nav__link" href="/account.html">
-          <img src="/Images/user.svg" class="nav__user-icon" alt="User icon"
-        /></a>
+        <hr />
+        <a class="nav__menu-item nav__link" href="/account/index.html">Account</a>
       </div>
-      <a class="logo" href="/index.html">
-        <img
-          class="logo"
-          src="../Images/allbirds-logo.svg"
-          alt="company logo"
-        />
-      </a>
-
-      <div class="nav__cart-icon-wrapper">
-        <img
-          class="nav__cart-icon"
-          src="../Images/Cart_Icon.png"
-          alt="cart icon"
-        />
-        <p class="nav__cart-count"></p>
-      </div>
-      <div class="shopping-cart">
-        <div class="shopping-cart__header">
-          <div class="shopping-cart__close"></div>
-        </div>
-        <div class="shopping-cart__items"></div>
-        <template class="shopping-cart__template">
-          <img class="shopping-cart__image" src="" />
-          <div class="shopping-cart__selections">
-            <h2 class="shopping-cart__name"></h2>
-            <p class="shopping-cart__color"></p>
-            <p class="shopping-cart__size"></p>
-            <div class="shopping-cart__quantity-wrapper">
-              <i
-                class="shopping-cart__minus fa fa-minus"
-                data-add="-1"
-                aria-hidden="true"
-              ></i>
-              <p class="shopping-cart__quantity">3</p>
-              <i
-                class="shopping-cart__plus fa fa-plus"
-                data-add="1"
-                aria-hidden="true"
-              ></i>
-            </div>
-          </div>
-          <div class="shopping-cart__delete-wrapper">
-            <i class="shopping-cart__delete fa fa-times" aria-hidden="true"></i>
-            <p class="shopping-cart__price"></p>
-          </div>
-          <hr />
-        </template>
-        <div class="shopping-cart__checkout">
-          <div class="shopping-cart__totals">
-            <h4 class="shopping-cart__subtotal">Total</h4>
-            <p class="shopping-cart__total"></p>
-          </div>
-          <button class="btn btn--active">proceed to checkout</button>
-        </div>
-      </div>
-      <div class="shopping-cart__overlay"></div>
-    </nav>
-
-    <div class="nav__menu">
-      <a class="nav__menu-item nav__link" href="/collections/shoes.html"
-        >Shoes</a
-      >
-      <hr />
-      <a class="nav__menu-item nav__link" href="/account/index.html">Account</a>
-    </div>
 
     <div class="product">
       <header class="product__header">
@@ -106,8 +109,8 @@
         </div>
 
         <div class="product__details">
-          <h1 class="title">Wool Runners</h1>
-          <p class="product__price">£110</p>
+          <h1 class="title">Tree Dasher 2</h1>
+          <p class="product__price">£125</p>
         </div>
 
         <div class="product__rating">
@@ -179,19 +182,19 @@
       <!-- Highlights -->
       <section class="highlights">
         <h2 class="highlights__title product__title">
-          Wool Runners Highlights
+          Tree Dasher 2 Highlights
         </h2>
         <hr class="product__hr" />
         <p class="highlights__text">
-          Warm and cosy ZQ Merino wool provides next-level comfort
+          Seamless one-piece upper provides maximum comfort
         </p>
         <hr class="highglights__hr" />
         <p class="highlights__text">
-          Cushioned midsole gives wear-all-day support
+          Lightly padded heel collar locks ankle in place
         </p>
         <hr class="product__hr" />
         <p class="highlights__text">
-          Machine-washable materials keep shoes looking like new
+          Flexible, cushioned midsole offers a smoother ride
         </p>
       </section>
 
@@ -203,23 +206,20 @@
             <i class="collapsible__chevron fa-solid fa-angle-down"></i>
           </label>
           <p class="collapsible__text">
-            Shop the one that started it all: Our Merino Wool Runners. Our
-            superfine ZQ Merino wool material is incredibly soft and cosy,
-            naturally thermoregulating, and ready for anything.
+            Meet The Tree Dasher 2, the next evolution of our best-selling
+            running shoe with lighter, more responsive foam, extra grip, and an
+            improved fit to keep you running and nature winning.
             <br />
             <strong class="collapsible__text--strong">Best For:</strong>
-            Walking, warmer weather, everyday wear Thermoregulating
-            <br />
-            <strong class="collapsible__text--strong"
-              >Super Soft Material:</strong
-            >
-            Warm and cozy premium ZQ Merino wool provides next-level comfort
+            Everyday runs, walks, roads, light workouts <br />
+            <strong class="collapsible__text--strong">Material:</strong>
+            Improved heel collar helps lock ankle in place
             <br />
             <strong class="collapsible__text--strong">Versatile Design:</strong>
-            Wear-with-everything classic style, great for travel
+            Sportier, angular heel shape softens impact
             <br />
             <strong class="collapsible__text--strong">Where It’s Made:</strong>
-            South Korea. Learn more about
+            Vietnam. Learn more about
             <a class="collapsible__link">our operations </a>
             <br />
           </p>
@@ -232,27 +232,10 @@
             <i class="collapsible__chevron fa-solid fa-angle-down"></i>
           </label>
           <p class="collapsible__text">
-            Our Wool Runner is carbon neutral thanks to sustainable practices,
-            like using natural materials funding high impact carbon projects.
-            But before we balance the emissions, its footprint starts at 9.9 kg
-            CO2e. Learn more about carbon footprint labeling and our commitments
-            to reduce our impact.
-            <br />
-            <strong class="collapsible__text--strong"
-              >Sustainable Materials:</strong
-            >
+            All-day comfort. Everyday style. With a classic low top made from
+            breezy eucalyptus tree fibre, our new Tree Piper is the summer
+            sneaker your outfits have been waiting for. Made in Vietnam.
           </p>
-
-          <ul class="collapsible__list">
-            <li>
-              ZQ certified Merino wool upper that meets the highest standards of
-              animal welfare, environmental care, and social sustainabilityr
-            </li>
-            <li>SweetFoam® midsole made with sugarcane-based green EVA</li>
-            <li>Shoe laces made from recycled plastic bottles</li>
-            <li>Castor bean oil-based insole foam</li>
-            <li>ZQ merino wool heel lining</li>
-          </ul>
         </div>
 
         <div class="collapsible__item" id="delivery-returns">
@@ -263,7 +246,7 @@
           </label>
           <p class="collapsible__text">
             Free delivery and our 30 days, no questions asked return policy.
-            Lightly worn shoes get donated to Soles4Souls.
+            Lightly worn shoes get donated to Soles4Souls..
           </p>
         </div>
 
@@ -291,15 +274,15 @@
       <div class="product-part">
         <img
           class="product-part__image"
-          src="../Images/products/wool-runners/wool-upper.avif"
+          src="../Images/products/tree-dasher/tree-upper.avif"
         />
         <div class="product-part__text-wrapper">
-          <h1 class="product-part__name">wool upper</h1>
-          <h3 class="product-part__title title">Superfine And Cosy</h3>
+          <h1 class="product-part__name">Tree Upper</h1>
+          <h3 class="product-part__title title">Seamless Durability</h3>
           <p class="product-part__description">
-            It’s soft and itch-free on the inside, durable on the outside, and
-            ethically sourced to ZQ Merino’s high standards for a cosy fit that
-            treads light on the planet.
+            We knitted a unique one-piece upper made with FSC® Certified
+            eucalyptus trees for a perfect fit that’s flexible, lightweight, and
+            breathable in every step.
           </p>
         </div>
       </div>
@@ -307,15 +290,14 @@
       <div class="product-part">
         <img
           class="product-part__image"
-          src="../Images/products/wool-runners/sugarcane-midsole.avif"
+          src="../Images/products/tree-dasher/sugarcane-midsole.avif"
         />
         <div class="product-part__text-wrapper">
           <h1 class="product-part__name">Sugarcane Midsole</h1>
-          <h3 class="product-part__title title">Sweet On The Planet</h3>
+          <h3 class="product-part__title title">Sweet Stability</h3>
           <p class="product-part__description">
-            Contoured and delightfully bouncy, our Brazilian sugarcane midsole
-            is called SweetFoam®, which is made with the world’s first carbon
-            negative green EVA.
+            Optimised for cushion, stability, and energy return, our SweetFoam®
+            midsole is made with the world’s first carbon negative green EVA.
           </p>
         </div>
       </div>
@@ -323,57 +305,21 @@
       <div class="product-part">
         <img
           class="product-part__image"
-          src="../Images/products/wool-runners/castor-bean-insole.avif"
+          src="../Images/products/tree-dasher/measured-performance.avif"
         />
         <div class="product-part__text-wrapper">
-          <h1 class="product-part__name">Castor Bean Insole</h1>
-          <h3 class="product-part__title title">Plant Your Feet In Comfort</h3>
+          <h1 class="product-part__name">Measured Performance</h1>
+          <h3 class="product-part__title title">Rigorously Tested</h3>
           <p class="product-part__description">
-            We layered castor bean oil, which emits less carbon than
-            petroleum-based foam, and ZQ Merino wool for a cushiony, moisture
-            wicking, and odor reducing insole.
+            Run confidently knowing we logged thousands of miles with 90+
+            runners over a nine-month testing period.
           </p>
         </div>
       </div>
-      <div class="product-part">
-        <img
-          class="product-part__image"
-          src="../Images/products/wool-runners/castor-bean-insole.avif"
-        />
-        <div class="product-part__text-wrapper">
-          <h1 class="product-part__name">Recycled Laces</h1>
-          <h3 class="product-part__title title">Loop And Swoop</h3>
-          <p class="product-part__description">
-            Our laces are made from 100% post-consumer recycled polyester. One
-            old plastic bottle becomes one pair of shoelaces.
-          </p>
-        </div>
-      </div>
-
-      <div class="product-part">
-        <img
-          class="product-part__image"
-          src="../Images/products/wool-runners/carbon-footprint.avif"
-        />
-        <div class="product-part__text-wrapper">
-          <h3 class="product-part__title title">Tread Lighter</h3>
-          <p class="product-part__description">
-            Our Tree Runner is carbon neutral thanks to sustainable practices,
-            like using natural materials and buying offsets. But before we
-            balance the emissions, its footprint starts at 9.6 kg CO2e. Think of
-            this measurement like a nutrition label for your closet.
-            <br />
-          </p>
-          <div class="product-part__link">
-            <a>Dig Into How We’re Measuring CO2e</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <section id="reviews">
       <div class="reviews__overview">
-        <h1 class="reviews__title title">Wool Runners Reviews</h1>
+        <h1 class="reviews__title title">Tree Pipers Reviews</h1>
         <div class="reviews__score">
           <p id="reviews__numbered-rating"></p>
           <div class="reviews__stars product__stars"></div>
@@ -448,6 +394,7 @@
         <p class="reviews__date"></p>
       </template>
     </section>
+
     <script type="module" src="../scripts/Product/index.js"></script>
   </body>
 </html>

@@ -134,7 +134,6 @@ class Product {
   selectSize({ currentTarget }) {
     this.productDetails.size = currentTarget.dataset.size;
     addToCart(this.productDetails);
-    toggleCartActive();
   }
 }
 

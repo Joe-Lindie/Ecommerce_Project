@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../style.css" />
-    <link rel="stylesheet" type="text/css" href="../products/products.css" />
-    <link rel="stylesheet" type="text/css" href="./collections.css" />
+    <link rel="stylesheet" type="text/css" href="../products/account.css" />
 
     <!-- Font Awesome Icon Library -->
     <script
       src="https://kit.fontawesome.com/248cd170f1.js"
       crossorigin="anonymous"
     ></script>
-    <title>Shoes</title>
+    <title>Account</title>
   </head>
-  <body id="shoe">
+  <body id="account">
     <!-- Nav -->
     <nav>
       <div class="nav__menu-icon">
@@ -98,63 +97,6 @@
       <a class="nav__menu-item nav__link" href="/account.html">Account</a>
     </div>
 
-    <div class="breadcrumbs">
-      <a class="breadcrumbs__item" href="../index.html">Home</a>
-      <h1 class="title">Shoes</h1>
-    </div>
-    <hr class="collection__hr" />
-    <div class="collection-wrapper">
-      <template class="item-template">
-        <div class="item">
-          <div class="item__header">
-            <h2 class="item__title"></h2>
-            <p class="item__subtitle"></p>
-          </div>
-          <div class="item__details">
-            <a class="item__link">
-              <img class="item__image" />
-              <h2 class="item__title--small"></h2>
-              <p class="product__color-name"></p>
-              <p class="item__price"></p>
-            </a>
-            <div class="color-wrapper"></div>
-            <hr />
-            <div class="quick-add">
-              <div class="quick-add__button-wrapper">
-                <h2 class="quick-add__title item__title--small">Quick Add</h2>
-                <div class="quick-add__button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-                    <defs />
-                    <path
-                      d="M26 0h12v64H26z"
-                      class="quick-add__button--vertical"
-                    />
-                    <path d="M0 38V26h64v12z" />
-                  </svg>
-                </div>
-              </div>
-
-              <div class="item__size-wrapper"></div>
-            </div>
-          </div>
-        </div>
-      </template>
-      <template class="color-template">
-        <div class="color">
-          <div class="color__icon">
-            <span class="color__icon--top"></span>
-            <span class="color__icon--bottom"></span>
-          </div>
-        </div>
-      </template>
-      <template class="size-template">
-        <div class="size">
-          <p class="size__region">uk</p>
-          <p class="size__number">7</p>
-        </div>
-      </template>
-    </div>
-
-    <script type="module" src="../scripts/Collection/index.js"></script>
+    <script type="module" src="/scripts/Account/Account.js"></script>
   </body>
 </html>

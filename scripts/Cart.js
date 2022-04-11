@@ -23,6 +23,7 @@ function addToCart(item) {
   itemInCart ? itemInCart.qty++ : cartArr.push(item);
   localStorage.setItem("cart", JSON.stringify(cartArr));
   updateCart();
+  toggleCartActive();
 }
 
 function updateCart() {
@@ -105,14 +106,14 @@ function updateTotal() {
 
 function displayEmptyCart() {
   const cartIsEmptyTextEl = document.createElement("p");
-  const buttonsTextList = ["shoes"];
+  const buttonsList = ["shoes"];
   cartIsEmptyTextEl.innerText = "Your Cart is Empty";
   cartIsEmptyTextEl.classList.add("shopping-cart__text");
   cartItemsDiv.append(cartIsEmptyTextEl);
 
   $(".shopping-cart__checkout").style = "display: none;";
   cartItemsDiv.append();
-  buttonsTextList.forEach((item) => {
+  buttonsList.forEach((item) => {
     const newButton = document.createElement("a");
     newButton.classList.add(
       "btn",
