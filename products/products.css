@@ -594,7 +594,7 @@ body {
 #new-review__text {
   min-height: 8rem;
   line-height: 2.2rem;
-  resize: vertical;
+  resize: none;
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
   color: var(--outer-space);

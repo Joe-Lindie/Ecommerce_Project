@@ -49,7 +49,7 @@ class Product {
   createProduct() {
     this.itemTitle.innerText = this.productName;
     this.itemSubtitle.innerText = this.subtitle;
-    this.itemLink.href = `../../products/${this.productId}.html`;
+    this.itemLink.href = `../products/${this.productId}.html`;
     this.itemSmallTitle.innerText = this.productName;
     this.itemPrice.innerText = `£${this.price}`;
     this.colors.forEach((color) => this.createColorIcon(color));
