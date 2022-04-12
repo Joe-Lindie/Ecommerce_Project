@@ -17,7 +17,6 @@ const products = [
           "../Images/products/tree-runners/mist4.avif",
           "../Images/products/tree-runners/mist5.avif",
           "../Images/products/tree-runners/mist6.avif",
-          "../Images/products/tree-runners/mist7.avif",
         ],
       },
       {
@@ -31,7 +30,6 @@ const products = [
           "../Images/products/tree-runners/buoyant-blue4.avif",
           "../Images/products/tree-runners/buoyant-blue5.avif",
           "../Images/products/tree-runners/buoyant-blue6.avif",
-          "../Images/products/tree-runners/buoyant-blue7.avif",
         ],
       },
       {
@@ -45,7 +43,6 @@ const products = [
           "../Images/products/tree-runners/wasatch4.avif",
           "../Images/products/tree-runners/wasatch5.avif",
           "../Images/products/tree-runners/wasatch6.avif",
-          "../Images/products/tree-runners/wasatch7.avif",
         ],
       },
     ],

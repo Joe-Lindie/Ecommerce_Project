@@ -72,6 +72,7 @@ body {
 
 .carousel__viewport {
   width: clamp(15rem, 100vw, 42rem);
+  height: auto;
   overflow: hidden;
 }
 
@@ -83,8 +84,9 @@ body {
 }
 
 .carousel__image {
-  width: clamp(15rem, 100vw, 45rem);
+  width: clamp(15rem, 100vw, 50rem);
   pointer-events: none;
+  object-fit: cover;
   z-index: 0;
 }
 
