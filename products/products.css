@@ -60,7 +60,7 @@ body {
 }
 
 .carousel {
-  height: clamp(15rem, 100vw, 45rem);
+  --carousel-height: clamp(15rem, 100vw, 42rem);
   position: relative;
   display: flex;
   justify-content: center;
@@ -71,7 +71,7 @@ body {
 }
 
 .carousel__viewport {
-  width: clamp(15rem, 100vw, 42rem);
+  width: var(--carousel-height);
   height: auto;
   overflow: hidden;
 }
@@ -84,9 +84,9 @@ body {
 }
 
 .carousel__image {
-  width: clamp(15rem, 100vw, 50rem);
+  height: var(--carousel-height);
   pointer-events: none;
-  object-fit: cover;
+  min-width: var(--carousel-height);
   z-index: 0;
 }
 
