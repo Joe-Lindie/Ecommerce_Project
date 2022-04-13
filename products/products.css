@@ -87,6 +87,7 @@ body {
   height: var(--carousel-height);
   pointer-events: none;
   min-width: var(--carousel-height);
+  object-fit: cover;
   z-index: 0;
 }
 
