@@ -1,4 +1,5 @@
 import "./Cart.js";
+import products from "../../data/products.js";
 
 // DOM containers
 const nav = document.querySelector("nav");
