@@ -1,8 +1,9 @@
 import "./Cart.js";
+import { $ } from "./utils.js";
 
 // DOM containers
-const nav = document.querySelector("nav");
-const menuIcon = document.querySelector(".nav__menu-icon");
+const nav = $("nav");
+const menuIcon = $(".nav__menu-icon");
 
 // Event Listeners
 window.addEventListener("resize", deactivateMenu);

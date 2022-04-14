@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../Images/favicon.ico"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" type="text/css" href="../style.css" />
     <link rel="stylesheet" type="text/css" href="./products.css" />
     <!-- Font Awesome Icon Library -->
@@ -15,89 +20,82 @@
   </head>
   <body id="tree-dasher">
     <!-- Nav -->
-<nav>
-        <div class="nav__menu-icon">
-          <div class="nav__menu-icon--top"></div>
-          <div class="nav__menu-icon--mid"></div>
-          <div class="nav__menu-icon--bot"></div>
-        </div>
+    <nav>
+      <div class="nav__menu-icon">
+        <div class="nav__menu-icon--top"></div>
+        <div class="nav__menu-icon--mid"></div>
+        <div class="nav__menu-icon--bot"></div>
+      </div>
 
-        <div class="nav__menu--desktop">
-          <a class="nav__menu-item nav__link" href="../collections/shoes.html"
-            >Shoes</a
-          >
-          <!-- <a class="nav__menu-item nav__link" href="../account/index.html"> -->
-            <!-- <img src="../Images/user.svg" class="nav__user-icon" alt="User icon"
-          /></a> -->
-        </div>
-        <a class="logo" href="../index.html">
-          <img
-            class="logo"
-            src="../Images/allbirds-logo.svg"
-            alt="company logo"
-          />
-        </a>
-
-        <div class="nav__cart-icon-wrapper">
-          <img
-            class="nav__cart-icon"
-            src="../Images/Cart_Icon.png"
-            alt="cart icon"
-          />
-          <p class="nav__cart-count"></p>
-        </div>
-        <div class="shopping-cart">
-          <div class="shopping-cart__header">
-            <div class="shopping-cart__close"></div>
-          </div>
-          <div class="shopping-cart__items"></div>
-          <template class="shopping-cart__template">
-            <img class="shopping-cart__image" src="" />
-            <div class="shopping-cart__selections">
-              <h2 class="shopping-cart__name"></h2>
-              <p class="shopping-cart__color"></p>
-              <p class="shopping-cart__size"></p>
-              <div class="shopping-cart__quantity-wrapper">
-                <i
-                  class="shopping-cart__minus fa fa-minus"
-                  data-add="-1"
-                  aria-hidden="true"
-                ></i>
-                <p class="shopping-cart__quantity">3</p>
-                <i
-                  class="shopping-cart__plus fa fa-plus"
-                  data-add="1"
-                  aria-hidden="true"
-                ></i>
-              </div>
-            </div>
-            <div class="shopping-cart__delete-wrapper">
-              <i
-                class="shopping-cart__delete fa fa-times"
-                aria-hidden="true"
-              ></i>
-              <p class="shopping-cart__price"></p>
-            </div>
-            <hr />
-          </template>
-          <div class="shopping-cart__checkout">
-            <div class="shopping-cart__totals">
-              <h4 class="shopping-cart__subtotal">Total</h4>
-              <p class="shopping-cart__total"></p>
-            </div>
-            <button class="btn btn--active">proceed to checkout</button>
-          </div>
-        </div>
-        <div class="shopping-cart__overlay"></div>
-      </nav>
-
-      <div class="nav__menu">
+      <div class="nav__menu--desktop">
         <a class="nav__menu-item nav__link" href="../collections/shoes.html"
           >Shoes</a
         >
-        <hr />
-        <!-- <a class="nav__menu-item nav__link" href="../account/index.html">Account</a> -->
+        <!-- <a class="nav__menu-item nav__link" href="/account/index.html"> -->
+        <!-- <img src="/Images/user.svg" class="nav__user-icon" alt="User icon"
+          /></a> -->
       </div>
+      <a class="logo" href="../index.html">
+        <img class="logo" src="../Images/logo.webp" alt="company logo" />
+      </a>
+
+      <div class="nav__cart-icon-wrapper">
+        <img
+          class="nav__cart-icon"
+          src="../Images/Cart_Icon.png"
+          alt="cart icon"
+        />
+        <p class="nav__cart-count"></p>
+      </div>
+      <div class="shopping-cart">
+        <div class="shopping-cart__header">
+          <div class="shopping-cart__close"></div>
+        </div>
+        <div class="shopping-cart__items"></div>
+        <template class="shopping-cart__template">
+          <img class="shopping-cart__image" src="" />
+          <div class="shopping-cart__selections">
+            <h2 class="shopping-cart__name"></h2>
+            <p class="shopping-cart__color"></p>
+            <p class="shopping-cart__size"></p>
+            <div class="shopping-cart__quantity-wrapper">
+              <i
+                class="shopping-cart__minus fa fa-minus"
+                data-add="-1"
+                aria-hidden="true"
+              ></i>
+              <p class="shopping-cart__quantity">3</p>
+              <i
+                class="shopping-cart__plus fa fa-plus"
+                data-add="1"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+          <div class="shopping-cart__delete-wrapper">
+            <i class="shopping-cart__delete fa fa-times" aria-hidden="true"></i>
+            <p class="shopping-cart__price"></p>
+          </div>
+          <hr />
+        </template>
+        <div class="shopping-cart__checkout">
+          <div class="shopping-cart__totals">
+            <h4 class="shopping-cart__subtotal">Total</h4>
+            <p class="shopping-cart__total"></p>
+          </div>
+          <button class="btn btn--active">proceed to checkout</button>
+        </div>
+      </div>
+      <div class="shopping-cart__overlay"></div>
+    </nav>
+
+    <div class="nav__menu">
+      <a class="nav__menu-item nav__link" href="../collections/shoes.html"
+        >Shoes</a
+      >
+      <hr />
+      <!-- <a class="nav__menu-item nav__link" href="/account/index.html">Account</a> -->
+    </div>
 
     <div class="product">
       <header class="product__header">
@@ -206,20 +204,19 @@
             <i class="collapsible__chevron fa-solid fa-angle-down"></i>
           </label>
           <p class="collapsible__text">
-            Meet The Tree Dasher 2, the next evolution of our best-selling
-            running shoe with lighter, more responsive foam, extra grip, and an
-            improved fit to keep you running and nature winning.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, hic.
             <br />
             <strong class="collapsible__text--strong">Best For:</strong>
-            Everyday runs, walks, roads, light workouts <br />
+            Walking, warmer weather, everyday wear Thermoregulating
+            <br />
             <strong class="collapsible__text--strong">Material:</strong>
-            Improved heel collar helps lock ankle in place
+            Lightweight, breathable eucalyptus fiber provides next-level comfort
             <br />
             <strong class="collapsible__text--strong">Versatile Design:</strong>
-            Sportier, angular heel shape softens impact
+            Wear-with-everything classic style, great for travel
             <br />
             <strong class="collapsible__text--strong">Where It’s Made:</strong>
-            Vietnam. Learn more about
+            Vietnam/China. Learn more about
             <a class="collapsible__link">our operations </a>
             <br />
           </p>
@@ -232,10 +229,39 @@
             <i class="collapsible__chevron fa-solid fa-angle-down"></i>
           </label>
           <p class="collapsible__text">
-            All-day comfort. Everyday style. With a classic low top made from
-            breezy eucalyptus tree fibre, our new Tree Piper is the summer
-            sneaker your outfits have been waiting for. Made in Vietnam.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore
+            cumque mollitia itaque quod harum, sit, assumenda alias earum
+            veritatis quas esse soluta placeat dolor odio nam autem repellat
+            explicabo a totam, nemo quae quo est ea. Voluptas, esse officia.
+            Dolorem?
+            <br />
+            <strong class="collapsible__text--strong"
+              >Sustainable Materials:</strong
+            >
           </p>
+
+          <ul class="collapsible__list">
+            <li>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Mollitia, quam.
+            </li>
+            <li>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. A,
+              error.
+            </li>
+            <li>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Delectus, facilis.
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
+              ducimus.
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur.lorem7 Lorem ipsum dolor
+              sit amet consectetur adipisicing.
+            </li>
+          </ul>
         </div>
 
         <div class="collapsible__item" id="delivery-returns">
@@ -246,7 +272,6 @@
           </label>
           <p class="collapsible__text">
             Free delivery and our 30 days, no questions asked return policy.
-            Lightly worn shoes get donated to Soles4Souls..
           </p>
         </div>
 
@@ -257,14 +282,16 @@
             <i class="collapsible__chevron fa-solid fa-angle-down"></i>
           </label>
           <p class="collapsible__text">
-            Searching for machine-washable sneakers that won’t lose their shape?
-            All our shoes can go right into the wash. To prep, pull out the
-            laces and insoles and place your shoes in a delicates bag (pro tip:
-            a pillowcase works too) and toss them in the washing machines.
-            Choose a gentle cycle with cold water and mild detergent. Next,
-            steer clear of the dryer, and instead shake out any excess water and
-            set aside to air dry. Shoes need a little extra TLC? Swap in some
-            brand new laces and insoles.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+            asperiores cupiditate voluptatem quos? Obcaecati soluta nemo beatae
+            sed odio perspiciatis totam quisquam. Debitis repellat totam animi!
+            Minus vitae modi laboriosam voluptatum obcaecati eligendi placeat
+            repudiandae magnam consequatur deserunt quidem, at dolore, veritatis
+            vero voluptatibus? Eum distinctio ut magnam amet, unde perferendis
+            aperiam nam nesciunt quod, quisquam veniam placeat praesentium error
+            voluptatum quibusdam autem provident aliquid ipsum! Harum quisquam
+            in vel eius fugit! Molestias perferendis minus eveniet quod! Ex,
+            corrupti corporis.
           </p>
         </div>
       </section>
@@ -274,15 +301,15 @@
       <div class="product-part">
         <img
           class="product-part__image"
-          src="../Images/products/tree-dasher/tree-upper.avif"
+          src="../Images/products/tree-upper.avif"
         />
         <div class="product-part__text-wrapper">
-          <h1 class="product-part__name">Tree Upper</h1>
-          <h3 class="product-part__title title">Seamless Durability</h3>
+          <h1 class="product-part__name">tree upper</h1>
+          <h3 class="product-part__title title">Silky And Breezy</h3>
           <p class="product-part__description">
-            We knitted a unique one-piece upper made with FSC® Certified
-            eucalyptus trees for a perfect fit that’s flexible, lightweight, and
-            breathable in every step.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
+            dignissimos odit nobis iste eligendi sed, libero impedit alias
+            soluta cupiditate?
           </p>
         </div>
       </div>
@@ -290,14 +317,18 @@
       <div class="product-part">
         <img
           class="product-part__image"
-          src="../Images/products/tree-dasher/sugarcane-midsole.avif"
+          src="../Images/products/sugarcane-midsole.avif"
         />
         <div class="product-part__text-wrapper">
           <h1 class="product-part__name">Sugarcane Midsole</h1>
-          <h3 class="product-part__title title">Sweet Stability</h3>
+          <h3 class="product-part__title title">Sweet On The Planet</h3>
           <p class="product-part__description">
-            Optimised for cushion, stability, and energy return, our SweetFoam®
-            midsole is made with the world’s first carbon negative green EVA.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            architecto quas numquam. Facere magni minima autem quis magnam
+            molestiae exercitationem distinctio modi at! Quo neque et culpa ad
+            at expedita. Reprehenderit voluptatibus incidunt aspernatur placeat
+            fugiat ut hic perspiciatis architecto veritatis, odio eligendi unde
+            cumque enim aut assumenda labore vel?
           </p>
         </div>
       </div>
@@ -305,17 +336,54 @@
       <div class="product-part">
         <img
           class="product-part__image"
-          src="../Images/products/tree-dasher/measured-performance.avif"
+          src="../Images/products/castor-bean-insole.avif"
         />
         <div class="product-part__text-wrapper">
-          <h1 class="product-part__name">Measured Performance</h1>
-          <h3 class="product-part__title title">Rigorously Tested</h3>
+          <h1 class="product-part__name">Castor Bean Insole</h1>
+          <h3 class="product-part__title title">Plant Your Feet In Comfort</h3>
           <p class="product-part__description">
-            Run confidently knowing we logged thousands of miles with 90+
-            runners over a nine-month testing period.
+            We layered castor bean oil, which emits less carbon than
+            petroleum-based foam, and ZQ Merino wool for a cushiony, moisture
+            wicking, and odor reducing insole.
           </p>
         </div>
       </div>
+
+      <div class="product-part">
+        <img
+          class="product-part__image"
+          src="../Images/products/recycled-laces.avif"
+        />
+        <div class="product-part__text-wrapper">
+          <h1 class="product-part__name">Recycled Laces</h1>
+          <h3 class="product-part__title title">Loop And Swoop</h3>
+          <p class="product-part__description">
+            Our laces are made from 100% post-consumer recycled polyester. One
+            old plastic bottle becomes one pair of shoelaces.
+          </p>
+        </div>
+      </div>
+
+      <div class="product-part">
+        <img
+          class="product-part__image"
+          src="../Images/products/carbon-footprint.png"
+        />
+        <div class="product-part__text-wrapper">
+          <h3 class="product-part__title title">Tread Lighter</h3>
+          <p class="product-part__description">
+            Our Tree Runner is carbon neutral thanks to sustainable practices,
+            like using natural materials and buying offsets. But before we
+            balance the emissions, its footprint starts at 9.6 kg CO2e. Think of
+            this measurement like a nutrition label for your closet.
+            <br />
+          </p>
+          <div class="product-part__link">
+            <a>Dig Into How We’re Measuring CO2e</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section id="reviews">
       <div class="reviews__overview">
@@ -374,7 +442,7 @@
             id="new-review__text"
             cols="30"
             rows="10"
-            placeholder="Write your review..."
+            placeholder="Write your review."
           ></textarea>
         </div>
         <div class="new-review__item">
