@@ -8,7 +8,7 @@ const closeButton = $(".shopping-cart__close");
 cartIcon.addEventListener("click", toggleCartActive);
 closeButton.addEventListener("click", toggleCartActive);
 updateCart();
-
+console.log("cart loaded");
 function toggleCartActive() {
   shoppingCartDiv.classList.toggle("shopping-cart--active");
   updateCart();
